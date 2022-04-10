@@ -7,6 +7,8 @@
   "compilerOptions": {
     "target": "ES2016",
     "module": "ESNext",
+    "jsx": "react-jsx",
+    "moduleResolution": "NodeNext",
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
     "strict": true,
