@@ -7,13 +7,12 @@ describe("Livecycles must work", () => {
     test('store livecycle', () => {
         const testComponent = mount(<TestComponent />);
 
-        expect(testComponent.html()).toEqual(`<div>constructor</div>`);
+        expect(testComponent.html()).toEqual(`<div>activate</div>`);
 
         testComponent.setProps({});
-        expect(testComponent.html()).toEqual(`<div>constructor</div>`);
+        expect(testComponent.html()).toEqual(`<div>activate</div>`);
 
         testComponent.unmount();
-        expect(testComponent.html()).toEqual(`<div>constructor</div>`);
     });
 });
 
