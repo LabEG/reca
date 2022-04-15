@@ -1,52 +1,70 @@
-import {useEffect, useState} from "react";
 
-export class Store<T extends Record<string, unknown>> {
+export class Store<T extends Record<string, unknown> = {}> {
 
-    private setSeed: (seed: number) => void;
-
-    public constructor () {
-
-        const [, setSeed] = useState(0);
-        this.setSeed = setSeed;
-
-        useEffect(() => {
-            return () => this.dispose?.();
-        }, []);
-    }
+    private redrawFunction: () => void = () => void 0;
 
     /**
-     * Method of livecycles for overrides
+     * Method for override in nested store.
+     * Run after first rendering component in DOM.
+     *
+     * @description
+     * Encapsulate:
+     *  useEffect(() => {
+     *      if (isInit) {
+     *          store.activate(props);
+     *      }
+     *  });
      */
     public activate(props: T): void {
         // override
     }
 
     /**
-     * Method of livecycles for overrides
+     * Method for override in nested store.
+     * Run after second and others rendering component in DOM.
+     *
+     * @description
+     * Encapsulate:
+     * useEffect(() => {
+     *     if (!isInit) {
+     *         store.activate(props);
+     *     }
+     * });
      */
     public update(props: T): void {
         // override
     }
 
     /**
-     * Method of livecycles for overrides
+     * Method for override in nested store.
+     * Run after second and others rendering component in DOM.
+     *
+     * @description
+     * Encapsulate:
+     * useEffect(() => {
+     *     return () => store.dispose();
+     * }, []);
      */
     public dispose(): void {
         // override
+    }
+
+    public setRedrawFunction(updateFunction: () => void): void {
+        this.redrawFunction = updateFunction;
     }
 
     /**
      * Update view on next requestAnimationFrame
      */
     public redraw(): void {
-        requestAnimationFrame(() => this.forceUpdate());
+        requestAnimationFrame(() => this.redrawFunction());
     }
 
     /**
      * Update view component immediately
      */
-    public forceUpdate(): void {
-        this.setSeed(Math.random());
+    public forceRedraw(): void {
+        this.redrawFunction();
     }
 
 }

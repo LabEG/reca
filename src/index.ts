@@ -1,3 +1,6 @@
 
-export * from "./UseStore";
-export * from "./WithStore";
+export * from "./hooks/UseStore";
+export * from "./functions/WithStore";
+
+export * from "./decorators/reflesction";
+export * from "./config";
