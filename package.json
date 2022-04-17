@@ -5,11 +5,13 @@
   "main": "dist/index.js",
   "type": "module",
   "scripts": {
-    "build": "npm run clean && tsc && npm run test:module",
+    "build": "npm run clean && tsc && clean:dist-tests && npm run test:module",
     "clean": "rimraf ./dist",
+    "clean:dist-tests": "rimraf ./dist/__fixtures__ && rimraf ./dist/__tests__",
     "test": "jest",
     "test:watch": "jest --watch",
-    "test:module": "node ./dist/index.js"
+    "test:module": "node ./dist/index.js",
+    "prepublish": "npm run test && npm run build"
   },
   "keywords": [
     "react",
