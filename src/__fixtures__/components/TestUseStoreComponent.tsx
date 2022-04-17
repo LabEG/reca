@@ -1,5 +1,5 @@
-import {useStore} from "../../hooks/UseStore";
-import {LiveCycleStore} from "../stores/LiveCycleStore";
+import {useStore} from "../../hooks/UseStore.js";
+import {LiveCycleStore} from "../stores/LiveCycleStore.js";
 
 export const TestUseStoreComponent = (props: Record<string, unknown>) => {
 

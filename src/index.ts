@@ -1,6 +1,7 @@
 
-export * from "./hooks/UseStore";
-export * from "./functions/WithStore";
+export * from "./hooks/UseStore.js";
+export * from "./functions/WithStore.js";
+export * from "./stores/Store.js";
 
-export * from "./decorators/reflesction";
-export * from "./config";
+export * from "./decorators/reflesction.js";
+export * from "./config.js";

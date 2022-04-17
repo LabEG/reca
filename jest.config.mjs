@@ -1,4 +1,4 @@
-/** @type {import("ts-jest/dist/types").InitialOptionsTsJest} */
+/**  @type {import('@jest/types').Config.ProjectConfig} */
 /*
  * For a detailed explanation regarding each configuration property and type check, visit:
  * https://jestjs.io/docs/configuration
@@ -9,6 +9,13 @@ export default {
   transform: {
     "\\.[jt]sx?$": "babel-jest"
   },
+  moduleNameMapper: {
+    "(.+)\\.js": "$1"
+  },
+  testPathIgnorePatterns: [
+    "/node_modules/",
+    "/dist/"
+  ],
   setupFilesAfterEnv: ["<rootDir>setup-tests.js"],
   clearMocks: true,
   collectCoverage: true,

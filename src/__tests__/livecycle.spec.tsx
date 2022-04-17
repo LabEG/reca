@@ -1,8 +1,8 @@
 
 
 import { mount } from 'enzyme';
-import {TestUseStoreComponent} from "../__fixtures__/components/TestUseStoreComponent";
-import {TestWithStoreComponent} from "../__fixtures__/components/TestWithStoreComponent";
+import {TestUseStoreComponent} from "../__fixtures__/components/TestUseStoreComponent.js";
+import {TestWithStoreComponent} from "../__fixtures__/components/TestWithStoreComponent.js";
 
 describe("Livecycles must work", () => {
     test('useStore livecycle', async () => {

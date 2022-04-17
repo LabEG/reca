@@ -1,5 +1,5 @@
-import {withStore} from "../../index";
-import {LiveCycleStore} from "../stores/LiveCycleStore";
+import {withStore} from "../../index.js";
+import {LiveCycleStore} from "../stores/LiveCycleStore.js";
 
 export const TestWithStoreComponent = withStore(LiveCycleStore, (lcStore, props) => (
     <div>

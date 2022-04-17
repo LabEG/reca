@@ -1,4 +1,4 @@
-import {Store} from "../../stores/Store";
+import {Store} from "../../stores/Store.js";
 
 type ILiveCycleStoreProps = {
     val?: string;

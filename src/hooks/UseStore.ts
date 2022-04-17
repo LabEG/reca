@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import {IDiClassCostructor} from "../interfaces/IClassCostructor";
-import {Store} from "../stores/Store";
+import {IDiClassCostructor} from "../interfaces/IClassCostructor.js";
+import {Store} from "../stores/Store.js";
 
 /**
  * todo: add DI here

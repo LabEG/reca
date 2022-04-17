@@ -1,7 +1,7 @@
-import { IWithStore } from "./../interfaces/IWithStore";
-import {useStore} from "../hooks/UseStore";
-import { IDiClassCostructor } from "../interfaces/IClassCostructor";
-import {Store} from "../stores/Store";
+import { IWithStore } from "./../interfaces/IWithStore.js";
+import {useStore} from "../hooks/UseStore.js";
+import { IDiClassCostructor } from "../interfaces/IClassCostructor.js";
+import {Store} from "../stores/Store.js";
 
 interface IStoreConstructor<P extends Record<string, unknown>> {
     new (...params: IDiClassCostructor[]): Store<P>;
