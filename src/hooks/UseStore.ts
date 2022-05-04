@@ -31,19 +31,17 @@ export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
         return stateStore;
     });
 
-    // Activate and Update methods
+    // Activate and Destructor methods
     useEffect(() => {
-        if (isInit) {
-            stateStore.activate(props ?? {} as P);
-        } else {
-            stateStore.update(props ?? {} as P);
-        }
-    });
+        stateStore.activate(props ?? {} as P);
 
-    // Destructor
-    useEffect(() => {
         return () => stateStore.dispose();
     }, []);
+
+    // Update method
+    if (!isInit) {
+        stateStore.update(props ?? {} as P);
+    }
 
     return stateStore;
 }

@@ -11,7 +11,7 @@ describe("Livecycles must work", () => {
         expect(testComponent.html()).toEqual(`<div>constructor</div>`);
 
         testComponent.setProps({});
-        expect(testComponent.html()).toEqual(`<div>activate</div>`);
+        expect(testComponent.html()).toEqual(`<div>update</div>`);
 
         testComponent.unmount();
 
@@ -23,7 +23,7 @@ describe("Livecycles must work", () => {
         expect(testComponent.html()).toEqual(`<div>constructor</div>`);
 
         testComponent.setProps({});
-        expect(testComponent.html()).toEqual(`<div>activate</div>`);
+        expect(testComponent.html()).toEqual(`<div>update</div>`);
 
         testComponent.unmount();
 
