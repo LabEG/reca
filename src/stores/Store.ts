@@ -1,5 +1,6 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
-export class Store<T extends Record<string, unknown> = {}> {
+export class Store<T extends Record<string, unknown> = Record<string, unknown>> {
 
     private redrawFunction: () => void = () => void 0;
 
@@ -15,8 +16,8 @@ export class Store<T extends Record<string, unknown> = {}> {
      *      }
      *  });
      */
-    public activate(props: T): void {
-        // override
+    public activate (props: T): void {
+        // Override
     }
 
     /**
@@ -31,8 +32,8 @@ export class Store<T extends Record<string, unknown> = {}> {
      *     }
      * });
      */
-    public update(props: T): void {
-        // override
+    public update (props: T): void {
+        // Override
     }
 
     /**
@@ -45,25 +46,25 @@ export class Store<T extends Record<string, unknown> = {}> {
      *     return () => store.dispose();
      * }, []);
      */
-    public dispose(): void {
-        // override
+    public dispose (): void {
+        // Override
     }
 
-    public setRedrawFunction(updateFunction: () => void): void {
+    public setRedrawFunction (updateFunction: () => void): void {
         this.redrawFunction = updateFunction;
     }
 
     /**
      * Update view on next requestAnimationFrame
      */
-    public redraw(): void {
+    public redraw (): void {
         requestAnimationFrame(() => this.redrawFunction());
     }
 
     /**
      * Update view component immediately
      */
-    public forceRedraw(): void {
+    public forceRedraw (): void {
         this.redrawFunction();
     }
 

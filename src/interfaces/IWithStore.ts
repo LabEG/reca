@@ -1,5 +1,5 @@
-import {Store} from "../stores/Store.js";
-import {IDiClassCostructor} from "./IClassCostructor.js";
+import type {Store} from "../stores/Store.js";
+import type {IDiClassCostructor} from "./IDiClassCostructor.js";
 
 export interface IWithStore<P extends Record<string, unknown> = {}> {
     // 0 stores

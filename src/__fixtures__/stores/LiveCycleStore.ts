@@ -1,6 +1,6 @@
 import {Store} from "../../stores/Store.js";
 
-type ILiveCycleStoreProps = {
+interface ILiveCycleStoreProps {
     val?: string;
 }
 
@@ -13,15 +13,16 @@ export class LiveCycleStore extends Store<ILiveCycleStoreProps> {
         this.state = "constructor";
     }
 
-    public activate(): void {
+    public activate (): void {
         this.state = "activate";
     }
 
-    public update(): void {
+    public update (): void {
         this.state = "update";
     }
 
-    public dispose(): void {
+    public dispose (): void {
         this.state = "dispose";
     }
+
 }

@@ -3,5 +3,11 @@ module.exports = {
     ignorePatterns: ["node_modules/*", "dist/*"],
     rules:{
         // override here
+        "@typescript-eslint/parameter-properties": [
+            2,
+            {
+              "allow": ["public"]
+            }
+          ]
     }
 };

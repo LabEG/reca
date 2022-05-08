@@ -1,20 +1,21 @@
-import { useEffect, useState } from "react";
+/* eslint-disable react/hook-use-state */
+import {useEffect, useState} from "react";
 import {config} from "../config.js";
-import {IDiClassCostructor} from "../interfaces/IClassCostructor.js";
-import {Store} from "../stores/Store.js";
+import type {IDiClassCostructor} from "../interfaces/IDiClassCostructor.js";
+import type {Store} from "../stores/Store.js";
 
 /**
- * todo: add DI here
+ * Todo: add DI here
  *
  * @param store
  * @param props
  * @returns
  */
 export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
-    store: new (...params: IDiClassCostructor[]) => T,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    store: new (...params: any[]) => T,
     props?: P
 ): T => {
-
     // Render function
     const [, setSeed] = useState(0);
 
@@ -23,13 +24,19 @@ export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
     const [stateStore] = useState(() => {
         isInit = true;
 
-        const stateStore = config.di.resolver(store);
+        const constructorParams: IDiClassCostructor[] = Reflect
+            .getMetadata("design:paramtypes", store) as ([] | null) ?? [];
 
-        stateStore.setRedrawFunction(() => {
+        const resolvedParams = constructorParams.map((param: IDiClassCostructor) => config.di.resolver(param));
+
+        // eslint-disable-next-line new-cap
+        const resolvedStore = new store(...resolvedParams);
+
+        resolvedStore.setRedrawFunction(() => {
             setSeed(Math.random());
         });
 
-        return stateStore;
+        return resolvedStore;
     });
 
     // Activate and Dispose(Destructor) methods
@@ -40,9 +47,10 @@ export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
     }, []);
 
     // Update method
+    // eslint-disable-next-line @typescript-eslint/no-unnecessary-condition
     if (!isInit) {
         stateStore.update(props ?? {} as P);
     }
 
     return stateStore;
-}
+};

@@ -1,32 +1,28 @@
 
 
-import { mount } from 'enzyme';
+import {mount} from "enzyme";
 import {TestUseStoreComponent} from "../__fixtures__/components/TestUseStoreComponent.js";
 import {TestWithStoreComponent} from "../__fixtures__/components/TestWithStoreComponent.js";
 
 describe("Livecycles must work", () => {
-    test('useStore livecycle', async () => {
-
+    test("useStore livecycle", () => {
         const testComponent = mount(<TestUseStoreComponent />);
-        expect(testComponent.html()).toEqual(`<div>constructor</div>`);
+        expect(testComponent.html()).toEqual("<div>constructor</div>");
 
         testComponent.setProps({});
-        expect(testComponent.html()).toEqual(`<div>update</div>`);
+        expect(testComponent.html()).toEqual("<div>update</div>");
 
         testComponent.unmount();
-
     });
 
-    test('withStore livecycle', async () => {
-
+    test("withStore livecycle", () => {
         const testComponent = mount(<TestWithStoreComponent />);
-        expect(testComponent.html()).toEqual(`<div>constructor</div>`);
+        expect(testComponent.html()).toEqual("<div>constructor</div>");
 
         testComponent.setProps({});
-        expect(testComponent.html()).toEqual(`<div>update</div>`);
+        expect(testComponent.html()).toEqual("<div>update</div>");
 
         testComponent.unmount();
-
     });
 });
 
