@@ -1,6 +1,8 @@
+import {resolve} from "first-di";
+import {ClassConstructor} from "first-di/dist/typings/class-constructor";
 
 export class DiConfig {
-    public resolver: string = "insert di resolver here";
+    public resolver: <T extends object>(constructor: ClassConstructor<T>, options?: any) => T = resolve;
 }
 
 export class Config {

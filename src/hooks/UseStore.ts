@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import {config} from "../config.js";
 import {IDiClassCostructor} from "../interfaces/IClassCostructor.js";
 import {Store} from "../stores/Store.js";
 
@@ -22,7 +23,7 @@ export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
     const [stateStore] = useState(() => {
         isInit = true;
 
-        const stateStore = new store();
+        const stateStore = config.di.resolver(store);
 
         stateStore.setRedrawFunction(() => {
             setSeed(Math.random());
@@ -31,7 +32,7 @@ export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
         return stateStore;
     });
 
-    // Activate and Destructor methods
+    // Activate and Dispose(Destructor) methods
     useEffect(() => {
         stateStore.activate(props ?? {} as P);
 
