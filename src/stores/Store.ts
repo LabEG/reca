@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-export class Store<T extends Record<string, unknown> = Record<string, unknown>> {
+export class Store<T extends object = object> {
 
     private redrawFunction: () => void = () => void 0;
 

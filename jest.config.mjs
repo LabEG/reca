@@ -5,20 +5,21 @@
  */
 
 export default {
-  testEnvironment: "jsdom",
-  transform: {
-    "\\.[jt]sx?$": "babel-jest"
-  },
-  moduleNameMapper: {
-    "(.+)\\.js": "$1"
-  },
-  testPathIgnorePatterns: [
-    "/node_modules/",
-    "/dist/"
-  ],
-  setupFilesAfterEnv: ["<rootDir>setup-tests.js"],
-  clearMocks: true,
-  collectCoverage: true,
-  coverageDirectory: "coverage",
-  coverageProvider: "v8"
+    testEnvironment: "jsdom",
+    transform: {
+        "\\.tsx?$": "ts-jest",
+        "\\.jsx?$": "babel-jest"
+    },
+    moduleNameMapper: {
+        "(.+)\\.js": "$1"
+    },
+    testPathIgnorePatterns: [
+        "/node_modules/",
+        "/dist/"
+    ],
+    setupFilesAfterEnv: ["<rootDir>setup-tests.js"],
+    clearMocks: true,
+    collectCoverage: true,
+    coverageDirectory: "coverage",
+    coverageProvider: "v8"
 };
