@@ -8,9 +8,43 @@ Created at the intersection of Functional style and OOP technologies. It is base
  - **Dependency Injection** - override any part of your application for unit test or other customer,
  - **Microfrontend** - perfect support microfrontends out the box without any boilerplates,
  - **Simple Data Flow** - don't need search functions call chain for debug your reducers,
+ - **Extra Small Size** - only 1kb of minified code.
 
- ## Why not Redux?
- - Monostore -
- - Reducers -
+ ## Why not Redux or Flux?
+ - Monostore - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
+ - Reducers - a large number of reducers makes you spend a lot of time searching for the necessary function.
+ - Architecture problem - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
 
- ... in progress
+## Using
+Just call hook useStore and pass store inside:
+
+``` typescript
+// todo.store.ts
+import {Store} from "reca";
+
+export class ToDoStore extends Store {
+
+    public todos: string[] = [];
+
+    public addTodo (todo: string): void {
+        this.todos.push(todo);
+    }
+
+}
+
+// todo.component.ts
+import {useStore} from "reca";
+import {ToDoStore} from "./todo.store.ts";
+
+export const ToDoComponent = (): JSX.Element => {
+    const store = useStore(ToDoStore);
+
+    return (
+        <div>
+            {store.diService.seed}
+        </div>
+    );
+};
+```
+
+...in progress
