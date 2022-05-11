@@ -12,7 +12,7 @@
     "test": "jest",
     "test:watch": "jest --watch",
     "test:module": "node ./dist/index.js",
-    "prepublishOnly": "npm run test && npm run build",
+    "prepublishOnly": "npm run test && npm run build && npm run release",
     "release": "standard-version",
     "prepare": "husky install"
   },
