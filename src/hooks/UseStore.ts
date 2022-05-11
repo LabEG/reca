@@ -11,7 +11,7 @@ import type {Store} from "../stores/Store.js";
  * @param props
  * @returns
  */
-export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
+export const useStore = <P extends object, T extends Store<P>>(
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     store: new (...params: any[]) => T,
     props?: P
@@ -27,7 +27,13 @@ export const useStore = <P extends Record<string, unknown>, T extends Store<P>>(
         const constructorParams: IDiClassCostructor[] = Reflect
             .getMetadata("design:paramtypes", store) as ([] | null) ?? [];
 
-        const resolvedParams = constructorParams.map((param: IDiClassCostructor) => config.di.resolver(param));
+        const resolvedParams = constructorParams.map((param: IDiClassCostructor) => {
+            if ("prototype" in param) {
+                return config.di.resolver(param);
+            }
+
+            return props;
+        });
 
         // eslint-disable-next-line new-cap
         const resolvedStore = new store(...resolvedParams);
