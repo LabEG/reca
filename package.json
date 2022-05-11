@@ -18,6 +18,11 @@
     "react",
     "state manager"
   ],
+  "lint-staged": {
+      "./src/**/*.(ts|tsx|js|jsx)": [
+          "eslint --fix -c .eslintrc.js --ext .tsx,.ts,.jsx,.js"
+      ]
+  },
   "author": "LabEG",
   "license": "MIT",
   "dependencies": {
@@ -28,6 +33,8 @@
   },
   "devDependencies": {
     "@babel/preset-env": "^7.17.10",
+    "@commitlint/cli": "^16.2.4",
+    "@commitlint/config-conventional": "^16.2.4",
     "@labeg/code-style": "^2.0.33",
     "@types/enzyme": "^3.10.12",
     "@types/jest": "^27.5.0",
@@ -35,8 +42,10 @@
     "@wojtekmaj/enzyme-adapter-react-17": "^0.6.7",
     "babel-jest": "^28.1.0",
     "enzyme": "^3.11.0",
+    "husky": "^8.0.1",
     "jest": "^28.1.0",
     "jest-environment-jsdom": "^28.1.0",
+    "lint-staged": "^12.4.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",

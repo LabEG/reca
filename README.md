@@ -11,11 +11,14 @@ Created at the intersection of Functional style and OOP technologies. It is base
  - **Extra Small Size** - only 1kb of minified code.
 
  ## Why not Redux or Flux?
- - Monostore - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
- - Reducers - a large number of reducers makes you spend a lot of time searching for the necessary function.
- - Architecture problem - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
+ - **Monostore** - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
+ - **Reducers** - a large number of reducers makes you spend a lot of time searching for the necessary function.
+ - **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
 
-## Using
+## Instalation
+...todo
+
+## Examples
 Just call hook useStore and pass store inside:
 
 ``` typescript
@@ -46,5 +49,14 @@ export const ToDoComponent = (): JSX.Element => {
     );
 };
 ```
+...todo: withstore...
 
-...in progress
+...todo: autostore...
+
+## Support and Documentation
+Discord server: [click here](https://discordapp.com/channels/974049080454045796/974049142022209566)
+
+...todo
+
+## License
+...todo
