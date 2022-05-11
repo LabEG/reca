@@ -1,6 +1,6 @@
 {
   "name": "reca",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "ReCA - React Clean Architecture state manager",
   "main": "dist/index.js",
   "type": "module",
@@ -13,6 +13,7 @@
     "test:watch": "jest --watch",
     "test:module": "node ./dist/index.js",
     "prepublishOnly": "npm run test && npm run build",
+    "release": "standard-version",
     "prepare": "husky install"
   },
   "keywords": [
@@ -50,6 +51,7 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "rimraf": "^3.0.2",
+    "standard-version": "^9.3.2",
     "ts-jest": "^28.0.2",
     "typescript": "^4.6.4"
   }
