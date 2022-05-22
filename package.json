@@ -38,6 +38,7 @@
     "@commitlint/cli": "^16.2.4",
     "@commitlint/config-conventional": "^16.2.4",
     "@labeg/code-style": "^2.0.33",
+    "@testing-library/react": "^13.2.0",
     "@types/enzyme": "^3.10.12",
     "@types/jest": "^27.5.0",
     "@types/react": "^18.0.9",

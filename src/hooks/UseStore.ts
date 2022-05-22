@@ -24,6 +24,7 @@ export const useStore = <P extends object, T extends Store<P>>(
     const [stateStore] = useState(() => {
         isInit = true;
 
+        // Resolve dependencies
         const constructorParams: IDiClassCostructor[] = Reflect
             .getMetadata("design:paramtypes", store) as ([] | null) ?? [];
 

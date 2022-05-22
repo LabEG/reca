@@ -2,7 +2,7 @@
 
 export class Store<T extends object = object> {
 
-    private redrawFunction: () => void = () => void 0;
+    protected redrawFunction: () => void = () => void 0;
 
     /**
      * Method for override in nested store.
