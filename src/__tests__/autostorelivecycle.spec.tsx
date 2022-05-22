@@ -2,7 +2,7 @@ import {TestAutoUseStoreComponent} from "../__fixtures__/components/TestAutoUseS
 import {TestWithStoreComponent} from "../__fixtures__/components/TestWithStoreComponent.js";
 import {render} from "@testing-library/react";
 
-describe("Autostore Livecycles must work", () => {
+describe("Autostore livecycles must work", () => {
     test("useStore livecycle", () => {
         const comp = render(<TestAutoUseStoreComponent />);
         expect(comp.container.innerHTML).toEqual("<div>constructor</div>");

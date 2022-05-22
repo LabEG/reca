@@ -8,6 +8,8 @@ export class LiveCycleAutoStore extends AutoStore<ILiveCycleStoreProps> {
 
     public state: string = "init";
 
+    public stat2: string = "init";
+
     public constructor () {
         super();
         this.state = "constructor";
@@ -23,6 +25,10 @@ export class LiveCycleAutoStore extends AutoStore<ILiveCycleStoreProps> {
 
     public dispose (): void {
         this.state = "dispose";
+    }
+
+    public onClick (): void {
+        this.state = "onclick";
     }
 
 }
