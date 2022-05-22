@@ -17,7 +17,6 @@ export default {
         "/node_modules/",
         "/dist/"
     ],
-    setupFilesAfterEnv: ["<rootDir>setup-tests.js"],
     clearMocks: true,
     collectCoverage: true,
     coverageDirectory: "coverage",

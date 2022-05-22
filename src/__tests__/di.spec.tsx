@@ -1,31 +1,29 @@
-
-
-import {mount} from "enzyme";
 import {TesDIComponent} from "../__fixtures__/components/TestDIComponent.js";
 import {TestDIWithPropsComponent} from "../__fixtures__/components/TestDIWithPropsComponent.js";
+import {render} from "@testing-library/react";
 
 describe("Dependency injection must work", () => {
     test("di must resolve dependencies", () => {
-        const testComponent1 = mount(<TesDIComponent />);
-        const testComponent2 = mount(<TesDIComponent />);
-        expect(testComponent1.html()).toEqual(testComponent2.html());
+        const comp1 = render(<TesDIComponent />);
+        const comp2 = render(<TesDIComponent />);
+        expect(comp1.container.innerHTML).toEqual(comp2.container.innerHTML);
 
-        testComponent1.setProps({});
-        expect(testComponent1.html()).toEqual(testComponent2.html());
+        comp1.rerender(<TesDIComponent />);
+        expect(comp1.container.innerHTML).toEqual(comp2.container.innerHTML);
 
-        testComponent1.unmount();
-        testComponent2.unmount();
+        comp1.unmount();
+        comp2.unmount();
     });
 
     test("di must resolve props", () => {
-        const testComponent1 = mount(<TestDIWithPropsComponent test={5} />);
-        const testComponent2 = mount(<TestDIWithPropsComponent test={5} />);
-        expect(testComponent1.html()).toEqual(testComponent2.html());
+        const comp1 = render(<TestDIWithPropsComponent test={5} />);
+        const comp2 = render(<TestDIWithPropsComponent test={5} />);
+        expect(comp1.container.innerHTML).toEqual(comp2.container.innerHTML);
 
-        testComponent1.setProps({});
-        expect(testComponent1.html()).toEqual(testComponent2.html());
+        comp1.rerender(<TestDIWithPropsComponent test={5} />);
+        expect(comp1.container.innerHTML).toEqual(comp2.container.innerHTML);
 
-        testComponent1.unmount();
-        testComponent2.unmount();
+        comp1.unmount();
+        comp2.unmount();
     });
 });

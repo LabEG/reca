@@ -1,28 +1,26 @@
-
-
-import {mount} from "enzyme";
 import {TestAutoUseStoreComponent} from "../__fixtures__/components/TestAutoUseStoreComponent.js";
 import {TestWithStoreComponent} from "../__fixtures__/components/TestWithStoreComponent.js";
+import {render} from "@testing-library/react";
 
-describe.only("Autostore Livecycles must work", () => {
+describe("Autostore Livecycles must work", () => {
     test("useStore livecycle", () => {
-        const testComponent = mount(<TestAutoUseStoreComponent />);
-        expect(testComponent.html()).toEqual("<div>constructor</div>");
+        const comp = render(<TestAutoUseStoreComponent />);
+        expect(comp.container.innerHTML).toEqual("<div>constructor</div>");
 
-        testComponent.setProps({});
-        expect(testComponent.html()).toEqual("<div>update</div>");
+        comp.rerender(<TestAutoUseStoreComponent />);
+        expect(comp.container.innerHTML).toEqual("<div>update</div>");
 
-        testComponent.unmount();
+        comp.unmount();
     });
 
     test("withStore livecycle", () => {
-        const testComponent = mount(<TestWithStoreComponent />);
-        expect(testComponent.html()).toEqual("<div>constructor</div>");
+        const comp = render(<TestWithStoreComponent />);
+        expect(comp.container.innerHTML).toEqual("<div>constructor</div>");
 
-        testComponent.setProps({});
-        expect(testComponent.html()).toEqual("<div>update</div>");
+        comp.rerender(<TestWithStoreComponent />);
+        expect(comp.container.innerHTML).toEqual("<div>update</div>");
 
-        testComponent.unmount();
+        comp.unmount();
     });
 });
 
