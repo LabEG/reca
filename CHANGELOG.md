@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.6](https://github.com/LabEG/reca/compare/v0.0.5...v0.0.6) (2022-05-28)
+
+
+### Features
+
+* complete autostore ([72bd447](https://github.com/LabEG/reca/commit/72bd44744c535118e7516221168580aad9a78085))
+* fix build and publish new version ([4c7b67e](https://github.com/LabEG/reca/commit/4c7b67ec163a08ce6061b31463a14b8d24cdf109))
+
+
+### Bug Fixes
+
+* module import ([9c5ea11](https://github.com/LabEG/reca/commit/9c5ea11de04a8bbb0ab557547edab69a99384b87))
+
 ### [0.0.5](https://github.com/LabEG/reca/compare/v0.0.4...v0.0.5) (2022-05-28)
 
 ### [0.0.4](https://github.com/LabEG/reca/compare/v0.0.3...v0.0.4) (2022-05-28)
