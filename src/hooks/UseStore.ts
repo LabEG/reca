@@ -1,3 +1,4 @@
+/* eslint-disable max-lines-per-function */
 /* eslint-disable react/hook-use-state */
 import {useEffect, useState} from "react";
 import {config} from "../config.js";
@@ -46,6 +47,8 @@ export const useStore = <P extends object, T extends Store<P>>(
         return resolvedStore;
     });
 
+    stateStore.isDrawTime = true;
+
     // Activate and Dispose(Destructor) methods
     useEffect(() => {
         stateStore.activate(props ?? {} as P);
@@ -58,6 +61,10 @@ export const useStore = <P extends object, T extends Store<P>>(
     if (!isInit) {
         stateStore.update(props ?? {} as P);
     }
+
+    useEffect(() => {
+        stateStore.isDrawTime = false;
+    });
 
     return stateStore;
 };

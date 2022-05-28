@@ -1,6 +1,14 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
+import {config} from "../config";
+
 export class Store<T extends object = object> {
+
+    /**
+     * Property for prevent cycle redraw if call method ot set props in AutoStore
+     * in view redraw time
+     */
+    public isDrawTime: boolean = false;
 
     protected redrawFunction: () => void = () => void 0;
 
@@ -58,7 +66,9 @@ export class Store<T extends object = object> {
      * Update view on next requestAnimationFrame
      */
     public redraw (): void {
-        requestAnimationFrame(() => this.redrawFunction());
+        if (config.isBrowser && !this.isDrawTime) {
+            requestAnimationFrame(() => this.redrawFunction());
+        }
     }
 
     /**

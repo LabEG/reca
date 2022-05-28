@@ -11,7 +11,6 @@ export class AutoStore<T extends object = object> extends Store<T> {
         "setRedrawFunction",
         "redraw",
         "forceRedraw",
-        "injectCustomSetters",
 
         // Properties
         "dontOverrideMethods",
@@ -21,10 +20,6 @@ export class AutoStore<T extends object = object> extends Store<T> {
 
     public constructor () {
         super();
-        Promise.resolve().then(() => this.injectCustomSetters());
-    }
-
-    protected injectCustomSetters (): void {
         this.injectProperties();
         this.injectMethods();
     }
@@ -68,12 +63,16 @@ export class AutoStore<T extends object = object> extends Store<T> {
                     method,
                     (...params: unknown[]) => {
                         this.redraw(); // Before method because in method can be error, how stop flow
-                        const maybePromise = methodFunction(...params);
+
+                        const maybePromise = methodFunction.apply(this, [...params]);
 
                         if (maybePromise instanceof Promise) {
                             maybePromise
                                 .then(() => this.redraw())
-                                .catch(() => this.redraw());
+                                .catch((error) => {
+                                    this.redraw();
+                                    throw error;
+                                });
                         }
                     }
                 );
