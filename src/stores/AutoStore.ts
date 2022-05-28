@@ -1,4 +1,4 @@
-import {Store} from "./Store";
+import {Store} from "./Store.js";
 
 export class AutoStore<T extends object = object> extends Store<T> {
 
@@ -41,7 +41,7 @@ export class AutoStore<T extends object = object> extends Store<T> {
 
                 Object.defineProperty(
                     this,
-                    "property",
+                    property,
                     {
                         get: () => propValue,
                         set: (value: unknown) => {
