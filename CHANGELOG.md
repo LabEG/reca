@@ -2,6 +2,15 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.4](https://github.com/LabEG/reca/compare/v0.0.3...v0.0.4) (2022-05-28)
+
+
+### Features
+
+* add support pass props in contructor ([c22c639](https://github.com/LabEG/reca/commit/c22c639d5b5f66394fc50baf9c32d6280e1da045))
+* begin making autostore ([c0dea00](https://github.com/LabEG/reca/commit/c0dea005e561dc1c2f661c7cc04de789281188b6))
+* replace enzyme by resct test library, update react to version 18 ([cca36a7](https://github.com/LabEG/reca/commit/cca36a76b8d0243d976c93181a8001f4947b3f67))
+
 ### 0.0.3 (2022-05-11)
 
 
