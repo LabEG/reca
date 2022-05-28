@@ -16,16 +16,24 @@ Created at the intersection of Functional style and OOP technologies. It is base
  - **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
 
 ## Instalation
-...todo
+npm:
+```
+npm install reca
+```
+
+yarn
+```
+yarn add reca
+```
 
 ## Examples
-Just call hook useStore and pass store inside:
+Create your Store by inheriting from AutoStore, and use it in a component via useStore hook.
 
 ``` typescript
 // todo.store.ts
-import {Store} from "reca";
+import {AutoStore} from "reca";
 
-export class ToDoStore extends Store {
+export class ToDoStore extends AutoStore {
 
     public todos: string[] = [];
 
