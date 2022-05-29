@@ -13,6 +13,7 @@ export class AutoStore<T extends object = object> extends Store<T> {
         "forceRedraw",
 
         // Properties
+        "isDrawTime",
         "dontOverrideMethods",
         "redrawFunction"
 

@@ -8,7 +8,7 @@ export class Store<T extends object = object> {
      * Property for prevent cycle redraw if call method ot set props in AutoStore
      * in view redraw time
      */
-    public isDrawTime: boolean = false;
+    public isDrawTime: boolean = true;
 
     protected redrawFunction: () => void = () => void 0;
 
