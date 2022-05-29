@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.7](https://github.com/LabEG/reca/compare/v0.0.6...v0.0.7) (2022-05-29)
+
+
+### Bug Fixes
+
+* autostore self redraw ([5ce5a36](https://github.com/LabEG/reca/commit/5ce5a364f80b4c92b739577eaa2869bf7c804da4))
+
 ### [0.0.6](https://github.com/LabEG/reca/compare/v0.0.5...v0.0.6) (2022-05-28)
 
 
