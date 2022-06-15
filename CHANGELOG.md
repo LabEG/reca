@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.8](https://github.com/LabEG/reca/compare/v0.0.7...v0.0.8) (2022-06-15)
+
+
+### Features
+
+* complete autostore, add autostore tests, add propsUpdate livacycle method ([7930f4a](https://github.com/LabEG/reca/commit/7930f4a7f39e8560ea13598f5d442fcc52197b43))
+
 ### [0.0.7](https://github.com/LabEG/reca/compare/v0.0.6...v0.0.7) (2022-05-29)
 
 
