@@ -1,8 +1,8 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable react/hook-use-state */
-import {useEffect, useState} from "react";
+import type {ClassConstructor} from "first-di/dist/typings/class-constructor";
+import {useEffect, useMemo, useState} from "react";
 import {config} from "../config.js";
-import type {IDiClassCostructor} from "../interfaces/IDiClassCostructor.js";
 import type {Store} from "../stores/Store.js";
 
 /**
@@ -26,14 +26,20 @@ export const useStore = <P extends object, T extends Store<P>>(
         isInit = true;
 
         // Resolve dependencies
-        const constructorParams: IDiClassCostructor[] = Reflect
+        const constructorParams: unknown[] = Reflect
             .getMetadata("design:paramtypes", store) as ([] | null) ?? [];
 
-        const resolvedParams = constructorParams.map((param: IDiClassCostructor) => {
-            if ("prototype" in param) {
-                return config.di.resolver(param);
+        const resolvedParams = constructorParams.map((param: unknown) => {
+            if (typeof param === "function" && "prototype" in param) { // Check is class
+                if (param.length === 1) { // Typescript interface in props
+                    return props;
+                }
+
+                // True class
+                return config.di.resolver(param as ClassConstructor<object>);
             }
 
+            // Else props object
             return props;
         });
 
@@ -53,7 +59,7 @@ export const useStore = <P extends object, T extends Store<P>>(
     useEffect(() => {
         stateStore.activate(props ?? {} as P);
 
-        return () => stateStore.dispose();
+        return () => stateStore.dispose(props ?? {} as P);
     }, []);
 
     // Update method
@@ -62,7 +68,19 @@ export const useStore = <P extends object, T extends Store<P>>(
         stateStore.update(props ?? {} as P);
     }
 
+    // PropsUpdate method
+    useMemo(
+        () => {
+            stateStore.propsUpdate(props ?? {} as P);
+        },
+        [props ?? {}]
+    );
+
+    // AfterUpdate method
     useEffect(() => {
+        if (!isInit) {
+            stateStore.afterUpdate(props ?? {} as P);
+        }
         stateStore.isDrawTime = false;
     });
 

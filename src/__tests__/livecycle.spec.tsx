@@ -1,26 +1,64 @@
-import {TestUseStoreComponent} from "../__fixtures__/components/TestUseStoreComponent.js";
-import {TestWithStoreComponent} from "../__fixtures__/components/TestWithStoreComponent.js";
+/* eslint-disable max-lines-per-function */
+/* eslint-disable max-statements */
+/* eslint-disable react/jsx-no-bind */
+
+import {TestStoreComponent} from "../__fixtures__/components/TestStoreComponent.js";
 import {render} from "@testing-library/react";
+import {TestAutoStoreComponent} from "../__fixtures__/components/TestAutoStoreComponent.js";
 
 describe("Livecycles must work", () => {
-    test("useStore livecycle", () => {
-        const comp = render(<TestUseStoreComponent />);
-        expect(comp.container.innerHTML).toEqual("<div>constructor</div>");
+    test("Store livecycle", () => {
+        let state = "";
+        const onLivecycleChange = (newState: string): void => {
+            state = newState;
+        };
 
-        comp.rerender(<TestUseStoreComponent />);
-        expect(comp.container.innerHTML).toEqual("<div>update</div>");
+        /**
+         * Activate and afterUpdate don't call redraw,
+         * so state have more livecycle methods than show in view
+         */
 
+        // Create component
+        const comp = render(<TestStoreComponent onLivecycleChange={onLivecycleChange} />);
+        expect(comp.container.innerHTML).toEqual("<div>init constructor</div>");
+        expect(state).toEqual("init constructor activate");
+
+        // Update component
+        comp.rerender(<TestStoreComponent onLivecycleChange={onLivecycleChange} />);
+        expect(comp.container.innerHTML).toEqual("<div>init constructor activate update</div>");
+        expect(state).toEqual("init constructor activate update afterUpdate");
+
+        // Delete component
         comp.unmount();
+        expect(comp.container.innerHTML).toEqual("");
+        expect(state).toEqual("init constructor activate update afterUpdate dispose");
     });
 
-    test("withStore livecycle", () => {
-        const comp = render(<TestWithStoreComponent />);
-        expect(comp.container.innerHTML).toEqual("<div>constructor</div>");
+    test("AutoStore livecycle", () => {
+        let state = "";
+        const onLivecycleChange = (newState: string): void => {
+            state = newState;
+        };
 
-        comp.rerender(<TestWithStoreComponent />);
-        expect(comp.container.innerHTML).toEqual("<div>update</div>");
+        /**
+         * Activate and afterUpdate don't call redraw,
+         * so state have more livecycle methods than show in view
+         */
 
+        // Create component
+        const comp = render(<TestAutoStoreComponent onLivecycleChange={onLivecycleChange} />);
+        expect(comp.container.innerHTML).toEqual("<div>init constructor</div>");
+        expect(state).toEqual("init constructor activate");
+
+        // Update component
+        comp.rerender(<TestAutoStoreComponent onLivecycleChange={onLivecycleChange} />);
+        expect(comp.container.innerHTML).toEqual("<div>init constructor activate update</div>");
+        expect(state).toEqual("init constructor activate update afterUpdate");
+
+        // Delete component
         comp.unmount();
+        expect(comp.container.innerHTML).toEqual("");
+        expect(state).toEqual("init constructor activate update afterUpdate dispose");
     });
 });
 

@@ -18,11 +18,11 @@ export class Store<T extends object = object> {
      *
      * @description
      * Encapsulate:
-     *  useEffect(() => {
-     *      if (isInit) {
-     *          store.activate(props);
-     *      }
-     *  });
+     * useEffect(() => {
+     *     stateStore.activate(props);
+     *
+     *     return () => stateStore.dispose(props);
+     * }, []);
      */
     public activate (props: T): void {
         // Override
@@ -30,17 +30,49 @@ export class Store<T extends object = object> {
 
     /**
      * Method for override in nested store.
-     * Run after second and others rendering component in DOM.
+     * Run before second and others time of rendering component in DOM.
+     *
+     * @description
+     * Encapsulate:
+     * if (!isInit) {
+     *     stateStore.update(props);
+     * }
+     */
+    public update (props: T): void {
+        // Override
+    }
+
+    /**
+     * Method for override in nested store.
+     * Run only if props changed.
+     * Run before second and others time of rendering component in DOM.
+     *
+     * @description
+     * Encapsulate:
+     * useMemo(
+     *     () => {
+     *         stateStore.propsUpdate(props);
+     *     },
+     *     [props]
+     * );
+     */
+    public propsUpdate (props: T): void {
+        // Override
+    }
+
+    /**
+     * Method for override in nested store.
+     * Run after second and others time of rendering component in DOM.
      *
      * @description
      * Encapsulate:
      * useEffect(() => {
      *     if (!isInit) {
-     *         store.activate(props);
+     *         stateStore.afterUpdate(props);
      *     }
      * });
      */
-    public update (props: T): void {
+    public afterUpdate (props: T): void {
         // Override
     }
 
@@ -51,10 +83,12 @@ export class Store<T extends object = object> {
      * @description
      * Encapsulate:
      * useEffect(() => {
-     *     return () => store.dispose();
+     *     stateStore.activate(props);
+     *
+     *     return () => stateStore.dispose(props);
      * }, []);
      */
-    public dispose (): void {
+    public dispose (props: T): void {
         // Override
     }
 

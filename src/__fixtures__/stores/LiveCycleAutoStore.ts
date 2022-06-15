@@ -1,34 +1,38 @@
-import {AutoStore} from "./../../stores/AutoStore";
+import {AutoStore, reflection} from "../../index.js";
 
-interface ILiveCycleStoreProps {
-    val?: string;
+export interface ILiveCycleStoreProps {
+    onLivecycleChange: (val: string) => void;
 }
 
-export class LiveCycleAutoStore extends AutoStore<ILiveCycleStoreProps> {
+@reflection
+export class LiveCycleAutoStore<P extends ILiveCycleStoreProps> extends AutoStore<P> {
 
     public state: string = "init";
 
-    public stat2: string = "init";
-
-    public constructor () {
+    public constructor (props: P) {
         super();
-        this.state = "constructor";
+        this.state += " constructor";
+        props.onLivecycleChange(this.state);
     }
 
-    public activate (): void {
-        this.state = "activate";
+    public activate (props: P): void {
+        this.state += " activate";
+        props.onLivecycleChange(this.state);
     }
 
-    public update (): void {
-        this.state = "update";
+    public update (props: P): void {
+        this.state += " update";
+        props.onLivecycleChange(this.state);
     }
 
-    public dispose (): void {
-        this.state = "dispose";
+    public afterUpdate (props: P): void {
+        this.state += " afterUpdate";
+        props.onLivecycleChange(this.state);
     }
 
-    public onClick (): void {
-        this.state = "onclick";
+    public dispose (props: P): void {
+        this.state += " dispose";
+        props.onLivecycleChange(this.state);
     }
 
 }

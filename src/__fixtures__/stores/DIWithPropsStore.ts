@@ -1,5 +1,5 @@
 import {reflection} from "first-di";
-import {Store} from "../../stores/Store";
+import {Store} from "../../index.js";
 import type {ITestDIWithPropsComponent} from "../components/TestDIWithPropsComponent";
 import {TestDIService} from "../services/TestDIService";
 

@@ -2,11 +2,13 @@ import {Store} from "./Store.js";
 
 export class AutoStore<T extends object = object> extends Store<T> {
 
-    protected dontOverrideMethods: (string | symbol) [] = [
+    protected dontObserveProperties: (string | symbol) [] = [
         // Methods
         "constructor",
         "activate",
         "update",
+        "propsUpdate",
+        "afterUpdate",
         "dispose",
         "setRedrawFunction",
         "redraw",
@@ -32,7 +34,7 @@ export class AutoStore<T extends object = object> extends Store<T> {
         const properties: (string | symbol)[] = Reflect.ownKeys(this);
 
         for (const property of properties) {
-            if (!this.dontOverrideMethods.includes(property)) {
+            if (!this.dontObserveProperties.includes(property)) {
                 let propValue = Reflect.get(this, property) as unknown;
 
                 Object.defineProperty(
@@ -57,7 +59,7 @@ export class AutoStore<T extends object = object> extends Store<T> {
         const methods: (string | symbol)[] = Reflect.ownKeys(Object.getPrototypeOf(this) as object);
 
         for (const method of methods) {
-            if (!this.dontOverrideMethods.includes(method)) {
+            if (!this.dontObserveProperties.includes(method)) {
                 const methodFunction = Reflect.get(this, method) as (...params: unknown[]) => unknown;
                 Reflect.set(
                     this,
@@ -68,13 +70,18 @@ export class AutoStore<T extends object = object> extends Store<T> {
                         const maybePromise = methodFunction.apply(this, [...params]);
 
                         if (maybePromise instanceof Promise) {
-                            maybePromise
-                                .then(() => this.redraw())
+                            return maybePromise
+                                .then((data: unknown) => {
+                                    this.redraw();
+                                    return data;
+                                })
                                 .catch((error) => {
                                     this.redraw();
                                     throw error;
                                 });
                         }
+
+                        return maybePromise;
                     }
                 );
             }

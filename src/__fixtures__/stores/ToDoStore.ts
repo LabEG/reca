@@ -1,4 +1,4 @@
-import {Store} from "../../stores/Store";
+import {Store} from "../../index.js";
 
 export class DIStore extends Store {
 
