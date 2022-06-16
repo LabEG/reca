@@ -27,44 +27,152 @@ yarn add reca
 ```
 
 ## Examples
+### Example AutoStore
 Create your Store by inheriting from AutoStore, and use it in a component via useStore hook.
 
 ``` typescript
 // todo.store.ts
 import {AutoStore} from "reca";
+import type {FormEvent} from "react";
 
 export class ToDoStore extends AutoStore {
 
+    public currentTodo: string = "";
+
     public todos: string[] = [];
 
-    public addTodo (todo: string): void {
-        this.todos.push(todo);
+    public handleAddTodo (): void {
+        this.todos.push(this.currentTodo);
+    }
+
+    public handleDeleteTodo (index: number): void {
+        this.todos.splice(index, 1);
+    }
+
+    public handleCurrentEdit (event: FormEvent<HTMLInputElement>): void {
+        this.currentTodo = event.currentTarget.value;
     }
 
 }
 
+
 // todo.component.ts
 import {useStore} from "reca";
-import {ToDoStore} from "./todo.store.ts";
+import {ToDoStore} from "../stores/ToDoStore.js";
 
 export const ToDoComponent = (): JSX.Element => {
     const store = useStore(ToDoStore);
 
     return (
-        <div>
-            {store.diService.seed}
+        <div className="todos">
+            <div className="todos-list">
+                {
+                    store.todos.map((todo, index) => (
+                        <div className="todo">
+                            {todo}
+
+                            <button
+                                className="todo-delete"
+                                onClick={() => store.handleDeleteTodo(index)}
+                                type="button"
+                            >
+                                X
+                            </button>
+                        </div>
+                    ))
+                }
+            </div>
+
+            <div className="todos-input">
+                <input
+                    onInput={store.handleCurrentEdit}
+                    value={store.currentTodo}
+                />
+
+                <button
+                    onClick={store.handleAddTodo}
+                    type="button"
+                >
+                    add
+                </button>
+            </div>
         </div>
     );
 };
 ```
-...todo: withstore...
 
-...todo: autostore...
+### Example low-level Store
+
+Also, if you need uncompromising performance, you can use the low-level Store. But you will need to start redrawing manually using the `this.redraw()` method. Also you must pass arrow function to all used HTMLElement events, such as onClick.
+
+``` typescript
+// todo.store.ts
+import {Store} from "reca";
+import type {FormEvent} from "react";
+
+export class ToDoStore extends Store {
+
+    public currentTodo: string = "";
+
+    public todos: string[] = [];
+
+    public handleAddTodo (): void {
+        this.todos.push(this.currentTodo);
+        this.redraw();
+    }
+
+    public handleDeleteTodo (index: number): void {
+        this.todos.splice(index, 1);
+        this.redraw();
+    }
+
+    public handleCurrentEdit (event: FormEvent<HTMLInputElement>): void {
+        this.currentTodo = event.currentTarget.value;
+        this.redraw();
+    }
+}
+
+
+// todo.component.ts
+import {useStore} from "reca";
+import {ToDoStore} from "../stores/ToDoStore.js";
+
+export const ToDoComponent = (): JSX.Element => {
+    const store = useStore(ToDoStore);
+
+    return (
+        <div className="todos">
+            ...
+
+            <div className="todos-input">
+                <input
+                    onInput={() => store.handleCurrentEdit()}
+                    value={store.currentTodo}
+                />
+
+                <button
+                    onClick={() => store.handleAddTodo()}
+                    type="button"
+                >
+                    add
+                </button>
+            </div>
+        </div>
+    );
+};
+```
+
+### Example using DI
+... todo: write ...
+
+``` typescript
+sample
+```
 
 ## Support and Documentation
 Discord server: [click here](https://discordapp.com/channels/974049080454045796/974049142022209566)
 
-...todo
+Wiki: [click here](https://github.com/LabEG/reca/wiki/Docs)
 
 ## License
-...todo
+ReCA is [MIT licensed](https://github.com/LabEG/reca/blob/main/LICENSE).

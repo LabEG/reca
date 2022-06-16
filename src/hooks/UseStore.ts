@@ -71,7 +71,9 @@ export const useStore = <P extends object, T extends Store<P>>(
     // PropsUpdate method
     useMemo(
         () => {
-            stateStore.propsUpdate(props ?? {} as P);
+            if (!isInit) {
+                stateStore.propsUpdate(props ?? {} as P);
+            }
         },
         [props ?? {}]
     );
