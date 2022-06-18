@@ -4,10 +4,10 @@
 /* eslint-disable react/jsx-key */
 
 import {useStore} from "../../index.js";
-import {ToDoStore} from "../stores/ToDoStore.js";
+import {ToDoAutoStore} from "../stores/ToDoAutoStore.js";
 
 export const ToDoComponent = (): JSX.Element => {
-    const store = useStore(ToDoStore);
+    const store = useStore(ToDoAutoStore);
 
     return (
         <div className="todos">

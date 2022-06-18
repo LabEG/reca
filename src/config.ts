@@ -14,8 +14,9 @@ export class Config {
 
     public di: DiConfig = new DiConfig();
 
-    // eslint-disable-next-line @typescript-eslint/no-implied-eval, no-new-func
-    public readonly isBrowser = new Function("try {process?.versions?.node ? false : true}catch(e){ return true;}")() as boolean;
+    // From https://gist.github.com/rhysburnie/498bfd98f24b7daf5fd5930c7f3c1b7b
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition
+    public readonly isBrowser = !(typeof process !== "undefined" && process.versions && process.versions.node);
 
 }
 

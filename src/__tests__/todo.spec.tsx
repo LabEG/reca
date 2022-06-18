@@ -3,7 +3,7 @@
 import {render, fireEvent} from "@testing-library/react";
 import {ToDoComponent} from "../__fixtures__/components/ToDoComponent";
 
-describe("ToDo smaple must work", () => {
+describe("ToDo sample must work", () => {
     test("sample must add end delete todo items", () => {
         const comp = render(<ToDoComponent />);
 
