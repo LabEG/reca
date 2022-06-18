@@ -58,7 +58,7 @@ export class ToDoStore extends AutoStore {
 
 // todo.component.ts
 import {useStore} from "reca";
-import {ToDoStore} from "../stores/ToDoStore.js";
+import {ToDoStore} from "../stores/todo.store";
 
 export const ToDoComponent = (): JSX.Element => {
     const store = useStore(ToDoStore);
@@ -135,7 +135,7 @@ export class ToDoStore extends Store {
 
 // todo.component.ts
 import {useStore} from "reca";
-import {ToDoStore} from "../stores/ToDoStore.js";
+import {ToDoStore} from "../stores/todo.store";
 
 export const ToDoComponent = (): JSX.Element => {
     const store = useStore(ToDoStore);
@@ -172,7 +172,7 @@ sample
 ## Support and Documentation
 Discord server: [click here](https://discordapp.com/channels/974049080454045796/974049142022209566)
 
-Wiki: [click here](https://github.com/LabEG/reca/wiki/Docs)
+Wiki: [click here](https://github.com/LabEG/reca/wiki)
 
 ## License
 ReCA is [MIT licensed](https://github.com/LabEG/reca/blob/main/LICENSE).

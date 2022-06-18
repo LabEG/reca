@@ -1,3 +1,4 @@
+/* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-no-bind */
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable react/jsx-key */
@@ -13,7 +14,10 @@ export const ToDoComponent = (): JSX.Element => {
             <div className="todos-list">
                 {
                     store.todos.map((todo, index) => (
-                        <div className="todo">
+                        <div
+                            className="todo"
+                            key={index}
+                        >
                             {todo}
 
                             <button
@@ -21,7 +25,7 @@ export const ToDoComponent = (): JSX.Element => {
                                 onClick={(): void => store.handleDeleteTodo(index)}
                                 type="button"
                             >
-                                🗑
+                                X
                             </button>
                         </div>
                     ))

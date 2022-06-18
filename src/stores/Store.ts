@@ -100,8 +100,15 @@ export class Store<T extends object = object> {
      * Update view on next requestAnimationFrame
      */
     public redraw (): void {
-        if (config.isBrowser && !this.isDrawTime) {
+        if (this.isDrawTime) {
+            return;
+        }
+
+        if (config.isBrowser) {
             requestAnimationFrame(() => this.redrawFunction());
+        } else {
+            // SSR don't use redraw, its for unit tests
+            this.redrawFunction();
         }
     }
 
