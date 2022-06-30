@@ -1,3 +1,4 @@
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e9e573d8408945168d14d83c81a103e6)](https://www.codacy.com/gh/LabEG/reca/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LabEG/reca&amp;utm_campaign=Badge_Grade)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](code_of_conduct.md)
 ![GitHub](https://img.shields.io/github/license/LabEG/reca.svg)
 
