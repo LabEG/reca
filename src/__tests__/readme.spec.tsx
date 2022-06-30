@@ -3,8 +3,8 @@
 import {render, fireEvent} from "@testing-library/react";
 import {ToDoComponent} from "../__fixtures__/components/ToDoComponent";
 
-describe("ToDo sample must work", () => {
-    test("sample must add end delete todo items", () => {
+describe("Readme samples must work", () => {
+    test("todo sample must add end delete todo items", () => {
         const comp = render(<ToDoComponent />);
 
         // Todos list empty
@@ -30,4 +30,11 @@ describe("ToDo sample must work", () => {
         // Check list empty
         expect(comp.container.querySelector(".todos-list")?.outerHTML).toEqual("<div class=\"todos-list\"></div>");
     });
+
+    /*
+     * Test("todo sample must add end delete todo items", () => {
+     *     const comp = render(<ToDoComponent />);
+     */
+
+    // });
 });

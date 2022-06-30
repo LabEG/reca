@@ -6,8 +6,8 @@ module.exports = {
         "@typescript-eslint/parameter-properties": [
             2,
             {
-              "allow": ["public"]
+              "allow": ["private readonly", "public readonly"]
             }
-          ]
+        ]
     }
 };

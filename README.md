@@ -163,10 +163,104 @@ export const ToDoComponent = (): JSX.Element => {
 ```
 
 ### Example using DI
-... todo: write ...
+This example demonstrates the simplicity of the business logic and the simplified principles of code organization according to the Clean Architecture methodology. The example is simplified for readme, but following the same principles you can organize a full-fledged Clean Architecture. Through the service constructor, you can pass other DI dependencies, such as Repository, Provider, and others.
 
 ``` typescript
-sample
+// SpaceXCompanyInfo.ts
+export class SpaceXCompanyInfo {
+
+    public name: string = "";
+
+    public founder: string = "";
+
+    public employees: number = 0;
+
+    public applyData (json: object): this {
+        Object.assign(this, json);
+        return this;
+    }
+
+}
+
+// SpaceXService.ts
+import {reflection} from "first-di";
+import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo";
+
+@reflection
+export class SpaceXService {
+
+    public async getCompanyInfo (): Promise<SpaceXCompanyInfo> {
+        const response = await fetch("https://api.spacexdata.com/v3/info");
+        const json: unknown = await response.json();
+
+        // ... and manies manies lines of logics
+
+        if (typeof json === "object" && json !== null) {
+            return new SpaceXCompanyInfo().applyData(json);
+        }
+        throw new Error("SpaceXService.getCompanyInfo: response object is not json");
+    }
+
+}
+
+// SpaceXStore.ts
+import {reflection} from "first-di";
+import {Store} from "../../index.js";
+import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo.js";
+import {SpaceXService} from "../services/SpaceXService.js";
+
+@reflection
+export class SpaceXStore extends Store {
+
+    public companyInfo: SpaceXCompanyInfo = new SpaceXCompanyInfo();
+
+    public constructor (
+        private readonly spaceXService: SpaceXService,
+        // private readonly logger: Logger
+    ) {
+        super();
+    }
+
+    public activate (): void {
+        this.fetchCompanyInfo();
+    }
+
+    private async fetchCompanyInfo (): Promise<void> {
+        try {
+            this.companyInfo = await this.spaceXService.getCompanyInfo();
+        } catch (error) {
+            // Process exceptions, ex: this.logger.error(error.message);
+        }
+    }
+
+}
+
+// SpaceXComponent.tsx
+import {useStore} from "../../index.js";
+import {SpaceXStore} from "../stores/SpaceXStore.js";
+
+export const TestStoreComponent = (): JSX.Element => {
+    const store = useStore(SpaceXStore);
+
+    return (
+        <div>
+            <p>
+                Company:
+                {" "}
+
+                {store.companyInfo.name}
+            </p>
+
+            <p>
+                Founder:
+                {" "}
+
+                {store.companyInfo.founder}
+            </p>
+        </div>
+    );
+};
+
 ```
 
 ## Support and Documentation
