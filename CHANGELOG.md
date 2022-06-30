@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/LabEG/reca/compare/v0.0.8...v0.0.9) (2022-06-30)
+
+
+### Features
+
+* add performance unit test ([9e1e1fe](https://github.com/LabEG/reca/commit/9e1e1feab7e6924823dcafe5abd4d241c936ea93))
+* add support unit tests for nodejs engine, write unit test for sample todo component ([8937e1a](https://github.com/LabEG/reca/commit/8937e1a7ba7fcef95d70060737ab9be11bf3baa7))
+
 ### [0.0.8](https://github.com/LabEG/reca/compare/v0.0.7...v0.0.8) (2022-06-15)
 
 
