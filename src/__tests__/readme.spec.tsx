@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
 
-import {render, fireEvent} from "@testing-library/react";
+import {render, fireEvent, waitFor, screen} from "@testing-library/react";
+import {SpaceXComponent} from "../__fixtures__/components/SpaceXComponent";
 import {ToDoComponent} from "../__fixtures__/components/ToDoComponent";
 
 describe("Readme samples must work", () => {
@@ -31,10 +32,11 @@ describe("Readme samples must work", () => {
         expect(comp.container.querySelector(".todos-list")?.outerHTML).toEqual("<div class=\"todos-list\"></div>");
     });
 
-    /*
-     * Test("todo sample must add end delete todo items", () => {
-     *     const comp = render(<ToDoComponent />);
-     */
+    test("todo sample must resolve di and show info from service", async () => {
+        const comp = render(<SpaceXComponent />);
 
-    // });
+        await waitFor(() => screen.findByText("Company: SpaceX"), {timeout: 5000});
+
+        expect(comp.container.innerHTML).toEqual("<div><p>Company: SpaceX</p><p>Founder: Elon Musk</p></div>");
+    });
 });

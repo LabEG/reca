@@ -8,6 +8,7 @@ Created at the intersection of Functional style and OOP technologies. It is base
  - **Dependency Injection** - override any part of your application for unit test or other customer,
  - **Microfrontend** - perfect support microfrontends out the box without any boilerplates,
  - **Simple Data Flow** - don't need search functions call chain for debug your reducers,
+ - **Code Organization** - structures the code easily even for large enterprise applications,
  - **Extra Small Size** - only 1kb of minified code.
 
  ## Why not Redux or Flux?
@@ -182,6 +183,7 @@ export class SpaceXCompanyInfo {
 
 }
 
+
 // SpaceXService.ts
 import {reflection} from "first-di";
 import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo";
@@ -203,14 +205,15 @@ export class SpaceXService {
 
 }
 
+
 // SpaceXStore.ts
 import {reflection} from "first-di";
-import {Store} from "../../index.js";
+import {AutoStore} from "reca";
 import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo.js";
 import {SpaceXService} from "../services/SpaceXService.js";
 
 @reflection
-export class SpaceXStore extends Store {
+export class SpaceXStore extends AutoStore {
 
     public companyInfo: SpaceXCompanyInfo = new SpaceXCompanyInfo();
 
@@ -235,8 +238,9 @@ export class SpaceXStore extends Store {
 
 }
 
+
 // SpaceXComponent.tsx
-import {useStore} from "../../index.js";
+import {useStore} from "reca";
 import {SpaceXStore} from "../stores/SpaceXStore.js";
 
 export const TestStoreComponent = (): JSX.Element => {

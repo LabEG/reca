@@ -1,10 +1,10 @@
 import {reflection} from "first-di";
-import {Store} from "../../index.js";
+import {AutoStore} from "../../index.js";
 import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo.js";
 import {SpaceXService} from "../services/SpaceXService.js";
 
 @reflection
-export class SpaceXStore extends Store {
+export class SpaceXStore extends AutoStore {
 
     public companyInfo: SpaceXCompanyInfo = new SpaceXCompanyInfo();
 

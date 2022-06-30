@@ -1,7 +1,7 @@
 import {useStore} from "../../index.js";
 import {SpaceXStore} from "../stores/SpaceXStore.js";
 
-export const TestStoreComponent = (): JSX.Element => {
+export const SpaceXComponent = (): JSX.Element => {
     const store = useStore(SpaceXStore);
 
     return (
