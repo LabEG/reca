@@ -31,7 +31,7 @@ export const useStore = <P extends object, T extends Store<P>>(
 
         const resolvedParams = constructorParams.map((param: unknown) => {
             if (typeof param === "function" && "prototype" in param) { // Check is class
-                if (param.length === 1) { // Typescript interface in props
+                if (param.prototype === Object.prototype) { // Typescript interface in props (props: P)
                     return props;
                 }
 
