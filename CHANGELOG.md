@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.11](https://github.com/LabEG/reca/compare/v0.0.10...v0.0.11) (2022-07-13)
+
+
+### Bug Fixes
+
+* props interface in params detection ([788afc3](https://github.com/LabEG/reca/commit/788afc3627f06b8b757a25b933e6db7585386c8d))
+* test for publishing ([8730a3d](https://github.com/LabEG/reca/commit/8730a3d9453addf8b437e42568a69778bc762b3c))
+
 ### [0.0.10](https://github.com/LabEG/reca/compare/v0.0.9...v0.0.10) (2022-07-01)
 
 ### [0.0.9](https://github.com/LabEG/reca/compare/v0.0.8...v0.0.9) (2022-06-30)
