@@ -1,4 +1,4 @@
-export const notAuto = (): MethodDecorator => (
+export const notAuto = (): MethodDecorator | PropertyDecorator => (
     target: object,
     propertyKey: string | symbol
 ): void => {
