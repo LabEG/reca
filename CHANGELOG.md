@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.13](https://github.com/LabEG/reca/compare/v0.0.12...v0.0.13) (2022-07-26)
+
+
+### Features
+
+* add notAuto and notRedraw decorators for auto store ([b14f3ea](https://github.com/LabEG/reca/commit/b14f3eae7b330fb244c1c72038dda041edb75f98))
+
 ### [0.0.12](https://github.com/LabEG/reca/compare/v0.0.11...v0.0.12) (2022-07-13)
 
 ### [0.0.11](https://github.com/LabEG/reca/compare/v0.0.10...v0.0.11) (2022-07-13)
