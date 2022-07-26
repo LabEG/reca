@@ -59,24 +59,34 @@ export class AutoStore<T extends object = object> extends Store<T> {
         const methods: (string | symbol)[] = Reflect.ownKeys(Object.getPrototypeOf(this) as object);
 
         for (const method of methods) {
-            if (!this.dontObserveProperties.includes(method)) {
+            const isNotAuto = Reflect.getMetadata("reca:notAuto", this, method) as unknown;
+
+            if (!this.dontObserveProperties.includes(method) || isNotAuto !== true) {
                 const methodFunction = Reflect.get(this, method) as (...params: unknown[]) => unknown;
+                const isNotRedraw = Reflect.getMetadata("reca:notRedraw", this, method) as unknown;
+
                 Reflect.set(
                     this,
                     method,
                     (...params: unknown[]) => {
-                        this.redraw(); // Before method because in method can be error, how stop flow
+                        if (isNotRedraw !== true) {
+                            this.redraw(); // Before method because in method can be error, how stop flow
+                        }
 
                         const maybePromise = methodFunction.apply(this, [...params]);
 
                         if (maybePromise instanceof Promise) {
                             return maybePromise
                                 .then((data: unknown) => {
-                                    this.redraw();
+                                    if (isNotRedraw !== true) {
+                                        this.redraw();
+                                    }
                                     return data;
                                 })
                                 .catch((error) => {
-                                    this.redraw();
+                                    if (isNotRedraw !== true) {
+                                        this.redraw();
+                                    }
                                     throw error;
                                 });
                         }
