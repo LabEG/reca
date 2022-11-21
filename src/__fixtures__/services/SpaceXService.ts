@@ -1,6 +1,5 @@
 import {reflection} from "first-di";
 import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo";
-import fetch from "cross-fetch";
 
 @reflection
 export class SpaceXService {

@@ -36,7 +36,7 @@ export class AutoStore<T extends object = object> extends Store<T> {
 
         for (const property of properties) {
             const isNotAuto = Reflect.getMetadata("reca:notAuto", this, property) as unknown;
-            if (!this.dontObserveProperties.includes(property) || isNotAuto !== true) {
+            if (!this.dontObserveProperties.includes(property) && isNotAuto !== true) {
                 let propValue = Reflect.get(this, property) as unknown;
 
                 Object.defineProperty(

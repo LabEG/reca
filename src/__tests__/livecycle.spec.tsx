@@ -5,9 +5,10 @@
 import {TestStoreComponent} from "../__fixtures__/components/TestStoreComponent.js";
 import {render} from "@testing-library/react";
 import {TestAutoStoreComponent} from "../__fixtures__/components/TestAutoStoreComponent.js";
+import {expect} from "chai";
 
 describe("Livecycles must work", () => {
-    test("Store livecycle", () => {
+    it("Store livecycle", () => {
         let state = "";
         const onLivecycleChange = (newState: string): void => {
             state = newState;
@@ -20,21 +21,21 @@ describe("Livecycles must work", () => {
 
         // Create component
         const comp = render(<TestStoreComponent onLivecycleChange={onLivecycleChange} />);
-        expect(comp.container.innerHTML).toEqual("<div>init constructor</div>");
-        expect(state).toEqual("init constructor activate");
+        expect(comp.container.innerHTML).to.equal("<div>init constructor</div>");
+        expect(state).to.equal("init constructor activate");
 
         // Update component
         comp.rerender(<TestStoreComponent onLivecycleChange={onLivecycleChange} />);
-        expect(comp.container.innerHTML).toEqual("<div>init constructor activate update</div>");
-        expect(state).toEqual("init constructor activate update afterUpdate");
+        expect(comp.container.innerHTML).to.equal("<div>init constructor activate update</div>");
+        expect(state).to.equal("init constructor activate update afterUpdate");
 
         // Delete component
         comp.unmount();
-        expect(comp.container.innerHTML).toEqual("");
-        expect(state).toEqual("init constructor activate update afterUpdate dispose");
+        expect(comp.container.innerHTML).to.equal("");
+        expect(state).to.equal("init constructor activate update afterUpdate dispose");
     });
 
-    test("AutoStore livecycle", () => {
+    it("AutoStore livecycle", () => {
         let state = "";
         const onLivecycleChange = (newState: string): void => {
             state = newState;
@@ -47,18 +48,18 @@ describe("Livecycles must work", () => {
 
         // Create component
         const comp = render(<TestAutoStoreComponent onLivecycleChange={onLivecycleChange} />);
-        expect(comp.container.innerHTML).toEqual("<div>init constructor</div>");
-        expect(state).toEqual("init constructor activate");
+        expect(comp.container.innerHTML).to.equal("<div>init constructor</div>");
+        expect(state).to.equal("init constructor activate");
 
         // Update component
         comp.rerender(<TestAutoStoreComponent onLivecycleChange={onLivecycleChange} />);
-        expect(comp.container.innerHTML).toEqual("<div>init constructor activate update</div>");
-        expect(state).toEqual("init constructor activate update afterUpdate");
+        expect(comp.container.innerHTML).to.equal("<div>init constructor activate update</div>");
+        expect(state).to.equal("init constructor activate update afterUpdate");
 
         // Delete component
         comp.unmount();
-        expect(comp.container.innerHTML).toEqual("");
-        expect(state).toEqual("init constructor activate update afterUpdate dispose");
+        expect(comp.container.innerHTML).to.equal("");
+        expect(state).to.equal("init constructor activate update afterUpdate dispose");
     });
 });
 
