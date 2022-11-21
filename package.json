@@ -1,6 +1,6 @@
 {
   "name": "reca",
-  "version": "0.0.13",
+  "version": "1.0.0",
   "description": "ReCA - React Clean Architecture state manager",
   "main": "dist/index.js",
   "type": "module",
@@ -28,30 +28,32 @@
   "author": "LabEG",
   "license": "MIT",
   "dependencies": {
-    "first-di": "^0.1.45"
+    "first-di": "^1.0.4"
   },
   "peerDependencies": {
-    "react": ">=16.0.0"
+    "react": ">=16.0.0",
+    "reflect-metadata": ">=0.1.0"
   },
   "devDependencies": {
-    "@babel/preset-env": "^7.18.0",
-    "@commitlint/cli": "^17.0.0",
-    "@commitlint/config-conventional": "^17.0.0",
-    "@labeg/code-style": "^2.0.34",
-    "@testing-library/react": "^13.2.0",
-    "@types/jest": "^27.5.1",
-    "@types/react": "^18.0.9",
-    "babel-jest": "^28.1.0",
+    "@babel/preset-env": "^7.20.2",
+    "@commitlint/cli": "^17.3.0",
+    "@commitlint/config-conventional": "^17.3.0",
+    "@labeg/code-style": "^2.0.53",
+    "@testing-library/react": "^13.4.0",
+    "@types/jest": "^29.2.3",
+    "@types/react": "^18.0.25",
+    "babel-jest": "^29.3.1",
     "cross-fetch": "^3.1.5",
-    "husky": "^8.0.1",
-    "jest": "^28.1.0",
-    "jest-environment-jsdom": "^28.1.0",
-    "lint-staged": "^12.4.1",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0",
+    "husky": "^8.0.2",
+    "jest": "^29.3.1",
+    "jest-environment-jsdom": "^29.3.1",
+    "lint-staged": "^13.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "standard-version": "^9.5.0",
-    "ts-jest": "^28.0.2",
-    "typescript": "^4.6.4"
+    "ts-jest": "^29.0.3",
+    "typescript": "^4.9.3"
   }
 }

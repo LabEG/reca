@@ -1,3 +1,4 @@
+import "reflect-metadata";
 import {Store} from "./Store.js";
 
 export class AutoStore<T extends object = object> extends Store<T> {
