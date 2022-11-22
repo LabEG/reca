@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [1.1.0](https://github.com/LabEG/reca/compare/v0.0.13...v1.1.0) (2022-11-22)
+
+
+### Features
+
+* add support notAuto decorator for auto store properties ([7729767](https://github.com/LabEG/reca/commit/772976752da7f40cfc280d19554ea98db3fddd14))
+
+
+### Bug Fixes
+
+* exports decorators for module type ([78330cc](https://github.com/LabEG/reca/commit/78330ccb62451c199bc0688f312990f02a35592d))
+
 ### [0.0.13](https://github.com/LabEG/reca/compare/v0.0.12...v0.0.13) (2022-07-26)
 
 
