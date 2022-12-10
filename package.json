@@ -28,7 +28,7 @@
   "author": "LabEG",
   "license": "MIT",
   "dependencies": {
-    "first-di": "^1.0.6"
+    "first-di": "^1.0.7"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
@@ -37,22 +37,22 @@
   "devDependencies": {
     "@commitlint/cli": "^17.3.0",
     "@commitlint/config-conventional": "^17.3.0",
-    "@labeg/code-style": "^2.0.60",
+    "@labeg/code-style": "^2.0.63",
     "@testing-library/react": "^13.4.0",
     "@types/chai": "^4.3.4",
-    "@types/mocha": "^10.0.0",
-    "@types/react": "^18.0.25",
+    "@types/mocha": "^10.0.1",
+    "@types/react": "^18.0.26",
     "chai": "^4.3.7",
     "global-jsdom": "^8.6.0",
     "husky": "^8.0.2",
     "jsdom": "^20.0.3",
-    "lint-staged": "^13.0.3",
+    "lint-staged": "^13.1.0",
     "mocha": "^10.1.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "reflect-metadata": "^0.1.13",
     "rimraf": "^3.0.2",
     "standard-version": "^9.5.0",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.4"
   }
 }
