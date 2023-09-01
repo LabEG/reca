@@ -15,7 +15,8 @@ export class Config {
     public di: DiConfig = new DiConfig();
 
     // From https://gist.github.com/rhysburnie/498bfd98f24b7daf5fd5930c7f3c1b7b
-    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition
+    // eslint-disable-next-line max-len
+    // eslint-disable-next-line @typescript-eslint/strict-boolean-expressions, @typescript-eslint/no-unnecessary-condition, @typescript-eslint/prefer-optional-chain
     public readonly isBrowser = !(typeof process !== "undefined" && process.versions && process.versions.node);
 
 }

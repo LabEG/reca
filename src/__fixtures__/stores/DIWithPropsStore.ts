@@ -9,6 +9,7 @@ export class DIWithPropsStore<P extends ITestDIWithPropsComponent> extends Store
     public test: number = 0;
 
     public constructor (
+        // eslint-disable-next-line @typescript-eslint/parameter-properties
         public diService: TestDIService,
         props: P
     ) {
