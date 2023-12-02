@@ -28,7 +28,7 @@
   "author": "LabEG",
   "license": "MIT",
   "dependencies": {
-    "first-di": "^1.0.17"
+    "first-di": "^1.0.18"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
@@ -37,7 +37,7 @@
   "devDependencies": {
     "@commitlint/cli": "^18.4.3",
     "@commitlint/config-conventional": "^18.4.3",
-    "@labeg/code-style": "^3.0.8",
+    "@labeg/code-style": "^3.0.9",
     "@testing-library/react": "^14.1.2",
     "@types/chai": "^4.3.11",
     "@types/mocha": "^10.0.6",
