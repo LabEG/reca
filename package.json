@@ -4,9 +4,9 @@
   "type": "module",
   "private": "true",
   "scripts": {
-    "build": "",
-    "lint": "eslint --fix -c .eslintrc.cjs --ext .tsx,.ts,.jsx,.js ./src/",
-    "release": "standard-version",
+    "build": "npm run build -w packages/reca",
+    "lint": "npm run build -w packages/reca",
+    "release": "npm run release -w packages/reca && standard-version",
     "prepare": "husky install"
   },
   "lint-staged": {
