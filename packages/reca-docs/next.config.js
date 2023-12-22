@@ -1,7 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
     output: 'export',
-    distDir: '../../docs'
+    distDir: '../../docs',
+    basePath: '/reca'
 }
 
 module.exports = nextConfig
