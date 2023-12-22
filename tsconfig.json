@@ -4,13 +4,12 @@
     "module": "ESNext",
     "moduleResolution": "Node",
     "forceConsistentCasingInFileNames": true,
-    "allowSyntheticDefaultImports": true,
     "strict": true,
     "declaration": true,
     "sourceMap": true,
-    "outDir": "dist"
-  },
-  "include": [
-    "./src/**/*"
-  ]
+    "noEmit": true,
+    "jsx": "react-jsx",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true
+  }
 }
