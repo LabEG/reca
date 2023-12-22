@@ -1,0 +1,45 @@
+{
+  "name": "reca",
+  "version": "2.0.0",
+  "description": "ReCA - React Clean Architecture state manager",
+  "main": "dist/index.js",
+  "type": "module",
+  "scripts": {
+    "build": "npm run clean && tsc && npm run test:module",
+    "clean": "rimraf ./dist",
+    "lint": "eslint --fix -c .eslintrc.cjs --ext .tsx,.ts,.jsx,.js ./src/",
+    "test": "mocha --parallel src/__tests__/*.spec.tsx",
+    "test:watch": "mocha --parallel --watch --watch-files src/**/*.ts,src/**/*.tsx src/__tests__/*.spec.tsx",
+    "test:module": "node ./dist/index.js",
+    "prepublishOnly": "npm run test && npm run build"
+  },
+  "keywords": [
+    "react",
+    "state manager"
+  ],
+  "author": "LabEG",
+  "license": "MIT",
+  "dependencies": {
+    "first-di": "^1.0.20"
+  },
+  "peerDependencies": {
+    "react": ">=16.0.0",
+    "reflect-metadata": ">=0.1.0"
+  },
+  "devDependencies": {
+    "@testing-library/react": "^14.1.2",
+    "@types/chai": "^4.3.11",
+    "@types/mocha": "^10.0.6",
+    "@types/react": "^18.2.45",
+    "chai": "^4.3.10",
+    "global-jsdom": "^9.2.0",
+    "jsdom": "^23.0.1",
+    "mocha": "^10.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "reflect-metadata": "^0.2.1",
+    "rimraf": "^5.0.5",
+    "standard-version": "^9.5.0",
+    "ts-node": "^10.9.2"
+  }
+}

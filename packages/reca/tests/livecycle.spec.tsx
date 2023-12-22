@@ -2,9 +2,9 @@
 /* eslint-disable max-statements */
 /* eslint-disable react/jsx-no-bind */
 
-import {TestStoreComponent} from "../__fixtures__/components/TestStoreComponent.js";
+import {TestStoreComponent} from "../src/__fixtures__/components/TestStoreComponent.js";
 import {render} from "@testing-library/react";
-import {TestAutoStoreComponent} from "../__fixtures__/components/TestAutoStoreComponent.js";
+import {TestAutoStoreComponent} from "../src/__fixtures__/components/TestAutoStoreComponent.js";
 import {expect} from "chai";
 
 describe("Livecycles must work", () => {
