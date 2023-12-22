@@ -1,5 +1,5 @@
-import {TesDIComponent} from "../src/__fixtures__/components/TestDIComponent.js";
-import {TestDIWithPropsComponent} from "../src/__fixtures__/components/TestDIWithPropsComponent.js";
+import {TesDIComponent} from "./fixtures/components/TestDIComponent.js";
+import {TestDIWithPropsComponent} from "./fixtures/components/TestDIWithPropsComponent.js";
 import {render} from "@testing-library/react";
 import {expect} from "chai";
 

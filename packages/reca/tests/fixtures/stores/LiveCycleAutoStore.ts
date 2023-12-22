@@ -1,4 +1,4 @@
-import {AutoStore, reflection} from "../../index.js";
+import {AutoStore, reflection} from "../../../src/index.js";
 
 export interface ILiveCycleStoreProps {
     onLivecycleChange: (val: string) => void;

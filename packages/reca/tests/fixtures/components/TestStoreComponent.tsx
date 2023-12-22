@@ -1,4 +1,4 @@
-import {useStore} from "../../index.js";
+import {useStore} from "../../../src/index.js";
 import type {ILiveCycleStoreProps} from "../stores/LiveCycleStore";
 import {LiveCycleStore} from "../stores/LiveCycleStore";
 

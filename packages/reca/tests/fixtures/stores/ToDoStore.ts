@@ -1,4 +1,4 @@
-import {Store} from "../../index.js";
+import {Store} from "../../../src/index.js";
 import type {FormEvent} from "react";
 
 export class ToDoStore extends Store {

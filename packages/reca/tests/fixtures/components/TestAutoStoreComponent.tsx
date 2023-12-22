@@ -1,5 +1,5 @@
 
-import {useStore} from "../../index.js";
+import {useStore} from "../../../src/index.js";
 import type {ILiveCycleStoreProps} from "../stores/LiveCycleAutoStore.js";
 import {LiveCycleAutoStore} from "../stores/LiveCycleAutoStore.js";
 

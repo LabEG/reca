@@ -1,5 +1,5 @@
 import {reflection} from "first-di";
-import {Store} from "../../index.js";
+import {Store} from "../../../src/index.js";
 import {TestDIService} from "../services/TestDIService";
 
 @reflection

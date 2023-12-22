@@ -1,4 +1,4 @@
-import {AutoStore} from "../../index.js";
+import {AutoStore} from "../../../src/index.js";
 import type {FormEvent} from "react";
 
 export class ToDoAutoStore extends AutoStore {

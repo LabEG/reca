@@ -1,4 +1,4 @@
-import {useStore} from "../../index.js";
+import {useStore} from "../../../src/index.js";
 import {SpaceXStore} from "../stores/SpaceXStore.js";
 
 export const SpaceXComponent = (): JSX.Element => {

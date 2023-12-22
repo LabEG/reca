@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
 
 import {render, fireEvent, waitFor, screen} from "@testing-library/react";
-import {SpaceXComponent} from "../src/__fixtures__/components/SpaceXComponent";
-import {ToDoComponent} from "../src/__fixtures__/components/ToDoComponent";
+import {SpaceXComponent} from "./fixtures/components/SpaceXComponent";
+import {ToDoComponent} from "./fixtures/components/ToDoComponent";
 import {expect} from "chai";
 
 describe("Readme samples must work", () => {

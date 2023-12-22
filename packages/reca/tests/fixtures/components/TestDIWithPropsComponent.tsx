@@ -1,5 +1,5 @@
 
-import {useStore} from "../../index.js";
+import {useStore} from "../../../src/index.js";
 import {DIWithPropsStore} from "../stores/DIWithPropsStore.js";
 
 export interface ITestDIWithPropsComponent {

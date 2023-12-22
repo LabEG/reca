@@ -1,4 +1,4 @@
-import {reflection, Store} from "../../index.js";
+import {reflection, Store} from "../../../src/index.js";
 
 export interface ILiveCycleStoreProps {
     onLivecycleChange: (val: string) => void;

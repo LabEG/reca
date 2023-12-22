@@ -3,7 +3,7 @@
 /* eslint-disable @typescript-eslint/unbound-method */
 /* eslint-disable react/jsx-key */
 
-import {useStore} from "../../index.js";
+import {useStore} from "../../../src/index.js";
 import {ToDoAutoStore} from "../stores/ToDoAutoStore.js";
 
 export const ToDoComponent = (): JSX.Element => {

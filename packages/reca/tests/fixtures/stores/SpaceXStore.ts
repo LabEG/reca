@@ -1,5 +1,5 @@
 import {reflection} from "first-di";
-import {AutoStore} from "../../index.js";
+import {AutoStore} from "../../../src/index.js";
 import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo.js";
 import {SpaceXService} from "../services/SpaceXService.js";
 

@@ -3,7 +3,7 @@
 /* eslint-disable max-lines-per-function */
 /* eslint-disable react/jsx-key */
 
-import {useStore} from "../../index.js";
+import {useStore} from "../../../src/index.js";
 import {ToDoAutoStore} from "../stores/ToDoAutoStore.js";
 import {ToDoStore} from "../stores/ToDoStore.js";
 

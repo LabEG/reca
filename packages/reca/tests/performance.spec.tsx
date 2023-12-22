@@ -1,6 +1,6 @@
 
 import {render} from "@testing-library/react";
-import {PerformanceComponent} from "../src/__fixtures__/components/PerformanceComponent";
+import {PerformanceComponent} from "./fixtures/components/PerformanceComponent";
 import {expect} from "chai";
 
 describe("Store component must work fast", () => {
