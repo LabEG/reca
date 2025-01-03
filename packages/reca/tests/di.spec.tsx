@@ -2,6 +2,7 @@ import {TesDIComponent} from "./fixtures/components/TestDIComponent.js";
 import {TestDIWithPropsComponent} from "./fixtures/components/TestDIWithPropsComponent.js";
 import {render} from "@testing-library/react";
 import {expect} from "chai";
+import {describe, it} from "node:test";
 
 describe("Dependency injection must work", () => {
     it("di must resolve dependencies", () => {

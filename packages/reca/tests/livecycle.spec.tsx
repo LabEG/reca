@@ -6,6 +6,7 @@ import {TestStoreComponent} from "./fixtures/components/TestStoreComponent.js";
 import {render} from "@testing-library/react";
 import {TestAutoStoreComponent} from "./fixtures/components/TestAutoStoreComponent.js";
 import {expect} from "chai";
+import {describe, it} from "node:test";
 
 describe("Livecycles must work", () => {
     it("Store livecycle", () => {

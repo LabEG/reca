@@ -2,6 +2,7 @@
 import {render} from "@testing-library/react";
 import {PerformanceComponent} from "./fixtures/components/PerformanceComponent";
 import {expect} from "chai";
+import {describe, it} from "node:test";
 
 describe("Store component must work fast", () => {
     it("count store performance", () => {

@@ -4,6 +4,7 @@ import {render, fireEvent, waitFor, screen} from "@testing-library/react";
 import {SpaceXComponent} from "./fixtures/components/SpaceXComponent";
 import {ToDoComponent} from "./fixtures/components/ToDoComponent";
 import {expect} from "chai";
+import {describe, it} from "node:test";
 
 describe("Readme samples must work", () => {
     it("todo sample must add end delete todo items", () => {
