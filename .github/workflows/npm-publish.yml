@@ -7,7 +7,7 @@ name: NPM Publish and Docs
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
   workflow_dispatch:
 
 permissions:
