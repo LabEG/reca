@@ -85,7 +85,7 @@ export class AutoStore<T extends object = object> extends Store<T> {
                                     }
                                     return data;
                                 })
-                                .catch((error) => {
+                                .catch((error: unknown) => {
                                     if (isNotRedraw !== true) {
                                         this.redraw();
                                     }

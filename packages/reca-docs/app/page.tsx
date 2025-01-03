@@ -1,21 +1,23 @@
 import Image from "next/image";
 import styles from "./page.module.css";
 import {AutoStore, reflection, useStoreAsync} from "reca";
+import {JSX} from "react";
 
 @reflection
 class TStore extends AutoStore {
 
-    public prop: number = 0;
+    public prop = 0;
 
-    // eslint-disable-next-line @typescript-eslint/class-methods-use-this
+    // eslint-disable-next-line class-methods-use-this
     public async testAsync (): Promise<number> {
-        return Promise.resolve(5);
+        return await Promise.resolve(5);
     }
 
 }
 
 // eslint-disable-next-line max-lines-per-function
 const Home = async (): Promise<JSX.Element> => {
+    // eslint-disable-next-line react-hooks/rules-of-hooks
     const store = await useStoreAsync(TStore);
 
     const num = await store.testAsync();
@@ -108,8 +110,7 @@ const Home = async (): Promise<JSX.Element> => {
 
                 <a
                     className={styles.card}
-                    // eslint-disable-next-line max-len, @stylistic/max-len
-                    href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
+                    href="https://vercel.com/templates"
                     rel="noopener noreferrer"
                     target="_blank"
                 >

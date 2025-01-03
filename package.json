@@ -7,6 +7,7 @@
     "build": "npm run build -w packages/reca",
     "lint": "npm run build -w packages/reca",
     "release": "npm run release -w packages/reca && standard-version",
+    "upgrade": "rimraf -g -v **/node_modules **/package-lock.json && ncu -u -ws --root && npm i",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -18,11 +19,12 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^18.4.3",
-    "@commitlint/config-conventional": "^18.4.3",
-    "@labeg/code-style": "^4.0.5",
-    "husky": "^8.0.3",
-    "lint-staged": "^15.2.0",
+    "@commitlint/cli": "^19.6.1",
+    "@commitlint/config-conventional": "^19.6.0",
+    "@labeg/code-style": "^5.5.0",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.3.0",
+    "rimraf": "^6.0.1",
     "standard-version": "^9.5.0"
   }
 }
