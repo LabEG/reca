@@ -35,7 +35,6 @@ jobs:
       - run: npm run build
       - run: npm run release
       - run: git push && git push --tags
-      - run: cd packages/reca
-      - run: npm publish --access public
+      - run: cd packages/reca && npm publish --access public
         env:
           NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
