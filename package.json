@@ -21,7 +21,7 @@
   "devDependencies": {
     "@commitlint/cli": "^19.6.1",
     "@commitlint/config-conventional": "^19.6.0",
-    "@labeg/code-style": "^5.5.0",
+    "@labeg/code-style": "^6.0.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.3.0",
     "rimraf": "^6.0.1",
