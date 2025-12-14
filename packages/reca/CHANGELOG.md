@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.4.0](https://github.com/LabEG/reca/compare/v2.0.14...v2.4.0) (2025-12-14)
+
+
+### Features
+
+* add README copying step to npm publish workflow ([ee93ac9](https://github.com/LabEG/reca/commit/ee93ac9ffbc358cb0f3a1d595badc05e2e2f2175))
+
 ### [2.3.8](https://github.com/LabEG/reca/compare/v2.0.13...v2.3.8) (2025-12-14)
 
 ### [2.3.7](https://github.com/LabEG/reca/compare/v2.0.12...v2.3.7) (2025-12-14)
