@@ -15,7 +15,6 @@ Created at the intersection of Functional style and OOP technologies. It is base
 - [ReCA - React Clean Architecture state manager](#reca---react-clean-architecture-state-manager)
   - [Table of Contents](#table-of-contents)
   - [Features](#features)
-  - [Why not Redux or Flux?](#why-not-redux-or-flux)
   - [Comparison with Other Libraries](#comparison-with-other-libraries)
     - [Why Choose ReCA?](#why-choose-reca)
   - [Installation](#installation)
@@ -45,27 +44,21 @@ Created at the intersection of Functional style and OOP technologies. It is base
 - **Code Organization** - structures the code easily even for large enterprise applications,
 - **Extra Small Size** - only 1kb of minified code.
 
-## Why not Redux or Flux?
-
-- **Monostore** - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
-- **Reducers** - a large number of reducers makes you spend a lot of time searching for the necessary function.
-- **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
-
 ## Comparison with Other Libraries
 
-| Feature | ReCA | Redux | MobX | Zustand |
-|---------|------|-------|------|----------|
-| **Bundle Size** | ~1KB | ~8KB | ~16KB | ~1KB |
-| **Boilerplate** | Minimal | Heavy | Medium | Minimal |
-| **Learning Curve** | Easy | Steep | Medium | Easy |
+| Feature | ReCA | Zustand | MobX | Redux |
+|---------|------|----------|------|-------|
+| **Bundle Size** | ~1KB | ~1KB | ~16KB | ~8KB |
+| **Boilerplate** | Minimal | Minimal | Medium | Heavy |
+| **Learning Curve** | Easy | Easy | Medium | Steep |
 | **TypeScript** | Built-in | Good | Good | Good |
-| **Performance** | Excellent | Good | Excellent | Excellent |
+| **Performance** | Excellent | Excellent | Excellent | Good |
 | **Dependency Injection** | ✅ Built-in | ❌ Manual | ❌ Manual | ❌ Manual |
-| **Clean Architecture** | ✅ Native | ⚠️ Requires setup | ⚠️ Requires setup | ❌ Limited |
-| **Microstores** | ✅ Yes | ❌ Monostore | ✅ Yes | ✅ Yes |
+| **Clean Architecture** | ✅ Native | ❌ Limited | ⚠️ Requires setup | ⚠️ Requires setup |
+| **Microstores** | ✅ Yes | ✅ Yes | ✅ Yes | ❌ Monostore |
 | **SSR Support** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
 | **Middleware** | Via DI | ✅ Yes | ❌ Limited | ✅ Yes |
-| **Async Actions** | ✅ Native | ⚠️ Requires thunk/saga | ✅ Native | ✅ Native |
+| **Async Actions** | ✅ Native | ✅ Native | ✅ Native | ⚠️ Requires thunk/saga |
 
 ### Why Choose ReCA?
 
