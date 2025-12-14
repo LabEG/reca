@@ -2,6 +2,8 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.8](https://github.com/LabEG/reca/compare/v2.0.13...v2.3.8) (2025-12-14)
+
 ### [2.3.7](https://github.com/LabEG/reca/compare/v2.0.12...v2.3.7) (2025-12-14)
 
 ### [2.3.6](https://github.com/LabEG/reca/compare/v2.0.11...v2.3.6) (2025-12-14)
