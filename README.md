@@ -1,13 +1,12 @@
 # ReCA - React Clean Architecture state manager
 
 [![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/reca)
-![GitHub](https://img.shields.io/github/license/LabEG/code-style.svg)
 [![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/LabEG/reca/blob/main/LICENSE)
 ![npm downloads](https://img.shields.io/npm/dm/@labeg/code-style.svg)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e9e573d8408945168d14d83c81a103e6)](https://www.codacy.com/gh/LabEG/reca/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LabEG/reca&amp;utm_campaign=Badge_Grade)
 ![build status](https://github.com/LabEG/code-style/workflows/Test%20Pull%20Request/badge.svg)
 [![CodeQL](https://github.com/LabEG/code-style/workflows/CodeQL%20Advanced/badge.svg)](https://github.com/LabEG/code-style/security/code-scanning)
 [![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e9e573d8408945168d14d83c81a103e6)](https://www.codacy.com/gh/LabEG/reca/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LabEG/reca&amp;utm_campaign=Badge_Grade)
 
 Created at the intersection of Functional style and OOP technologies. It is based on the simplicity of the functional style of the view, enriched with OOP technologies for writing business logic. Perfect for beginner developers and complex enterprise applications
 
