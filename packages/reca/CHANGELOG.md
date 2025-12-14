@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.4](https://github.com/LabEG/reca/compare/v2.0.9...v2.3.4) (2025-12-14)
+
+
+### Bug Fixes
+
+* update README and package.json for accurate badge links and repository metadata ([d834244](https://github.com/LabEG/reca/commit/d834244dd115b98c368d37a271dba2161c49d383))
+
 ### [2.3.3](https://github.com/LabEG/reca/compare/v2.0.8...v2.3.3) (2025-12-14)
 
 
