@@ -2,7 +2,7 @@ name: Test Pull Request
 
 on:
   pull_request:
-    branches: [ master ]
+    branches: [ main ]
     types: [ opened, synchronize, reopened ]
 
 permissions:

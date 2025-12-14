@@ -28,7 +28,7 @@ Enhancement suggestions are welcome! Please provide:
 
 ### Pull Requests
 
-1. **Fork the repository** and create your branch from `master`
+1. **Fork the repository** and create your branch from `main`
 2. **Make your changes** following our coding standards
 3. **Test your changes** by running `npm test`
 4. **Commit your changes** using [Conventional Commits](https://www.conventionalcommits.org/):
@@ -137,7 +137,7 @@ All tests must pass before your PR can be merged.
 
 Releases are automated:
 
-1. Maintainer merges PR to `master`
+1. Maintainer merges PR to `main`
 2. Version is bumped automatically
 3. Changelog is generated
 4. Package is published to npm
