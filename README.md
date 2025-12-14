@@ -10,29 +10,6 @@
 
 Created at the intersection of Functional style and OOP technologies. It is based on the simplicity of the functional style of the view, enriched with OOP technologies for writing business logic. Perfect for beginner developers and complex enterprise applications
 
-## Table of Contents
-
-- [ReCA - React Clean Architecture state manager](#reca---react-clean-architecture-state-manager)
-  - [Table of Contents](#table-of-contents)
-  - [Features](#features)
-  - [Comparison with Other Libraries](#comparison-with-other-libraries)
-    - [Why Choose ReCA?](#why-choose-reca)
-  - [Installation](#installation)
-    - [Using npm](#using-npm)
-    - [Using yarn](#using-yarn)
-    - [Using pnpm](#using-pnpm)
-    - [Setup](#setup)
-  - [Examples](#examples)
-    - [Quick Start - Counter Example](#quick-start---counter-example)
-    - [ToDo Example](#todo-example)
-    - [Example low-level Store](#example-low-level-store)
-    - [Advanced Example - Dependency Injection for Enterprise Applications](#advanced-example---dependency-injection-for-enterprise-applications)
-  - [Documentation and Resources](#documentation-and-resources)
-    - [Documentation](#documentation)
-    - [Community and Support](#community-and-support)
-    - [Contributing](#contributing)
-  - [License](#license)
-
 ## Features
 
 - **Microstores** - calculations state of components don't affect to other components, small CPU usage for update states,
