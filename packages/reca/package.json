@@ -20,6 +20,11 @@
   ],
   "author": "LabEG",
   "license": "MIT",
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE"
+  ],
   "dependencies": {
     "first-di": "^3.3.0"
   },
