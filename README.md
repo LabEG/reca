@@ -10,6 +10,30 @@
 
 Created at the intersection of Functional style and OOP technologies. It is based on the simplicity of the functional style of the view, enriched with OOP technologies for writing business logic. Perfect for beginner developers and complex enterprise applications
 
+## Table of Contents
+
+- [ReCA - React Clean Architecture state manager](#reca---react-clean-architecture-state-manager)
+  - [Table of Contents](#table-of-contents)
+  - [Features](#features)
+  - [Why not Redux or Flux?](#why-not-redux-or-flux)
+  - [Comparison with Other Libraries](#comparison-with-other-libraries)
+    - [Why Choose ReCA?](#why-choose-reca)
+  - [Installation](#installation)
+    - [Using npm](#using-npm)
+    - [Using yarn](#using-yarn)
+    - [Using pnpm](#using-pnpm)
+    - [Setup](#setup)
+  - [Examples](#examples)
+    - [Quick Start - Counter Example](#quick-start---counter-example)
+    - [ToDo Example](#todo-example)
+    - [Example low-level Store](#example-low-level-store)
+    - [Advanced Example - Dependency Injection for Enterprise Applications](#advanced-example---dependency-injection-for-enterprise-applications)
+  - [Documentation and Resources](#documentation-and-resources)
+    - [📚 Documentation](#-documentation)
+    - [💬 Community and Support](#-community-and-support)
+    - [🤝 Contributing](#-contributing)
+  - [License](#license)
+
 ## Features
 
 - **Microstores** - calculations state of components don't affect to other components, small CPU usage for update states,
@@ -26,6 +50,31 @@ Created at the intersection of Functional style and OOP technologies. It is base
 - **Monostore** - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
 - **Reducers** - a large number of reducers makes you spend a lot of time searching for the necessary function.
 - **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
+
+## Comparison with Other Libraries
+
+| Feature | ReCA | Redux | MobX | Zustand |
+|---------|------|-------|------|----------|
+| **Bundle Size** | ~1KB | ~8KB | ~16KB | ~1KB |
+| **Boilerplate** | Minimal | Heavy | Medium | Minimal |
+| **Learning Curve** | Easy | Steep | Medium | Easy |
+| **TypeScript** | Built-in | Good | Good | Good |
+| **Performance** | Excellent | Good | Excellent | Excellent |
+| **Dependency Injection** | ✅ Built-in | ❌ Manual | ❌ Manual | ❌ Manual |
+| **Clean Architecture** | ✅ Native | ⚠️ Requires setup | ⚠️ Requires setup | ❌ Limited |
+| **Microstores** | ✅ Yes | ❌ Monostore | ✅ Yes | ✅ Yes |
+| **SSR Support** | ✅ Yes | ✅ Yes | ✅ Yes | ✅ Yes |
+| **Middleware** | Via DI | ✅ Yes | ❌ Limited | ✅ Yes |
+| **Async Actions** | ✅ Native | ⚠️ Requires thunk/saga | ✅ Native | ✅ Native |
+
+### Why Choose ReCA?
+
+- **Smallest footprint** - Only 1KB minified, same as Zustand but with more features
+- **Zero boilerplate** - No actions, reducers, or dispatchers needed
+- **Enterprise-ready** - Built-in DI and Clean Architecture support
+- **Developer-friendly** - Simple API, easy to learn and use
+- **Flexible** - Choose between AutoStore (automatic) or Store (manual control)
+- **Type-safe** - Full TypeScript support out of the box
 
 ## Installation
 
@@ -64,7 +113,44 @@ ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
 
 ## Examples
 
-### Example AutoStore
+### Quick Start - Counter Example
+
+A simple example to get you started with ReCA:
+
+```typescript
+// counter.store.ts
+import { AutoStore } from "reca";
+
+export class CounterStore extends AutoStore {
+    public count: number = 0;
+
+    public increment(): void {
+        this.count++;
+    }
+
+    public decrement(): void {
+        this.count--;
+    }
+}
+
+// Counter.tsx
+import { useStore } from "reca";
+import { CounterStore } from "./stores/counter.store";
+
+export const Counter = () => {
+    const store = useStore(CounterStore);
+
+    return (
+        <div>
+            <h1>Count: {store.count}</h1>
+            <button onClick={store.increment}>+1</button>
+            <button onClick={store.decrement}>-1</button>
+        </div>
+    );
+};
+```
+
+### ToDo Example
 
 Create your Store by inheriting from AutoStore, and use it in a component via useStore hook.
 
@@ -200,11 +286,25 @@ export const ToDoComponent = (): JSX.Element => {
 };
 ```
 
-### Example using DI
+### Advanced Example - Dependency Injection for Enterprise Applications
 
-This example demonstrates the simplicity of the business logic and the simplified principles of code organization according to the Clean Architecture methodology. The example is simplified for readme, but following the same principles you can organize a full-fledged Clean Architecture. Through the service constructor, you can pass other DI dependencies, such as Repository, Provider, and others.
+This example demonstrates how to build scalable enterprise applications using ReCA with Dependency Injection. It shows the simplicity of business logic organization following Clean Architecture principles.
 
-``` typescript
+The example includes:
+
+- **Service Layer** - encapsulates business logic and external API calls
+- **Model Layer** - defines data structures
+- **Store Layer** - manages state and coordinates services
+- **Component Layer** - pure view logic
+
+This architecture makes your code:
+
+- **Testable** - easily mock services for unit tests
+- **Maintainable** - clear separation of concerns
+- **Scalable** - add new features without modifying existing code
+- **Flexible** - swap implementations through DI (e.g., Repository, Provider, Logger)
+
+```typescript
 // SpaceXCompanyInfo.ts
 export class SpaceXCompanyInfo {
 
@@ -305,11 +405,26 @@ export const TestStoreComponent = (): JSX.Element => {
 
 ```
 
-## Support and Documentation
+## Documentation and Resources
 
-Discord server: [click here](https://discordapp.com/channels/974049080454045796/974049142022209566)
+### 📚 Documentation
 
-Wiki: [click here](https://github.com/LabEG/reca/wiki)
+- **[Wiki](https://github.com/LabEG/reca/wiki)** - Comprehensive guides, tutorials, and API reference
+- **[API Documentation](https://github.com/LabEG/reca/wiki)** - Detailed API documentation for all features
+
+### 💬 Community and Support
+
+- **[Discord Server](https://discordapp.com/channels/974049080454045796/974049142022209566)** - Join our community for real-time help and discussions
+- **[GitHub Discussions](https://github.com/LabEG/reca/discussions)** - Ask questions and share ideas
+- **[GitHub Issues](https://github.com/LabEG/reca/issues)** - Report bugs or request features
+
+### 🤝 Contributing
+
+We welcome contributions! See our:
+
+- **[Contributing Guide](CONTRIBUTING.md)** - Learn how to contribute to the project
+- **[Code of Conduct](CODE_OF_CONDUCT.md)** - Our community guidelines
+- **[Security Policy](SECURITY.md)** - How to report security vulnerabilities
 
 ## License
 
