@@ -7,6 +7,7 @@
     "build": "npm run build -w packages/reca",
     "lint": "npm run lint -w packages/reca",
     "release": "npm run release -w packages/reca && standard-version",
+    "test": "npm run lint -w packages/reca",
     "upgrade": "rimraf -g -v **/node_modules **/package-lock.json && ncu -u -ws --root && npm i",
     "prepare": "husky"
   },
