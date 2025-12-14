@@ -1,6 +1,6 @@
 {
   "name": "reca-workspace",
-  "version": "2.0.7",
+  "version": "2.0.8",
   "type": "module",
   "private": "true",
   "scripts": {
@@ -27,6 +27,6 @@
     "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
     "standard-version": "^9.5.0",
-    "npm-check-updates":"^19.2.0"
+    "npm-check-updates": "^19.2.0"
   }
 }
