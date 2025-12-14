@@ -53,5 +53,8 @@ jobs:
       - name: Push changes and tags
         run: git push && git push --tags
 
+      - name: Copy README to package
+        run: cp README.md packages/reca/README.md
+
       - name: Publish to NPM
         run: npm publish --provenance --access public -w packages/reca
