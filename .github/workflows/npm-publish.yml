@@ -54,4 +54,4 @@ jobs:
         run: git push && git push --tags
 
       - name: Publish to NPM
-        run: cd packages/reca && npm publish --provenance --access public -w packages/reca
+        run: npm publish --provenance --access public -w packages/reca
