@@ -29,9 +29,9 @@ Created at the intersection of Functional style and OOP technologies. It is base
     - [Example low-level Store](#example-low-level-store)
     - [Advanced Example - Dependency Injection for Enterprise Applications](#advanced-example---dependency-injection-for-enterprise-applications)
   - [Documentation and Resources](#documentation-and-resources)
-    - [📚 Documentation](#-documentation)
-    - [💬 Community and Support](#-community-and-support)
-    - [🤝 Contributing](#-contributing)
+    - [Documentation](#documentation)
+    - [Community and Support](#community-and-support)
+    - [Contributing](#contributing)
   - [License](#license)
 
 ## Features
@@ -407,18 +407,18 @@ export const TestStoreComponent = (): JSX.Element => {
 
 ## Documentation and Resources
 
-### 📚 Documentation
+### Documentation
 
 - **[Wiki](https://github.com/LabEG/reca/wiki)** - Comprehensive guides, tutorials, and API reference
 - **[API Documentation](https://github.com/LabEG/reca/wiki)** - Detailed API documentation for all features
 
-### 💬 Community and Support
+### Community and Support
 
 - **[Discord Server](https://discordapp.com/channels/974049080454045796/974049142022209566)** - Join our community for real-time help and discussions
 - **[GitHub Discussions](https://github.com/LabEG/reca/discussions)** - Ask questions and share ideas
 - **[GitHub Issues](https://github.com/LabEG/reca/issues)** - Report bugs or request features
 
-### 🤝 Contributing
+### Contributing
 
 We welcome contributions! See our:
 
