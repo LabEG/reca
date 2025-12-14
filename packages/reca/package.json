@@ -20,6 +20,14 @@
   ],
   "author": "LabEG",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LabEG/reca.git"
+  },
+  "bugs": {
+    "url": "https://github.com/LabEG/reca/issues"
+  },
+  "homepage": "https://github.com/LabEG/reca#readme",
   "files": [
     "dist",
     "README.md",
