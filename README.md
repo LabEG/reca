@@ -27,13 +27,40 @@ Created at the intersection of Functional style and OOP technologies. It is base
 - **Reducers** - a large number of reducers makes you spend a lot of time searching for the necessary function.
 - **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
 
-## Instalation
+## Installation
 
-npm:
+### Using npm
 
-``` bash
-npm install reca
+```bash
+npm install reca reflect-metadata
 ```
+
+### Using yarn
+
+```bash
+yarn add reca reflect-metadata
+```
+
+### Using pnpm
+
+```bash
+pnpm add reca reflect-metadata
+```
+
+### Setup
+
+After installation, import `reflect-metadata` at the entry point of your application (e.g., `index.tsx` or `main.tsx`):
+
+```typescript
+import "reflect-metadata";
+import React from "react";
+import ReactDOM from "react-dom/client";
+import { App } from "./App";
+
+ReactDOM.createRoot(document.getElementById("root")!).render(<App />);
+```
+
+> **Note:** The `reflect-metadata` package is required for dependency injection functionality. Make sure to import it before any other imports in your application entry point.
 
 ## Examples
 
