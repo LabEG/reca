@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+## [2.3.0](https://github.com/LabEG/reca/compare/v2.0.5...v2.3.0) (2025-12-14)
+
+
+### Features
+
+* add issue templates for bug reports and feature requests, and implement security policy ([212d1a7](https://github.com/LabEG/reca/commit/212d1a7eba238117674a9ac93f3371157ab1e7b6))
+
+
+### Bug Fixes
+
+* add test script to package.json for linting during testing ([3f0ca92](https://github.com/LabEG/reca/commit/3f0ca921720cc6e87af7bef2ec392e81572786d3))
+* correct files field in package.json to include necessary files ([2fa2202](https://github.com/LabEG/reca/commit/2fa220248faf3460b085a3056fbfba257ce67804))
+* reorder badges and improve README structure for clarity ([1cd8c17](https://github.com/LabEG/reca/commit/1cd8c17084d55a1a48193dfe1d2c3e2f199f73de))
+* update badge order and remove duplicate Codacy badge in README ([f3d0370](https://github.com/LabEG/reca/commit/f3d0370d4fd373faf4505986f1ea60fa8f9b0ace))
+* update workflows and documentation to use 'main' branch instead of 'master' ([d47bbef](https://github.com/LabEG/reca/commit/d47bbef2dc9bef04fd8ac48f6ae8445a85ebdc93))
+
 ## [2.2.0](https://github.com/LabEG/reca/compare/v2.0.4...v2.2.0) (2025-04-10)
 
 
