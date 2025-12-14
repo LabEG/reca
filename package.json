@@ -8,7 +8,7 @@
     "lint": "npm run lint -w packages/reca",
     "release": "npm run release -w packages/reca && standard-version",
     "upgrade": "rimraf -g -v **/node_modules **/package-lock.json && ncu -u -ws --root && npm i",
-    "prepare": "husky install"
+    "prepare": "husky"
   },
   "lint-staged": {
     "./src/**/*.(ts|tsx|js|jsx)": [

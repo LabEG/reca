@@ -1,39 +1,51 @@
-[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e9e573d8408945168d14d83c81a103e6)](https://www.codacy.com/gh/LabEG/reca/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LabEG/reca&amp;utm_campaign=Badge_Grade)
-[![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/reca)
-[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
-[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/LabEG/reca/blob/main/LICENSE)
-
 # ReCA - React Clean Architecture state manager
+
 Created at the intersection of Functional style and OOP technologies. It is based on the simplicity of the functional style of the view, enriched with OOP technologies for writing business logic. Perfect for beginner developers and complex enterprise applications
 
 ## Features
- - **Microstores** - calculations state of components don't affect to other components, small CPU usage for update states,
- - **Direct Functions Call** - don't need heavy CPU utilization for search function in reducer, just call the function directly,
- - **No Boilerplate** - write only business code without those debt,
- - **Dependency Injection** - override any part of your application for unit test or other customer,
- - **Microfrontend** - perfect support microfrontends out the box without any boilerplates,
- - **Simple Data Flow** - don't need search functions call chain for debug your reducers,
- - **Code Organization** - structures the code easily even for large enterprise applications,
- - **Extra Small Size** - only 1kb of minified code.
 
- ## Why not Redux or Flux?
- - **Monostore** - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
- - **Reducers** - a large number of reducers makes you spend a lot of time searching for the necessary function.
- - **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/e9e573d8408945168d14d83c81a103e6)](https://www.codacy.com/gh/LabEG/reca/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=LabEG/reca&amp;utm_campaign=Badge_Grade)
+[![npm version](https://img.shields.io/npm/v/react.svg?style=flat)](https://www.npmjs.com/package/reca)
+![npm downloads](https://img.shields.io/npm/dm/@labeg/code-style.svg)
+![GitHub](https://img.shields.io/github/license/LabEG/code-style.svg)
+![build status](https://github.com/LabEG/code-style/workflows/Test%20Pull%20Request/badge.svg)
+[![CodeQL](https://github.com/LabEG/code-style/workflows/CodeQL%20Advanced/badge.svg)](https://github.com/LabEG/code-style/security/code-scanning)
+[![Contributor Covenant](https://img.shields.io/badge/Contributor%20Covenant-2.1-4baaaa.svg)](CODE_OF_CONDUCT.md)
+[![GitHub license](https://img.shields.io/badge/license-MIT-green.svg)](https://github.com/LabEG/reca/blob/main/LICENSE)
+
+- **Microstores** - calculations state of components don't affect to other components, small CPU usage for update states,
+- **Direct Functions Call** - don't need heavy CPU utilization for search function in reducer, just call the function directly,
+- **No Boilerplate** - write only business code without those debt,
+- **Dependency Injection** - override any part of your application for unit test or other customer,
+- **Microfrontend** - perfect support microfrontends out the box without any boilerplates,
+- **Simple Data Flow** - don't need search functions call chain for debug your reducers,
+- **Code Organization** - structures the code easily even for large enterprise applications,
+- **Extra Small Size** - only 1kb of minified code.
+
+## Why not Redux or Flux?
+
+- **Monostore** - as the application grows, the cost of maintaining a monostore greatly exceeds the useful work.
+- **Reducers** - a large number of reducers makes you spend a lot of time searching for the necessary function.
+- **Architecture problem** - forces you to use tons of additional packages to solve problems, such as saga, thunk, toolkit and many others.
 
 ## Instalation
+
 npm:
-```
+
+``` bash
 npm install reca
 ```
 
 yarn
-```
+
+``` bash
 yarn add reca
 ```
 
 ## Examples
+
 ### Example AutoStore
+
 Create your Store by inheriting from AutoStore, and use it in a component via useStore hook.
 
 ``` typescript
@@ -169,6 +181,7 @@ export const ToDoComponent = (): JSX.Element => {
 ```
 
 ### Example using DI
+
 This example demonstrates the simplicity of the business logic and the simplified principles of code organization according to the Clean Architecture methodology. The example is simplified for readme, but following the same principles you can organize a full-fledged Clean Architecture. Through the service constructor, you can pass other DI dependencies, such as Repository, Provider, and others.
 
 ``` typescript
@@ -273,9 +286,11 @@ export const TestStoreComponent = (): JSX.Element => {
 ```
 
 ## Support and Documentation
+
 Discord server: [click here](https://discordapp.com/channels/974049080454045796/974049142022209566)
 
 Wiki: [click here](https://github.com/LabEG/reca/wiki)
 
 ## License
+
 ReCA is [MIT licensed](https://github.com/LabEG/reca/blob/main/LICENSE).
