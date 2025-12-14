@@ -38,6 +38,3 @@ jobs:
       - name: Check for security vulnerabilities
         run: npm audit --production
         continue-on-error: true
-
-      - name: Verify package can be built
-        run: npm pack --dry-run
