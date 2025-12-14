@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.3.1](https://github.com/LabEG/reca/compare/v2.0.6...v2.3.1) (2025-12-14)
+
+
+### Bug Fixes
+
+* remove dry-run build verification step from test workflow ([ba43452](https://github.com/LabEG/reca/commit/ba434522259363d3fae55fc41329565e2b39995c))
+
 ## [2.3.0](https://github.com/LabEG/reca/compare/v2.0.5...v2.3.0) (2025-12-14)
 
 
