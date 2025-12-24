@@ -1,6 +1,6 @@
 {
   "name": "reca",
-  "version": "2.4.3",
+  "version": "2.4.4",
   "description": "ReCA - React Clean Architecture state manager",
   "main": "dist/index.js",
   "type": "module",
