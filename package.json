@@ -22,7 +22,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.2.0",
     "@commitlint/config-conventional": "^20.2.0",
-    "@labeg/code-style": "^6.10.13",
+    "@labeg/code-style": "^6.10.15",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
