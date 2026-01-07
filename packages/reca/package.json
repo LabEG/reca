@@ -34,7 +34,7 @@
     "LICENSE"
   ],
   "dependencies": {
-    "first-di": "^3.4.9"
+    "first-di": "^3.4.10"
   },
   "peerDependencies": {
     "react": ">=16.0.0",
