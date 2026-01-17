@@ -9,7 +9,7 @@ on:
   push:
     branches: [ main ]
   schedule:
-    - cron: '0 12 * * 3'  # Every Wednesday at 12:00 UTC (3 hours after Dependabot runs at 09:00)
+    - cron: '0 12 3 1,4,7,10 *'  # 3rd day of Jan/Apr/Jul/Oct at 12:00 UTC (quarterly)
   workflow_dispatch:
 
 permissions:
