@@ -41,7 +41,7 @@
     "reflect-metadata": ">=0.1.0"
   },
   "devDependencies": {
-    "@testing-library/react": "^16.3.1",
+    "@testing-library/react": "^16.3.2",
     "@swc-node/register": "^1.11.1",
     "@types/chai": "^5.2.3",
     "@types/react": "^19.2.7",
