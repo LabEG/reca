@@ -12,7 +12,7 @@
   "dependencies": {
     "react": "^19",
     "react-dom": "^19",
-    "next": "^16.1.4",
+    "next": "^16.1.5",
     "reca": "^2.0.0"
   },
   "devDependencies": {
