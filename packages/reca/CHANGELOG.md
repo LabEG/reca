@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [2.4.8](https://github.com/LabEG/reca/compare/v2.0.22...v2.4.8) (2026-01-17)
+
+
+### Bug Fixes
+
+* update cron schedule for CodeQL and npm publish workflows ([5cfb6ba](https://github.com/LabEG/reca/commit/5cfb6ba92ad038278ac6a1c006fb56ad63daa298))
+
 ### [2.4.7](https://github.com/LabEG/reca/compare/v2.0.21...v2.4.7) (2026-01-14)
 
 ### [2.4.6](https://github.com/LabEG/reca/compare/v2.0.20...v2.4.6) (2026-01-07)
