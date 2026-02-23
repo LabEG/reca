@@ -1,160 +1,633 @@
 # Changelog
 
-All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
+All notable changes to this project will be documented in this file. See [cliff-jumper](https://github.com/favware/cliff-jumper) for commit guidelines.
 
-### [2.0.23](https://github.com/LabEG/reca/compare/v2.4.8...v2.0.23) (2026-01-17)
+## [2.0.23] - 2026-01-17
 
-### [2.0.22](https://github.com/LabEG/reca/compare/v2.4.7...v2.0.22) (2026-01-14)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.21](https://github.com/LabEG/reca/compare/v2.4.6...v2.0.21) (2026-01-07)
+- *(release)* 2.0.23
 
-### [2.0.20](https://github.com/LabEG/reca/compare/v2.4.5...v2.0.20) (2025-12-31)
+## [2.4.8] - 2026-01-17
 
-### [2.0.19](https://github.com/LabEG/reca/compare/v2.4.4...v2.0.19) (2025-12-24)
+### 🚜 Refactor
 
-### [2.0.18](https://github.com/LabEG/reca/compare/v2.4.3...v2.0.18) (2025-12-17)
+- Update testing setup to use ts-node and remove swc-node
 
-### [2.0.17](https://github.com/LabEG/reca/compare/v2.4.2...v2.0.17) (2025-12-14)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.16](https://github.com/LabEG/reca/compare/v2.4.1...v2.0.16) (2025-12-14)
+- *(release)* 2.4.8
 
-### [2.0.15](https://github.com/LabEG/reca/compare/v2.4.0...v2.0.15) (2025-12-14)
+## [2.0.22] - 2026-01-14
 
-### [2.0.14](https://github.com/LabEG/reca/compare/v2.3.8...v2.0.14) (2025-12-14)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.13](https://github.com/LabEG/reca/compare/v2.3.7...v2.0.13) (2025-12-14)
+- *(release)* 2.0.22
 
-### [2.0.12](https://github.com/LabEG/reca/compare/v2.3.6...v2.0.12) (2025-12-14)
+## [2.4.7] - 2026-01-14
 
-### [2.0.11](https://github.com/LabEG/reca/compare/v2.3.5...v2.0.11) (2025-12-14)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.10](https://github.com/LabEG/reca/compare/v2.3.4...v2.0.10) (2025-12-14)
+- *(deps)* Bump first-di in the all-minor-patch group (#12)
+- *(deps-dev)* Bump the development-dependencies group with 4 updates (#13)
+- *(release)* 2.4.7
 
-### [2.0.9](https://github.com/LabEG/reca/compare/v2.3.3...v2.0.9) (2025-12-14)
+## [2.0.21] - 2026-01-07
 
-### [2.0.8](https://github.com/LabEG/reca/compare/v2.3.2...v2.0.8) (2025-12-14)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.7](https://github.com/LabEG/reca/compare/v2.3.1...v2.0.7) (2025-12-14)
+- *(release)* 2.0.21
 
-### [2.0.6](https://github.com/LabEG/reca/compare/v2.3.0...v2.0.6) (2025-12-14)
+## [2.4.6] - 2026-01-07
 
-### [2.0.5](https://github.com/LabEG/reca/compare/v2.2.0...v2.0.5) (2025-04-10)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.4](https://github.com/LabEG/reca/compare/v2.1.3...v2.0.4) (2025-01-03)
+- *(deps)* Bump first-di in the all-minor-patch group (#10)
+- *(deps-dev)* Bump the development-dependencies group with 4 updates (#11)
+- *(release)* 2.4.6
 
-### [2.0.3](https://github.com/LabEG/reca/compare/v2.1.2...v2.0.3) (2025-01-03)
+## [2.0.20] - 2025-12-31
 
-### [2.0.2](https://github.com/LabEG/reca/compare/v2.1.1...v2.0.2) (2025-01-03)
+### ⚙️ Miscellaneous Tasks
 
-### [2.0.1](https://github.com/LabEG/reca/compare/v2.1.0...v2.0.1) (2025-01-03)
+- *(release)* 2.0.20
 
-### [1.1.13](https://github.com/LabEG/reca/compare/v1.1.12...v1.1.13) (2023-12-16)
+## [2.4.5] - 2025-12-31
 
-### [1.1.12](https://github.com/LabEG/reca/compare/v1.1.11...v1.1.12) (2023-12-16)
+### ⚙️ Miscellaneous Tasks
 
-### [1.1.11](https://github.com/LabEG/reca/compare/v1.1.10...v1.1.11) (2023-12-02)
+- *(deps)* Bump first-di in the all-minor-patch group (#8)
+- *(deps-dev)* Bump the development-dependencies group with 2 updates (#9)
+- *(release)* 2.4.5
 
-### [1.1.10](https://github.com/LabEG/reca/compare/v1.1.9...v1.1.10) (2023-12-02)
+## [2.0.19] - 2025-12-24
 
-### [1.1.9](https://github.com/LabEG/reca/compare/v1.1.8...v1.1.9) (2023-09-01)
+### ⚙️ Miscellaneous Tasks
 
-### [1.1.8](https://github.com/LabEG/reca/compare/v1.1.5...v1.1.8) (2023-07-14)
+- *(release)* 2.0.19
 
-### [1.1.7](https://github.com/LabEG/reca/compare/v1.1.6...v1.1.7) (2023-06-25)
+## [2.4.4] - 2025-12-24
 
-### [1.1.6](https://github.com/LabEG/reca/compare/v1.1.2...v1.1.6) (2023-06-25)
+### ⚙️ Miscellaneous Tasks
 
-### [1.1.5](https://github.com/LabEG/reca/compare/v1.1.4...v1.1.5) (2023-02-09)
+- *(deps)* Bump the all-minor-patch group with 2 updates (#6)
+- *(deps-dev)* Bump the development-dependencies group with 4 updates (#7)
+- *(release)* 2.4.4
 
-### [1.1.4](https://github.com/LabEG/reca/compare/v1.1.3...v1.1.4) (2023-02-09)
+## [2.0.18] - 2025-12-17
 
-### [1.1.3](https://github.com/LabEG/reca/compare/v1.1.2...v1.1.3) (2023-02-08)
+### ⚙️ Miscellaneous Tasks
 
-### [1.1.2](https://github.com/LabEG/reca/compare/v1.1.1...v1.1.2) (2022-12-10)
+- *(release)* 2.0.18
 
-### [1.1.1](https://github.com/LabEG/reca/compare/v1.1.0...v1.1.1) (2022-11-22)
+## [2.4.3] - 2025-12-17
 
-## [1.1.0](https://github.com/LabEG/reca/compare/v0.0.13...v1.1.0) (2022-11-22)
+### ⚙️ Miscellaneous Tasks
 
+- *(deps)* Bump first-di in the all-minor-patch group (#5)
+- *(release)* 2.4.3
 
-### Features
+## [2.0.17] - 2025-12-14
 
-* add support notAuto decorator for auto store properties ([7729767](https://github.com/LabEG/reca/commit/772976752da7f40cfc280d19554ea98db3fddd14))
+### ⚙️ Miscellaneous Tasks
 
+- *(release)* 2.0.17
 
-### Bug Fixes
+## [2.4.2] - 2025-12-14
 
-* exports decorators for module type ([78330cc](https://github.com/LabEG/reca/commit/78330ccb62451c199bc0688f312990f02a35592d))
+### 🐛 Bug Fixes
 
-### [0.0.13](https://github.com/LabEG/reca/compare/v0.0.12...v0.0.13) (2022-07-26)
+- Update cron schedule for CodeQL and npm publish workflows
 
+### ⚙️ Miscellaneous Tasks
 
-### Features
+- *(release)* 2.4.2
 
-* add notAuto and notRedraw decorators for auto store ([b14f3ea](https://github.com/LabEG/reca/commit/b14f3eae7b330fb244c1c72038dda041edb75f98))
+## [2.0.16] - 2025-12-14
 
-### [0.0.12](https://github.com/LabEG/reca/compare/v0.0.11...v0.0.12) (2022-07-13)
+### ⚙️ Miscellaneous Tasks
 
-### [0.0.11](https://github.com/LabEG/reca/compare/v0.0.10...v0.0.11) (2022-07-13)
+- *(release)* 2.0.16
 
+## [2.4.1] - 2025-12-14
 
-### Bug Fixes
+### 🚜 Refactor
 
-* props interface in params detection ([788afc3](https://github.com/LabEG/reca/commit/788afc3627f06b8b757a25b933e6db7585386c8d))
-* test for publishing ([8730a3d](https://github.com/LabEG/reca/commit/8730a3d9453addf8b437e42568a69778bc762b3c))
+- Remove "Why not Redux or Flux?" section and update comparison table
+- Remove Table of Contents section from README
 
-### [0.0.10](https://github.com/LabEG/reca/compare/v0.0.9...v0.0.10) (2022-07-01)
+### ⚙️ Miscellaneous Tasks
 
-### [0.0.9](https://github.com/LabEG/reca/compare/v0.0.8...v0.0.9) (2022-06-30)
+- *(release)* 2.4.1
 
+## [2.0.15] - 2025-12-14
 
-### Features
+### ⚙️ Miscellaneous Tasks
 
-* add performance unit test ([9e1e1fe](https://github.com/LabEG/reca/commit/9e1e1feab7e6924823dcafe5abd4d241c936ea93))
-* add support unit tests for nodejs engine, write unit test for sample todo component ([8937e1a](https://github.com/LabEG/reca/commit/8937e1a7ba7fcef95d70060737ab9be11bf3baa7))
+- *(release)* 2.0.15
 
-### [0.0.8](https://github.com/LabEG/reca/compare/v0.0.7...v0.0.8) (2022-06-15)
+## [2.4.0] - 2025-12-14
 
+### ⚙️ Miscellaneous Tasks
 
-### Features
+- *(release)* 2.4.0
 
-* complete autostore, add autostore tests, add propsUpdate livacycle method ([7930f4a](https://github.com/LabEG/reca/commit/7930f4a7f39e8560ea13598f5d442fcc52197b43))
+## [2.0.14] - 2025-12-14
 
-### [0.0.7](https://github.com/LabEG/reca/compare/v0.0.6...v0.0.7) (2022-05-29)
+### ⚙️ Miscellaneous Tasks
 
+- *(release)* 2.0.14
 
-### Bug Fixes
+## [2.3.8] - 2025-12-14
 
-* autostore self redraw ([5ce5a36](https://github.com/LabEG/reca/commit/5ce5a364f80b4c92b739577eaa2869bf7c804da4))
+### 🚀 Features
 
-### [0.0.6](https://github.com/LabEG/reca/compare/v0.0.5...v0.0.6) (2022-05-28)
+- Add README copying step to npm publish workflow
 
+### ⚙️ Miscellaneous Tasks
 
-### Features
+- *(release)* Bump version to 2.0.13 and 2.3.7
+- *(release)* 2.3.8
 
-* complete autostore ([72bd447](https://github.com/LabEG/reca/commit/72bd44744c535118e7516221168580aad9a78085))
-* fix build and publish new version ([4c7b67e](https://github.com/LabEG/reca/commit/4c7b67ec163a08ce6061b31463a14b8d24cdf109))
+## [2.0.13] - 2025-12-14
 
+### ⚙️ Miscellaneous Tasks
 
-### Bug Fixes
+- *(release)* 2.0.13
 
-* module import ([9c5ea11](https://github.com/LabEG/reca/commit/9c5ea11de04a8bbb0ab557547edab69a99384b87))
+## [2.3.7] - 2025-12-14
 
-### [0.0.5](https://github.com/LabEG/reca/compare/v0.0.4...v0.0.5) (2022-05-28)
+### 📚 Documentation
 
-### [0.0.4](https://github.com/LabEG/reca/compare/v0.0.3...v0.0.4) (2022-05-28)
+- Enhance README with detailed table of contents and comparison with other libraries
+- Update README to simplify section headings and improve clarity
 
+### ⚙️ Miscellaneous Tasks
 
-### Features
+- *(release)* 2.3.7
 
-* add support pass props in contructor ([c22c639](https://github.com/LabEG/reca/commit/c22c639d5b5f66394fc50baf9c32d6280e1da045))
-* begin making autostore ([c0dea00](https://github.com/LabEG/reca/commit/c0dea005e561dc1c2f661c7cc04de789281188b6))
-* replace enzyme by resct test library, update react to version 18 ([cca36a7](https://github.com/LabEG/reca/commit/cca36a76b8d0243d976c93181a8001f4947b3f67))
+## [2.0.12] - 2025-12-14
 
-### 0.0.3 (2022-05-11)
+### ⚙️ Miscellaneous Tasks
 
+- *(release)* 2.0.12
 
-### Bug Fixes
+## [2.3.6] - 2025-12-14
 
-* complete husky setup ([5f2bb1d](https://github.com/LabEG/reca/commit/5f2bb1d5b182b50b6fd4b4286946113d9af6bd38))
-* livecycle methods ([66889f8](https://github.com/LabEG/reca/commit/66889f81ca236efdec14dbb850533a1f6edd5b86))
+### 📚 Documentation
+
+- Update installation instructions and add setup guide for reflect-metadata
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.3.6
+
+## [2.0.11] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.11
+
+## [2.3.5] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.3.5
+
+## [2.0.10] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.10
+
+## [2.3.4] - 2025-12-14
+
+### 🐛 Bug Fixes
+
+- Update build status badge in README.md
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.3.4
+
+## [2.0.9] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.9
+
+## [2.3.3] - 2025-12-14
+
+### 🐛 Bug Fixes
+
+- Update README and package.json for accurate badge links and repository metadata
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.3.3
+
+## [2.0.8] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.8
+
+## [2.3.2] - 2025-12-14
+
+### 🐛 Bug Fixes
+
+- Simplify NPM publish command by removing unnecessary directory change
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.3.2
+
+## [2.0.7] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.7
+
+## [2.3.1] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- Update dependencies and improve upgrade script
+- *(release)* 2.3.1
+
+## [2.0.6] - 2025-12-14
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.6
+
+## [2.3.0] - 2025-12-14
+
+### 🐛 Bug Fixes
+
+- Reorder badges and improve README structure for clarity
+- Update badge order and remove duplicate Codacy badge in README
+- Update workflows and documentation to use 'main' branch instead of 'master'
+- Add test script to package.json for linting during testing
+- Remove dry-run build verification step from test workflow
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps)* Bump first-di in the all-minor-patch group
+- *(deps-dev)* Bump js-yaml from 4.1.0 to 4.1.1
+- *(deps-dev)* Bump glob from 11.0.1 to 11.1.0
+- *(deps)* Bump next from 15.3.0 to 15.4.10
+- *(release)* 2.3.0
+
+## [2.0.5] - 2025-04-10
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.5
+
+## [2.2.0] - 2025-04-10
+
+### 🚀 Features
+
+- Add issue templates for bug reports and feature requests, and implement security policy
+
+### 🐛 Bug Fixes
+
+- Correct files field in package.json to include necessary files
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.2.0
+
+## [2.0.4] - 2025-01-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.4
+
+## [2.1.3] - 2025-01-03
+
+### 🚀 Features
+
+- Update packages versions
+
+### 📚 Documentation
+
+- Update next.js configs to version 15
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.1.3
+
+## [2.0.3] - 2025-01-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.3
+
+## [2.1.2] - 2025-01-03
+
+### 🧪 Testing
+
+- Replace mocha by nodejs native test runner
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.1.2
+
+## [2.0.2] - 2025-01-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.2
+
+## [2.1.1] - 2025-01-03
+
+### ⚙️ Miscellaneous Tasks
+
+- Fix path for publication
+- *(release)* 2.1.1
+
+## [2.0.1] - 2025-01-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 2.0.1
+
+## [2.1.0] - 2025-01-03
+
+### 🚀 Features
+
+- Add support server side components
+- Update packages versions
+
+### 🚜 Refactor
+
+- Prepare structure of project for version 2
+- Update script for work in workspace
+- Prepare reca-docs for publishing on github pages
+- Prepare docs for publishing in github pages
+- Fix base path for docs
+- Rebuild with correct base path
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- *(release)* 2.0.1
+- Add build by github actions
+- Fix main branch name
+- Minor fixes
+- Setup publication to npm from action
+- *(release)* 2.1.0
+
+## [1.1.13] - 2023-12-16
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.13
+
+## [1.1.12] - 2023-12-16
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.12
+
+## [1.1.11] - 2023-12-02
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.11
+
+## [1.1.10] - 2023-12-02
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Update dependencies versions
+- Bump dependencies
+- Bump dependencies
+- *(release)* 1.1.10
+
+## [1.1.9] - 2023-09-01
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Updaye codestyle for new codetyleconfig
+- Bump dependencies
+- *(release)* 1.1.9
+
+## [1.1.8] - 2023-07-14
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.6
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.7
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.8
+
+## [1.1.5] - 2023-02-09
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.5
+
+## [1.1.4] - 2023-02-09
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.4
+
+## [1.1.3] - 2023-02-08
+
+### 📚 Documentation
+
+- Fix link in readme
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.3
+
+## [1.1.2] - 2022-12-10
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.2
+
+## [1.1.1] - 2022-11-22
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump version and publish to npm
+- Bump dependencies
+- *(release)* 1.1.1
+
+## [1.1.0] - 2022-11-22
+
+### 🚀 Features
+
+- Add support notAuto decorator for auto store properties
+
+### 🐛 Bug Fixes
+
+- Exports decorators for module type
+
+### 🚜 Refactor
+
+- Replace jest by mocha
+
+### ⚙️ Miscellaneous Tasks
+
+- Bump dependencies
+- Bump dependencies
+- *(release)* 1.1.0
+
+## [0.0.13] - 2022-07-26
+
+### 🚀 Features
+
+- Add notAuto and notRedraw decorators for auto store
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.13
+
+## [0.0.12] - 2022-07-13
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.12
+
+## [0.0.11] - 2022-07-13
+
+### 🐛 Bug Fixes
+
+- Props interface in params detection
+- Test for publishing
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.11
+
+## [0.0.10] - 2022-07-01
+
+### 📚 Documentation
+
+- Add code of conduct
+
+### ⚙️ Miscellaneous Tasks
+
+- Add readme license badge
+- Add codacy badge
+- Add npm badge
+- *(release)* 0.0.10
+
+## [0.0.9] - 2022-06-30
+
+### 🚀 Features
+
+- Add support unit tests for nodejs engine, write unit test for sample todo component
+- Add performance unit test
+
+### 📚 Documentation
+
+- Update readme
+- Complete readme sample for DI
+
+### 🧪 Testing
+
+- Write test for di readme sample
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.9
+
+## [0.0.8] - 2022-06-15
+
+### 🚀 Features
+
+- Complete autostore, add autostore tests, add propsUpdate livacycle method
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.8
+
+## [0.0.7] - 2022-05-29
+
+### 🐛 Bug Fixes
+
+- Autostore self redraw
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.7
+
+## [0.0.6] - 2022-05-28
+
+### 🚀 Features
+
+- Fix build and publish new version
+
+### 🐛 Bug Fixes
+
+- Module import
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.6
+
+## [0.0.5] - 2022-05-28
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.5
+
+## [0.0.4] - 2022-05-28
+
+### 🚀 Features
+
+- Add support pass props in contructor
+- Begin making autostore
+- Replace enzyme by resct test library, update react to version 18
+
+### 📚 Documentation
+
+- Update readme
+
+### ⚙️ Miscellaneous Tasks
+
+- Add release to prepublish script
+- Add wrappers for methods and properties in autostore
+- *(release)* 0.0.4
+
+## [0.0.3] - 2022-05-11
+
+### 🐛 Bug Fixes
+
+- Livecycle methods
+- Complete husky setup
+
+### ⚙️ Miscellaneous Tasks
+
+- *(release)* 0.0.3
+
+<!-- generated by git-cliff -->

@@ -11,7 +11,6 @@
     "test": "node --import ./register-ts-node.js --test --test-reporter=spec --test-reporter-destination=stdout \"tests/**/*.spec.tsx\"",
     "test-watch": "node --watch --import ./register-ts-node.js --test --test-reporter=spec --test-reporter-destination=stdout \"tests/**/*.spec.tsx\"",
     "coverage": "node --import ./register-ts-node.js --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info \"tests/**/*.spec.tsx\"",
-    "release": "standard-version",
     "prepublishOnly": "npm run test && npm run build"
   },
   "keywords": [
@@ -52,8 +51,6 @@
     "react-dom": "^19.2.3",
     "reflect-metadata": "^0.2.2",
     "rimraf": "^6.1.2",
-    "standard-version": "^9.5.0",
-        "ts-node": "^10.9.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

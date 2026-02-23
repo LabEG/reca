@@ -1,12 +1,14 @@
 {
   "name": "reca-workspace",
-  "version": "2.0.23",
+  "version": "2.4.8",
   "type": "module",
   "private": "true",
   "scripts": {
     "build": "npm run build -w packages/reca",
     "lint": "npm run lint -w packages/reca",
-    "release": "npm run release -w packages/reca && standard-version",
+    "release": "cliff-jumper -n reca -p . --tag-template \"v{{new-version}}\" && npm run sync-version && npm run sync-changelog",
+    "sync-version": "node scripts/sync-version.js",
+    "sync-changelog": "node scripts/sync-changelog.js",
     "test": "npm run lint -w packages/reca",
     "upgrade": "ncu -u -ws --root && rimraf -g -v **/node_modules **/package-lock.json && npm i",
     "prepare": "husky"
@@ -22,11 +24,11 @@
   "devDependencies": {
     "@commitlint/cli": "^20.4.1",
     "@commitlint/config-conventional": "^20.4.1",
+    "@favware/cliff-jumper": "^6.0.0",
     "@labeg/code-style": "^6.10.19",
     "husky": "^9.1.7",
     "lint-staged": "^16.2.7",
     "rimraf": "^6.1.2",
-    "standard-version": "^9.5.0",
     "npm-check-updates": "^19.3.2"
   }
 }
