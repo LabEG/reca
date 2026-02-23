@@ -8,9 +8,9 @@
     "build": "npm run clean && tsc --project tsconfig.build.json && node ./dist/index.js",
     "clean": "rimraf ./dist",
     "lint": "eslint --fix ./src/",
-    "test": "node --import ./ts-loader.js --test --test-reporter=spec --test-reporter-destination=stdout \"tests/**/*.spec.tsx\"",
-    "test-watch": "node --watch --import ./ts-loader.js --test --test-reporter=spec --test-reporter-destination=stdout \"tests/**/*.spec.tsx\"",
-    "coverage": "node --import ./ts-loader.js --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info \"tests/**/*.spec.tsx\"",
+    "test": "node --import ./register-ts-node.js --test --test-reporter=spec --test-reporter-destination=stdout \"tests/**/*.spec.tsx\"",
+    "test-watch": "node --watch --import ./register-ts-node.js --test --test-reporter=spec --test-reporter-destination=stdout \"tests/**/*.spec.tsx\"",
+    "coverage": "node --import ./register-ts-node.js --test --experimental-test-coverage --test-reporter=lcov --test-reporter-destination=coverage/lcov.info \"tests/**/*.spec.tsx\"",
     "release": "standard-version",
     "prepublishOnly": "npm run test && npm run build"
   },
@@ -42,7 +42,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.1",
-    "@swc-node/register": "^1.11.1",
+        "@swc/core": "^1.15.11",
     "@types/chai": "^5.2.3",
     "@types/react": "^19.2.7",
     "chai": "^6.2.2",
@@ -53,6 +53,7 @@
     "reflect-metadata": "^0.2.2",
     "rimraf": "^6.1.2",
     "standard-version": "^9.5.0",
+        "ts-node": "^10.9.2",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.3"
   }

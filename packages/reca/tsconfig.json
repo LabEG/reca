@@ -4,10 +4,17 @@
     "jsx": "react-jsx",
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
-    "noEmit": true
+    "noEmit": true,
+    "allowImportingTsExtensions": true
   },
   "include": [
     "./src/**/*",
     "./tests/**/*"
-  ]
+  ],
+    "ts-node": {
+        "esm": true,
+        "swc": true,
+        "experimentalResolver": true,
+        "experimentalSpecifierResolution": "node"
+    }
 }
