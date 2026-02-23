@@ -21,7 +21,7 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "rimraf": "^6.1.2",
-    "eslint": "^9",
+    "eslint": "^10",
     "eslint-config-next": "16.1.6"
   }
 }
