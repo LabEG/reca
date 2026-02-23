@@ -1,6 +1,6 @@
 {
   "name": "reca-docs",
-  "version": "2.4.8",
+  "version": "2.4.10",
   "private": true,
   "type": "module",
   "scripts": {
