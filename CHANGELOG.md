@@ -1,5 +1,18 @@
 # Changelog
 
+All notable changes to this project will be documented in this file.
+
+## [2.4.11] - 2026-02-23
+
+### ⚙️ Miscellaneous Tasks
+
+- Update package versions and release scripts
+- *(deps-dev)* Bump eslint in the eslint-plugins group (#23)
+- Remove outdated README copy step from npm publish workflow
+- Bump version to 2.4.10 in package.json files
+
+# Changelog
+
 All notable changes to this project will be documented in this file. See [cliff-jumper](https://github.com/favware/cliff-jumper) for commit guidelines.
 
 ## [2.4.8] - 2026-01-17
