@@ -25,10 +25,10 @@
     "@commitlint/cli": "^20.5.0",
     "@commitlint/config-conventional": "^20.5.0",
     "@favware/cliff-jumper": "^6.0.0",
-    "@labeg/code-style": "^6.10.19",
+    "@labeg/code-style": "^6.10.21",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "rimraf": "^6.1.2",
-    "npm-check-updates": "^20.0.0"
+    "npm-check-updates": "^20.0.1"
   }
 }
