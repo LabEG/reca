@@ -41,7 +41,7 @@
   },
   "devDependencies": {
     "@testing-library/react": "^16.3.2",
-    "@swc/core": "^1.15.24",
+    "@swc/core": "^1.15.26",
     "@types/chai": "^5.2.3",
     "@types/react": "^19.2.7",
     "chai": "^6.2.2",
