@@ -10,18 +10,18 @@
     "lint": "next lint --fix"
   },
   "dependencies": {
+    "next": "^16.2.3",
     "react": "^19",
     "react-dom": "^19",
-    "next": "^16.1.6",
     "reca": "^2.0.0"
   },
   "devDependencies": {
-    "typescript": "^5",
-    "@types/node": "^25",
+    "@types/node": "^25.6.0",
     "@types/react": "^19",
     "@types/react-dom": "^19",
+    "eslint": "^10.2.0",
+    "eslint-config-next": "16.2.3",
     "rimraf": "^6.1.2",
-    "eslint": "^10",
-    "eslint-config-next": "16.1.6"
+    "typescript": "^6"
   }
 }

@@ -22,13 +22,13 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^20.4.1",
-    "@commitlint/config-conventional": "^20.4.1",
-    "@favware/cliff-jumper": "^6.0.0",
-    "@labeg/code-style": "^6.10.19",
+    "@commitlint/cli": "^20.5.0",
+    "@commitlint/config-conventional": "^20.5.0",
+    "@favware/cliff-jumper": "^6.1.0",
+    "@labeg/code-style": "^6.10.21",
     "husky": "^9.1.7",
-    "lint-staged": "^16.2.7",
+    "lint-staged": "^16.4.0",
     "rimraf": "^6.1.2",
-    "npm-check-updates": "^19.3.2"
+    "npm-check-updates": "^21.0.0"
   }
 }
