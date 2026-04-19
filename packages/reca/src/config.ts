@@ -16,8 +16,8 @@ export class Config {
 
     // From https://gist.github.com/rhysburnie/498bfd98f24b7daf5fd5930c7f3c1b7b
 
-    // eslint-disable-next-line @typescript-eslint/prefer-optional-chain, @typescript-eslint/no-unnecessary-condition
-    public readonly isBrowser = !(typeof process !== "undefined" && process.versions && process.versions.node);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unsafe-member-access
+    public readonly isBrowser = !((globalThis as any).process?.versions?.node);
 
 }
 
