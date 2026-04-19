@@ -1,7 +1,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable max-lines-per-function */
 
-import type {ClassConstructor} from "first-di/dist/typings/class-constructor";
+import type {ClassConstructor} from "first-di/dist/typings/class-constructor.js";
 import * as React from "react";
 import {config} from "../config.js";
 import type {Store} from "../stores/Store.js";

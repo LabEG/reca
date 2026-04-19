@@ -1,4 +1,4 @@
-import type {ClassConstructor} from "first-di/dist/typings/class-constructor";
+import type {ClassConstructor} from "first-di/dist/typings/class-constructor.js";
 import {config} from "../config.js";
 import type {Store} from "../stores/Store.js";
 

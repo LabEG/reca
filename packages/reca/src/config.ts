@@ -1,7 +1,7 @@
 /* eslint-disable max-classes-per-file */
 
 import {resolve} from "first-di";
-import type {ClassConstructor} from "first-di/dist/typings/class-constructor";
+import type {ClassConstructor} from "first-di/dist/typings/class-constructor.js";
 
 export class DiConfig {
 
