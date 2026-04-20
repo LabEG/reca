@@ -56,7 +56,7 @@ export const Shell = ({children}: IShellProps): JSX.Element => {
         }
     };
 
-    const isActive = (path: string): boolean => pathname === path;
+    const isActive = (path: string): boolean => pathname === path || pathname === `${path}/`;
 
     const drawerContent = (
         <Box sx={{mt: "64px", overflowY: "auto", py: 1}}>

@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 320" fill="none">
+  <defs>
+    <linearGradient id="sAuto" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#66bb6a"/>
+      <stop offset="100%" stop-color="#43a047"/>
+    </linearGradient>
+    <linearGradient id="sManual" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42a5f5"/>
+      <stop offset="100%" stop-color="#1e88e5"/>
+    </linearGradient>
+    <filter id="sh" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <!-- AutoStore flow -->
+  <rect x="30" y="20" width="310" height="280" rx="14" fill="#f1f8e9" stroke="#c5e1a5" stroke-width="1.5"/>
+  <text x="185" y="48" text-anchor="middle" fill="#33691e" font-family="Inter,sans-serif" font-size="13" font-weight="700">AutoStore (Automatic)</text>
+
+  <rect x="60" y="70" width="250" height="40" rx="8" fill="url(#sAuto)" filter="url(#sh)"/>
+  <text x="185" y="95" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">1. Property mutated</text>
+
+  <path d="M185 110 L185 130" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="60" y="130" width="250" height="40" rx="8" fill="url(#sAuto)" filter="url(#sh)"/>
+  <text x="185" y="155" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">2. Proxy detects change</text>
+
+  <path d="M185 170 L185 190" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="60" y="190" width="250" height="40" rx="8" fill="url(#sAuto)" filter="url(#sh)"/>
+  <text x="185" y="215" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">3. setState() called automatically</text>
+
+  <path d="M185 230 L185 250" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="60" y="250" width="250" height="40" rx="8" fill="url(#sAuto)" filter="url(#sh)"/>
+  <text x="185" y="275" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">4. Component re-renders</text>
+
+  <!-- Store flow -->
+  <rect x="380" y="20" width="310" height="280" rx="14" fill="#e3f2fd" stroke="#90caf9" stroke-width="1.5"/>
+  <text x="535" y="48" text-anchor="middle" fill="#0d47a1" font-family="Inter,sans-serif" font-size="13" font-weight="700">Store (Manual)</text>
+
+  <rect x="410" y="70" width="250" height="40" rx="8" fill="url(#sManual)" filter="url(#sh)"/>
+  <text x="535" y="95" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">1. Property mutated</text>
+
+  <path d="M535 110 L535 130" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="410" y="130" width="250" height="40" rx="8" fill="url(#sManual)" filter="url(#sh)"/>
+  <text x="535" y="155" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">2. No automatic detection</text>
+
+  <path d="M535 170 L535 190" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="410" y="190" width="250" height="40" rx="8" fill="url(#sManual)" filter="url(#sh)"/>
+  <text x="535" y="215" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">3. Call this.redraw() manually</text>
+
+  <path d="M535 230 L535 250" stroke="#90a4ae" stroke-width="1.5" marker-end="url(#ad)"/>
+
+  <rect x="410" y="250" width="250" height="40" rx="8" fill="url(#sManual)" filter="url(#sh)"/>
+  <text x="535" y="275" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="12" font-weight="600">4. Component re-renders</text>
+
+  <defs>
+    <marker id="ad" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#90a4ae"/>
+    </marker>
+  </defs>
+</svg>

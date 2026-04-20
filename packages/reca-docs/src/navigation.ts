@@ -10,27 +10,46 @@ export interface INavGroup {
 
 export const navigation: INavGroup[] = [
     {
-        label: "Introduction",
+        label: "Getting Started",
         items: [
-            {label: "Overview", path: "/"},
-            {label: "Installation", path: "/installation"},
-            {label: "First Steps", path: "/first-steps"}
+            {label: "Introduction", path: "/getting-started/introduction"},
+            {label: "Installation", path: "/getting-started/installation"},
+            {label: "First Component", path: "/getting-started/first-component"}
         ]
     },
     {
-        label: "Fundamentals",
+        label: "Guides",
         items: [
-            {label: "AutoStore", path: "/auto-store"},
-            {label: "Store", path: "/store"},
-            {label: "Hooks", path: "/hooks"}
+            {label: "AutoStore Basics", path: "/guides/auto-store-basics"},
+            {label: "Todo Application", path: "/guides/todo-application"},
+            {label: "Services", path: "/guides/services"},
+            {label: "Repository Pattern", path: "/guides/repository"},
+            {label: "Using Interfaces", path: "/guides/interfaces"}
         ]
     },
     {
-        label: "Techniques",
+        label: "Architecture",
         items: [
-            {label: "Dependency Injection", path: "/dependency-injection"},
-            {label: "Decorators", path: "/decorators"},
-            {label: "SSR Support", path: "/ssr"}
+            {label: "Overview", path: "/architecture/overview"},
+            {label: "Store Layer", path: "/architecture/store-layer"},
+            {label: "Service Layer", path: "/architecture/service-layer"},
+            {label: "Repository Layer", path: "/architecture/repository-layer"},
+            {label: "References", path: "/architecture/references"}
+        ]
+    },
+    {
+        label: "Testing",
+        items: [
+            {label: "Testing with Jest", path: "/testing/jest"},
+            {label: "Testing with Mocha", path: "/testing/mocha"}
+        ]
+    },
+    {
+        label: "API",
+        items: [
+            {label: "AutoStore", path: "/api/auto-store"},
+            {label: "Store", path: "/api/store"},
+            {label: "Decorators", path: "/api/decorators"}
         ]
     }
 ];

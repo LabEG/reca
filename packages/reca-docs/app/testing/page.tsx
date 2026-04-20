@@ -1,7 +1,7 @@
 import {redirect} from "next/navigation";
 
 const Page = (): never => {
-    redirect("/getting-started/introduction");
+    redirect("/testing/jest");
 };
 
 export default Page;

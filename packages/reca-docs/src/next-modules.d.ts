@@ -34,4 +34,5 @@ declare module "next/navigation" {
     };
     export function useSearchParams(): URLSearchParams;
     export function useParams<T extends Record<string, string | string[]> = Record<string, string | string[]>>(): T;
+    export function redirect(url: string, type?: "replace" | "push"): never;
 }

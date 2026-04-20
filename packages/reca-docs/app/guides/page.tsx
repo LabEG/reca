@@ -1,7 +1,7 @@
 import {redirect} from "next/navigation";
 
 const Page = (): never => {
-    redirect("/getting-started/introduction");
+    redirect("/guides/auto-store-basics");
 };
 
 export default Page;

@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 220" fill="none">
+  <defs>
+    <filter id="s" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+    <marker id="ar" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#90a4ae"/>
+    </marker>
+  </defs>
+
+  <!-- Component -->
+  <rect x="20" y="80" width="120" height="60" rx="10" fill="#42a5f5" filter="url(#s)"/>
+  <text x="80" y="107" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="11" font-weight="600">Component</text>
+  <text x="80" y="123" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="9">useStore()</text>
+
+  <path d="M140 110 L175 110" stroke="#90a4ae" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- Store -->
+  <rect x="180" y="80" width="120" height="60" rx="10" fill="#66bb6a" filter="url(#s)"/>
+  <text x="240" y="107" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="11" font-weight="600">Store</text>
+  <text x="240" y="123" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="9">State + UI Logic</text>
+
+  <path d="M300 110 L335 110" stroke="#90a4ae" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- Service -->
+  <rect x="340" y="80" width="120" height="60" rx="10" fill="#ffa726" filter="url(#s)"/>
+  <text x="400" y="107" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="11" font-weight="600">Service</text>
+  <text x="400" y="123" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="9">Business Logic</text>
+
+  <path d="M460 110 L495 110" stroke="#90a4ae" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- Repository -->
+  <rect x="500" y="80" width="120" height="60" rx="10" fill="#ab47bc" filter="url(#s)"/>
+  <text x="560" y="107" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="11" font-weight="600">Repository</text>
+  <text x="560" y="123" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-family="Inter,sans-serif" font-size="9">Data Access</text>
+
+  <path d="M620 110 L655 110" stroke="#90a4ae" stroke-width="2" marker-end="url(#ar)"/>
+
+  <!-- API -->
+  <rect x="660" y="80" width="50" height="60" rx="10" fill="#78909c" filter="url(#s)"/>
+  <text x="685" y="115" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="10" font-weight="600">API</text>
+
+  <!-- Labels -->
+  <text x="360" y="30" text-anchor="middle" fill="#555" font-family="Inter,sans-serif" font-size="13" font-weight="700">Request Lifecycle</text>
+  <text x="360" y="50" text-anchor="middle" fill="#999" font-family="Inter,sans-serif" font-size="10">Data flows from Component through layers to external API</text>
+
+  <!-- DI annotation -->
+  <rect x="180" y="165" width="440" height="35" rx="8" fill="#fff3e0" stroke="#ffe0b2" stroke-width="1"/>
+  <text x="400" y="187" text-anchor="middle" fill="#e65100" font-family="Inter,sans-serif" font-size="10" font-weight="600">Dependencies injected via @reflection decorator &amp; constructor parameters</text>
+</svg>

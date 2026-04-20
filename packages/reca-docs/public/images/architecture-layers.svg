@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 400" fill="none">
+  <defs>
+    <linearGradient id="gComp" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#42a5f5"/>
+      <stop offset="100%" stop-color="#1e88e5"/>
+    </linearGradient>
+    <linearGradient id="gStore" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#66bb6a"/>
+      <stop offset="100%" stop-color="#43a047"/>
+    </linearGradient>
+    <linearGradient id="gService" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffa726"/>
+      <stop offset="100%" stop-color="#fb8c00"/>
+    </linearGradient>
+    <linearGradient id="gRepo" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ab47bc"/>
+      <stop offset="100%" stop-color="#8e24aa"/>
+    </linearGradient>
+    <filter id="shadow" x="-4%" y="-4%" width="108%" height="112%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.10"/>
+    </filter>
+  </defs>
+
+  <!-- Component Layer -->
+  <rect x="40" y="30" width="640" height="70" rx="12" fill="url(#gComp)" filter="url(#shadow)"/>
+  <text x="360" y="58" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="600">COMPONENT LAYER</text>
+  <text x="360" y="80" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="11">React Components &amp; Hooks (useStore, useClientStore)</text>
+
+  <!-- Arrow -->
+  <path d="M360 100 L360 130" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Store Layer -->
+  <rect x="40" y="130" width="640" height="70" rx="12" fill="url(#gStore)" filter="url(#shadow)"/>
+  <text x="360" y="158" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="600">STORE LAYER</text>
+  <text x="360" y="180" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="11">AutoStore / Store — State Management &amp; UI Logic</text>
+
+  <!-- Arrow -->
+  <path d="M360 200 L360 230" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Service Layer -->
+  <rect x="40" y="230" width="640" height="70" rx="12" fill="url(#gService)" filter="url(#shadow)"/>
+  <text x="360" y="258" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="600">SERVICE LAYER</text>
+  <text x="360" y="280" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="11">Business Logic, Validation, Data Transformation</text>
+
+  <!-- Arrow -->
+  <path d="M360 300 L360 330" stroke="#90a4ae" stroke-width="2" marker-end="url(#arrowDown)"/>
+
+  <!-- Repository Layer -->
+  <rect x="40" y="330" width="640" height="70" rx="12" fill="url(#gRepo)" filter="url(#shadow)"/>
+  <text x="360" y="358" text-anchor="middle" fill="#fff" font-family="Inter,sans-serif" font-size="14" font-weight="600">REPOSITORY LAYER</text>
+  <text x="360" y="380" text-anchor="middle" fill="rgba(255,255,255,0.8)" font-family="Inter,sans-serif" font-size="11">API Calls, Data Persistence, External Services</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowDown" markerWidth="10" markerHeight="7" refX="5" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#90a4ae"/>
+    </marker>
+  </defs>
+</svg>
