@@ -100,5 +100,59 @@ export const ArchitectureOverviewScreen = (): JSX.Element => (
             alt="AutoStore (automatic proxy-based) vs Store (manual emitChange) flow comparison"
             style={{width: "100%", maxWidth: 700, display: "block", margin: "24px auto"}}
         />
+
+        <h2>Store as a Modern Controller</h2>
+        <p>
+            If you have a background in MVC (Model–View–Controller), the Store concept will
+            feel familiar. In classic MVC, the <strong>Controller</strong> receives user input,
+            coordinates with the Model, and updates the View. ReCA&apos;s Store plays exactly
+            the same role:
+        </p>
+        <table>
+            <thead>
+                <tr>
+                    <th>MVC</th>
+                    <th>ReCA</th>
+                    <th>Responsibility</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr><td>View</td><td>Component</td><td>Renders UI, captures events</td></tr>
+                <tr><td>Controller</td><td>Store</td><td>Handles input, orchestrates logic, updates state</td></tr>
+                <tr><td>Model</td><td>Service + Repository</td><td>Business rules and data access</td></tr>
+            </tbody>
+        </table>
+        <p>
+            The Store inherits the Controller ideology but adapts it for the reactive
+            world: instead of imperatively updating the view, the store mutates state and the
+            view automatically re-renders.
+        </p>
+
+        <blockquote>
+            <p>
+                &quot;The Controller&apos;s job is to take the user&apos;s input and figure out what to
+                do with it.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 22</em>
+            </p>
+        </blockquote>
+
+        <h2>From the Literature</h2>
+        <blockquote>
+            <p>
+                &quot;Good architecture makes the system easy to understand, easy to develop,
+                easy to maintain, and easy to deploy. The ultimate goal is to minimize the
+                lifetime cost of the system and to maximize programmer productivity.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 15</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;The center of your application is not the database. It is not one or more
+                of the frameworks you may be using. The center of your application is the
+                use cases of your application.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 20</em>
+            </p>
+        </blockquote>
     </DocContent>
 );

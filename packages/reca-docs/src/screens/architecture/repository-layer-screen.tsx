@@ -154,5 +154,39 @@ export class UserLocalRepository {
             <li><strong>No business logic</strong> — repositories only fetch and persist data</li>
             <li><strong>Stateless</strong> — repositories should not hold state; use services for caching</li>
         </ul>
+
+        <h2>From the Literature</h2>
+        <blockquote>
+            <p>
+                &quot;A Repository mediates between the domain and data mapping layers using
+                a collection-like interface for accessing domain objects.&quot;
+                <br /><em>— Martin Fowler, Patterns of Enterprise Application Architecture (2002), Chapter 10</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;For each type of object that needs global access, create an object that
+                can provide the illusion of an in-memory collection of all objects of that
+                type... Provide repositories only for Aggregate roots that actually need
+                direct access.&quot;
+                <br /><em>— Eric Evans, Domain-Driven Design (2003), Chapter 6</em>
+            </p>
+        </blockquote>
+
+        <p>
+            In ReCA, each repository encapsulates one data source — an API endpoint, a
+            database table, or a storage mechanism. The service layer above never knows
+            <em>how</em> data is fetched — only that it can ask for it.
+        </p>
+
+        <blockquote>
+            <p>
+                &quot;The dependency between business rules and the database should be in the
+                form of an interface defined in the business rules and implemented by the
+                database layer.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 22</em>
+            </p>
+        </blockquote>
     </DocContent>
 );

@@ -171,5 +171,39 @@ public async handlePlaceOrder(): Promise<void> {
         ).rejects.toThrow("Insufficient stock");
     });
 });`}</code></pre>
+
+        <h2>From the Literature</h2>
+        <blockquote>
+            <p>
+                &quot;A Service Layer defines an application&apos;s boundary with a layer of
+                services that establishes a set of available operations and coordinates
+                the application&apos;s response in each operation.&quot;
+                <br /><em>— Martin Fowler, Patterns of Enterprise Application Architecture (2002), Chapter 9</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;Use cases are the business rules of the application. They are the most
+                essential business rules, the ones that make the application what it is.
+                The use cases encapsulate and implement all of the use cases of the system.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 20</em>
+            </p>
+        </blockquote>
+
+        <p>
+            In ReCA, services correspond to Martin&apos;s &quot;use cases&quot; — they encode
+            the specific business operations of your application. They are independent of
+            the UI framework, the database, and any external agency.
+        </p>
+
+        <blockquote>
+            <p>
+                &quot;Application services are the interface used by the outside world, where the
+                outside world can&apos;t communicate via our Entity objects directly, but it
+                can ask for Action to be executed.&quot;
+                <br /><em>— Eric Evans, Domain-Driven Design (2003), Chapter 5</em>
+            </p>
+        </blockquote>
     </DocContent>
 );

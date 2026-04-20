@@ -145,5 +145,64 @@ export class TimerStore extends AutoStore {
             <li>Use getters for computed/derived values</li>
             <li>Name methods after user intentions: <code>handleSubmit</code>, <code>toggleFilter</code></li>
         </ul>
+
+        <h2>Store = Modern Controller</h2>
+        <p>
+            The Store concept is a direct evolution of the <strong>Controller</strong> from the
+            MVC pattern. In Martin Fowler&apos;s words:
+        </p>
+
+        <blockquote>
+            <p>
+                &quot;The controller&apos;s job is to take the user&apos;s input and figure out
+                what to do with it... The input controller then picks the appropriate model
+                to deal with and the appropriate view to display the result.&quot;
+                <br /><em>— Martin Fowler, Patterns of Enterprise Application Architecture (2002), Chapter 14</em>
+            </p>
+        </blockquote>
+
+        <p>
+            ReCA&apos;s Store does exactly this: it receives user interactions from the component,
+            orchestrates calls to services, and mutates state so the view re-renders. The key
+            difference is that in MVC the controller imperatively tells the view to update,
+            while in ReCA the store simply changes its properties and the reactive proxy handles
+            the rest.
+        </p>
+
+        <blockquote>
+            <p>
+                &quot;A Presentation Model pulls the state and behavior of the view out into a
+                model class that is part of the presentation.&quot;
+                <br /><em>— Martin Fowler, &quot;Presentation Model&quot; (2004)</em>
+            </p>
+        </blockquote>
+
+        <p>
+            This is precisely what an AutoStore is — a Presentation Model that holds the
+            view&apos;s state and behavior in a standalone, testable class.
+        </p>
+
+        <h2>From the Literature</h2>
+        <blockquote>
+            <p>
+                &quot;Separate the user interface code into a view, which handles display and
+                user events, and a Presentation Model, which gathers state for the view
+                and manages the interaction.&quot;
+                <br /><em>— Martin Fowler, Patterns of Enterprise Application Architecture (2002)</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;The essence of a Microservice Architecture is to have each component
+                own its own data, its own logic, and be independently deployable.&quot;
+                <br /><em>— Sam Newman, Building Microservices (2015), Chapter 1</em>
+            </p>
+        </blockquote>
+        <p>
+            ReCA applies this microservice philosophy at the component level: each component
+            gets its own store instance (a &quot;microstore&quot;), owning its own state and
+            logic independently.
+        </p>
     </DocContent>
 );

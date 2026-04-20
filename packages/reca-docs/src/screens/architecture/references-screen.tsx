@@ -39,7 +39,85 @@ export const ReferencesScreen = (): JSX.Element => (
                 Software</em>. Addison-Wesley.
                 <br />Introduces Bounded Contexts, Aggregates, and the layered architecture approach.
             </li>
+            <li>
+                Newman, S. (2015). <em>Building Microservices: Designing Fine-Grained Systems</em>.
+                O&apos;Reilly Media.
+                <br />Principles of service isolation and independent deployability — applied
+                at the component level by ReCA&apos;s microstore pattern.
+            </li>
         </ul>
+
+        <h2>Key Excerpts</h2>
+
+        <blockquote>
+            <p>
+                &quot;The only way to go fast, is to go well.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017)</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;A Service Layer defines an application&apos;s boundary with a layer of
+                services that establishes a set of available operations and coordinates
+                the application&apos;s response in each operation.&quot;
+                <br /><em>— Martin Fowler, Patterns of Enterprise Application Architecture (2002), Chapter 9</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;A Repository mediates between the domain and data mapping layers using
+                a collection-like interface for accessing domain objects.&quot;
+                <br /><em>— Martin Fowler, Patterns of Enterprise Application Architecture (2002), Chapter 10</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;The center of your application is not the database. It is not one or more
+                of the frameworks you may be using. The center of your application is the
+                use cases of your application.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 20</em>
+            </p>
+        </blockquote>
+
+        <blockquote>
+            <p>
+                &quot;For each type of object that needs global access, create an object that
+                can provide the illusion of an in-memory collection of all objects of that
+                type.&quot;
+                <br /><em>— Eric Evans, Domain-Driven Design (2003), Chapter 6</em>
+            </p>
+        </blockquote>
+
+        <h2>Store and Controller: An Evolution</h2>
+        <p>
+            The MVC (Model–View–Controller) pattern, formalized by Trygve Reenskaug in 1979 and
+            popularized by the GoF book, defines a Controller as the component that &quot;receives
+            input and initiates a response by making calls on model objects.&quot;
+        </p>
+        <p>
+            ReCA&apos;s Store is a direct descendant of this idea. Like a Controller, the Store:
+        </p>
+        <ul>
+            <li>Receives user input from the view (component)</li>
+            <li>Decides what to do with it (orchestration)</li>
+            <li>Delegates to the model (services &amp; repositories)</li>
+            <li>Updates state so the view reflects the change</li>
+        </ul>
+        <p>
+            The difference is in the binding mechanism: MVC Controllers explicitly push updates
+            to Views, while ReCA Stores use reactive proxies — the view automatically reflects
+            state changes without imperative wiring.
+        </p>
+        <blockquote>
+            <p>
+                &quot;The Controller&apos;s job is to take the user&apos;s input and figure out what to
+                do with it.&quot;
+                <br /><em>— Robert C. Martin, Clean Architecture (2017), Chapter 22</em>
+            </p>
+        </blockquote>
 
         <h2>Academic Papers</h2>
         <ul>

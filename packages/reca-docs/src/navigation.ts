@@ -13,6 +13,7 @@ export const navigation: INavGroup[] = [
         label: "Getting Started",
         items: [
             {label: "Introduction", path: "/getting-started/introduction"},
+            {label: "Why ReCA", path: "/getting-started/why-reca"},
             {label: "Installation", path: "/getting-started/installation"},
             {label: "First Component", path: "/getting-started/first-component"}
         ]
