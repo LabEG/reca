@@ -15,12 +15,14 @@
     "@mui/icons-material": "^9.0.0",
     "@mui/material": "^9.0.0",
     "next": "^16.2.3",
+    "prismjs": "^1.30.0",
     "react": "^19",
     "react-dom": "^19",
     "reca": "^2.0.0"
   },
   "devDependencies": {
     "@types/node": "^25.6.0",
+    "@types/prismjs": "^1.26.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "eslint": "^10.2.0",

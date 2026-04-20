@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const DocContent = styled("article")`
+export const DocArticle = styled("article")`
     line-height: 1.8;
     color: #333;
     max-width: 820px;
@@ -57,6 +57,73 @@ export const DocContent = styled("article")`
             padding: 0;
             color: inherit;
             font-size: inherit;
+        }
+
+        .token.comment,
+        .token.prolog,
+        .token.doctype,
+        .token.cdata {
+            color: #6c7086;
+            font-style: italic;
+        }
+
+        .token.punctuation {
+            color: #bac2de;
+        }
+
+        .token.property,
+        .token.tag,
+        .token.boolean,
+        .token.number,
+        .token.constant,
+        .token.symbol {
+            color: #fab387;
+        }
+
+        .token.selector,
+        .token.attr-name,
+        .token.string,
+        .token.char,
+        .token.builtin {
+            color: #a6e3a1;
+        }
+
+        .token.operator,
+        .token.entity,
+        .token.url,
+        .language-css .token.string,
+        .style .token.string {
+            color: #89dceb;
+        }
+
+        .token.atrule,
+        .token.attr-value,
+        .token.keyword {
+            color: #cba6f7;
+        }
+
+        .token.function,
+        .token.class-name {
+            color: #89b4fa;
+        }
+
+        .token.regex,
+        .token.important,
+        .token.variable {
+            color: #f9e2af;
+        }
+
+        .token.important,
+        .token.bold {
+            font-weight: bold;
+        }
+
+        .token.italic {
+            font-style: italic;
+        }
+
+        .token.generic-method .token.function {
+            color: #89b4fa;
         }
     }
 
