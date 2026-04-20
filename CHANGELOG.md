@@ -2,6 +2,39 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.5.0] - 2026-04-19
+
+### 🚀 Features
+
+- Update TypeScript configurations for consistency
+
+### 🐛 Bug Fixes
+
+- Update isBrowser check for improved clarity and safety
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps-dev)* Bump eslint in the eslint-plugins group (#24)
+- *(deps-dev)* Bump minimatch from 3.1.3 to 3.1.5 (#25)
+- *(deps-dev)* Bump the development-dependencies group with 6 updates (#26)
+- *(deps-dev)* Bump eslint in the eslint-plugins group (#27)
+- *(deps)* Bump next from 16.1.6 to 16.1.7 (#28)
+- *(deps-dev)* Bump eslint-config-next in the eslint-plugins group (#29)
+- *(deps-dev)* Bump the development-dependencies group with 7 updates (#30)
+- *(deps-dev)* Bump flatted from 3.3.3 to 3.4.2 (#31)
+- *(deps)* Bump next in the all-minor-patch group (#32)
+- *(deps)* Bump picomatch from 4.0.3 to 4.0.4 (#34)
+- *(deps)* Bump lewagon/wait-on-check-action from 1.5.0 to 1.6.0 (#35)
+- *(deps-dev)* Bump the development-dependencies group across 1 directory with 4 updates (#36)
+- *(deps)* Bump lewagon/wait-on-check-action from 1.6.0 to 1.6.1 (#37)
+- *(deps)* Bump next in the all-minor-patch group (#38)
+- *(deps)* Bump next from 16.2.2 to 16.2.3 (#40)
+- *(deps-dev)* Bump the development-dependencies group across 1 directory with 5 updates (#41)
+- *(deps)* Bump dependabot/fetch-metadata from 2 to 3 (#43)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#44)
+- *(deps-dev)* Bump the development-dependencies group with 3 updates (#45)
+- Merge branches 'main' and 'main' of github.com:LabEG/reca
+
 ## [2.4.11] - 2026-02-23
 
 ### ⚙️ Miscellaneous Tasks
