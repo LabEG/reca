@@ -1,7 +1,6 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import {type JSX} from "react";
-import {StyledComponentsRegistry} from "../src/lib/styled-components-registry.js";
 import {ThemeRegistry} from "../src/components/theme-registry/theme-registry.js";
 
 export const metadata: Metadata = {
@@ -16,11 +15,9 @@ interface IRootLayout {
 const RootLayout = ({children}: IRootLayout): JSX.Element => (
     <html lang="en">
         <body>
-            <StyledComponentsRegistry>
-                <ThemeRegistry>
-                    {children}
-                </ThemeRegistry>
-            </StyledComponentsRegistry>
+            <ThemeRegistry>
+                {children}
+            </ThemeRegistry>
         </body>
     </html>
 );
