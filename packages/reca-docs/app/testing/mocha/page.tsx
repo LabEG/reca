@@ -1,6 +1,6 @@
 import {type JSX} from "react";
-import {Shell} from "../../../src/components/shell/shell";
-import {MochaTestingScreen} from "../../../src/screens/testing/mocha-screen";
+import {Shell} from "../../../src/components/shell/shell.js";
+import {MochaTestingScreen} from "../../../src/screens/testing/mocha-screen.js";
 
 const Page = (): JSX.Element => (
     <Shell>

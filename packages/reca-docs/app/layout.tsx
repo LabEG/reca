@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import {type JSX} from "react";
-import {ThemeRegistry} from "../src/components/theme-registry/theme-registry";
+import {ThemeRegistry} from "../src/components/theme-registry/theme-registry.js";
 
 export const metadata: Metadata = {
     title: "ReCA Documentation",

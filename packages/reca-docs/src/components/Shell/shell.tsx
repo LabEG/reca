@@ -21,8 +21,8 @@ import ExpandMore from "@mui/icons-material/ExpandMore";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import Link from "next/link";
 import {usePathname} from "next/navigation";
-import {type INavGroup, navigation} from "../../navigation";
-import {DRAWER_WIDTH, LogoWrapper, MainContent} from "./shell.styles";
+import {type INavGroup, navigation} from "../../navigation.js";
+import {DRAWER_WIDTH, LogoWrapper, MainContent} from "./shell.styles.js";
 
 interface IShellProps {
     readonly children: ReactNode;

@@ -1,6 +1,6 @@
 import {type JSX} from "react";
-import {Shell} from "../../../src/components/shell/shell";
-import {StoreLayerScreen} from "../../../src/screens/architecture/store-layer-screen";
+import {Shell} from "../../../src/components/shell/shell.js";
+import {StoreLayerScreen} from "../../../src/screens/architecture/store-layer-screen.js";
 
 const Page = (): JSX.Element => (
     <Shell>
