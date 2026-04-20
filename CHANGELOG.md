@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.7.0] - 2026-04-20
+
+### 🚀 Features
+
+- Add Shell component with responsive drawer and main content styling
+
+### 🚜 Refactor
+
+- Remove Shell component and associated styles
+
 ## [2.6.4] - 2026-04-20
 
 ### 🐛 Bug Fixes
