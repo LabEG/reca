@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.8.0] - 2026-04-20
+
+### 🚀 Features
+
+- Add Why ReCA screen and related SVG, update navigation
+
+### 📚 Documentation
+
+- Add documentation for Configuration API, Hooks API, and Component Communication
+
 ## [2.7.0] - 2026-04-20
 
 ### 🚀 Features
