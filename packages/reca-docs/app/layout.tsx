@@ -1,8 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import {type JSX} from "react";
-import {ThemeRegistry} from "../src/components/theme-registry/theme-registry.js";
-import {Shell} from "../src/components/shell/shell.js";
+import {ThemeRegistry} from "@/src/components/theme-registry/theme-registry.js";
 
 export const metadata: Metadata = {
     title: "ReCA Documentation",
@@ -17,9 +16,7 @@ const RootLayout = ({children}: IRootLayout): JSX.Element => (
     <html lang="en">
         <body>
             <ThemeRegistry>
-                <Shell>
-                    {children}
-                </Shell>
+                {children}
             </ThemeRegistry>
         </body>
     </html>
