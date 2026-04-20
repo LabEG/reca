@@ -2,6 +2,7 @@ import type {Metadata} from "next";
 import "./globals.css";
 import {type JSX} from "react";
 import {StyledComponentsRegistry} from "../src/lib/styled-components-registry.js";
+import {ThemeRegistry} from "../src/components/theme-registry/theme-registry.js";
 
 export const metadata: Metadata = {
     title: "ReCA Documentation",
@@ -16,7 +17,9 @@ const RootLayout = ({children}: IRootLayout): JSX.Element => (
     <html lang="en">
         <body>
             <StyledComponentsRegistry>
-                {children}
+                <ThemeRegistry>
+                    {children}
+                </ThemeRegistry>
             </StyledComponentsRegistry>
         </body>
     </html>

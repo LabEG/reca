@@ -19,17 +19,18 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ExpandLess from "@mui/icons-material/ExpandLess";
 import ExpandMore from "@mui/icons-material/ExpandMore";
 import GitHubIcon from "@mui/icons-material/GitHub";
+import Link from "next/link";
+import {usePathname} from "next/navigation";
 import {type INavGroup, navigation} from "../../navigation.js";
 import {DRAWER_WIDTH, LogoWrapper, MainContent} from "./shell.styles.js";
 
 interface IShellProps {
     readonly children: ReactNode;
-    readonly currentPath: string;
-    readonly onNavigate: (path: string) => void;
 }
 
-export const Shell = ({children, currentPath, onNavigate}: IShellProps): JSX.Element => {
+export const Shell = ({children}: IShellProps): JSX.Element => {
     const muiTheme = useTheme();
+    const pathname = usePathname();
     const isMobile = useMediaQuery(muiTheme.breakpoints.down("md"));
     const [mobileOpen, setMobileOpen] = useState(false);
     const [openSections, setOpenSections] = useState<Record<string, boolean>>(() => {
@@ -49,12 +50,13 @@ export const Shell = ({children, currentPath, onNavigate}: IShellProps): JSX.Ele
         setOpenSections((prev) => ({...prev, [label]: !prev[label]}));
     };
 
-    const handleNavigate = (path: string): void => {
-        onNavigate(path);
+    const handleMobileClose = (): void => {
         if (isMobile) {
             setMobileOpen(false);
         }
     };
+
+    const isActive = (path: string): boolean => pathname === path;
 
     const drawerContent = (
         <Box sx={{mt: "64px", overflowY: "auto", py: 1}}>
@@ -86,32 +88,33 @@ export const Shell = ({children, currentPath, onNavigate}: IShellProps): JSX.Ele
                         <Collapse in={openSections[group.label]} timeout="auto" unmountOnExit>
                             <List component="div" disablePadding>
                                 {group.items.map((item) => (
-                                    <ListItemButton
-                                        key={item.path}
-                                        onClick={() => handleNavigate(item.path)}
-                                        selected={currentPath === item.path}
-                                        sx={{
-                                            pl: 4,
-                                            py: 0.5,
-                                            "&.Mui-selected": {
-                                                backgroundColor: "rgba(25, 118, 210, 0.08)",
-                                                borderRight: "3px solid #1976d2",
-                                                "& .MuiListItemText-primary": {
-                                                    color: "#1976d2",
-                                                    fontWeight: 600
-                                                }
-                                            }
-                                        }}
-                                    >
-                                        <ListItemText
-                                            primary={item.label}
-                                            slotProps={{
-                                                primary: {
-                                                    sx: {fontSize: "0.9rem"}
+                                    <Link key={item.path} href={item.path} style={{textDecoration: "none", color: "inherit"}}>
+                                        <ListItemButton
+                                            onClick={handleMobileClose}
+                                            selected={isActive(item.path)}
+                                            sx={{
+                                                pl: 4,
+                                                py: 0.5,
+                                                "&.Mui-selected": {
+                                                    backgroundColor: "rgba(25, 118, 210, 0.08)",
+                                                    borderRight: "3px solid #1976d2",
+                                                    "& .MuiListItemText-primary": {
+                                                        color: "#1976d2",
+                                                        fontWeight: 600
+                                                    }
                                                 }
                                             }}
-                                        />
-                                    </ListItemButton>
+                                        >
+                                            <ListItemText
+                                                primary={item.label}
+                                                slotProps={{
+                                                    primary: {
+                                                        sx: {fontSize: "0.9rem"}
+                                                    }
+                                                }}
+                                            />
+                                        </ListItemButton>
+                                    </Link>
                                 ))}
                             </List>
                         </Collapse>
@@ -142,21 +145,23 @@ export const Shell = ({children, currentPath, onNavigate}: IShellProps): JSX.Ele
                             <MenuIcon />
                         </IconButton>
                     )}
-                    <LogoWrapper onClick={() => handleNavigate("overview")}>
-                        <Typography
-                            variant="h6"
-                            noWrap
-                            sx={{fontWeight: 800, color: "#1976d2"}}
-                        >
-                            ReCA
-                        </Typography>
-                        <Typography
-                            variant="body2"
-                            noWrap
-                            sx={{color: "#999", fontWeight: 400}}
-                        >
-                            Documentation
-                        </Typography>
+                    <LogoWrapper>
+                        <Link href="/" style={{display: "flex", alignItems: "center", gap: 10, textDecoration: "none"}}>
+                            <Typography
+                                variant="h6"
+                                noWrap
+                                sx={{fontWeight: 800, color: "#1976d2"}}
+                            >
+                                ReCA
+                            </Typography>
+                            <Typography
+                                variant="body2"
+                                noWrap
+                                sx={{color: "#999", fontWeight: 400}}
+                            >
+                                Documentation
+                            </Typography>
+                        </Link>
                     </LogoWrapper>
                     <Box sx={{flexGrow: 1}} />
                     <IconButton

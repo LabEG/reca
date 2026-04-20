@@ -1,6 +1,11 @@
 import {type JSX} from "react";
-import {App} from "../src/app.js";
+import {Shell} from "../src/components/shell/shell.js";
+import {IndexPage} from "../src/screens/index/index-page.js";
 
-const Page = (): JSX.Element => <App />;
+const Page = (): JSX.Element => (
+    <Shell>
+        <IndexPage />
+    </Shell>
+);
 
 export default Page;
