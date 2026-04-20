@@ -1,11 +1,6 @@
 import {type JSX} from "react";
-import {Shell} from "@/src/components/shell/shell.js";
 import {StoreLayerScreen} from "@/src/screens/architecture/store-layer-screen.js";
 
-const Page = (): JSX.Element => (
-    <Shell>
-        <StoreLayerScreen />
-    </Shell>
-);
+const Page = (): JSX.Element => <StoreLayerScreen />;
 
 export default Page;
