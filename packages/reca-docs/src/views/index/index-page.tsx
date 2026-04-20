@@ -2,7 +2,7 @@
 
 import {type JSX} from "react";
 import {Alert, Chip, Stack} from "@mui/material";
-import {DocContent} from "../../components/DocContent/DocContent.js";
+import {DocContent} from "../../components/doc-content/doc-content.js";
 
 export const IndexPage = (): JSX.Element => (
     <DocContent>

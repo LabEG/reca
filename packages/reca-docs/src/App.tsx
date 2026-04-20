@@ -4,12 +4,12 @@ import {type JSX, useCallback, useEffect, useState} from "react";
 import {ThemeProvider} from "@mui/material/styles";
 import CssBaseline from "@mui/material/CssBaseline";
 import {Typography} from "@mui/material";
-import {Shell} from "./components/Shell/Shell.js";
-import {DocContent} from "./components/DocContent/DocContent.js";
+import {Shell} from "./components/shell/shell.js";
+import {DocContent} from "./components/doc-content/doc-content.js";
 import {theme} from "./theme.js";
-import {IndexPage} from "./pagees/index/IndexPage.js";
-import {InstallationPage} from "./pagees/installation/InstallationPage.js";
-import {FirstStepsPage} from "./pagees/first-steps/FirstStepsPage.js";
+import {IndexPage} from "./views/index/index-page.js";
+import {InstallationPage} from "./views/installation/installation-page.js";
+import {FirstStepsPage} from "./views/first-steps/first-steps-page.js";
 
 const routes: Record<string, () => JSX.Element> = {
     "overview": IndexPage,

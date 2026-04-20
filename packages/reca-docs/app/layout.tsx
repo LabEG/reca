@@ -1,7 +1,7 @@
 import type {Metadata} from "next";
 import "./globals.css";
 import {type JSX} from "react";
-import {StyledComponentsRegistry} from "../src/lib/StyledComponentsRegistry.js";
+import {StyledComponentsRegistry} from "../src/lib/styled-components-registry.js";
 
 export const metadata: Metadata = {
     title: "ReCA Documentation",
