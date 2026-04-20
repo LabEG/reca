@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.6.3] - 2026-04-20
+
+### 🚜 Refactor
+
+- Update import paths to use relative imports for consistency
+
 ## [2.6.2] - 2026-04-20
 
 ### 🚜 Refactor
