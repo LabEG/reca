@@ -2,6 +2,20 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.6.0] - 2026-04-20
+
+### 🚀 Features
+
+- Refactor ReCA documentation site with new layout and components
+- Implement GitHub Pages deployment workflow and enhance documentation structure
+- Add new documentation pages and refactor layout components
+- Add comprehensive guides for AutoStore, Interfaces, Repository, Services, and Todo Application
+- Integrate Prism.js for syntax highlighting and update DocContent component
+
+### 🚜 Refactor
+
+- Remove unused styled-components registry and update styling imports
+
 ## [2.5.0] - 2026-04-19
 
 ### 🚀 Features
