@@ -2,7 +2,7 @@
 
 import {type JSX} from "react";
 import {Typography} from "@mui/material";
-import {DocContent} from "../../components/doc-content/doc-content.js";
+import {DocContent} from "../../components/doc-content/doc-content";
 
 export const PlaceholderPage = ({title}: {readonly title: string}): JSX.Element => (
     <DocContent>

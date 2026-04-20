@@ -1,6 +1,6 @@
 import {type JSX} from "react";
-import {Shell} from "../../../src/components/shell/shell.js";
-import {RepositoryScreen} from "../../../src/screens/guides/repository-screen.js";
+import {Shell} from "../../../src/components/shell/shell";
+import {RepositoryScreen} from "../../../src/screens/guides/repository-screen";
 
 const Page = (): JSX.Element => (
     <Shell>

@@ -1,7 +1,7 @@
 "use client";
 
 import {type JSX} from "react";
-import {DocContent} from "../../components/doc-content/doc-content.js";
+import {DocContent} from "../../components/doc-content/doc-content";
 
 export const MochaTestingScreen = (): JSX.Element => (
     <DocContent>

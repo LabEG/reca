@@ -3,13 +3,13 @@
 import {type JSX, useEffect, useRef} from "react";
 import Prism from "prismjs";
 
-import "prismjs/components/prism-typescript.js";
-import "prismjs/components/prism-jsx.js";
-import "prismjs/components/prism-tsx.js";
-import "prismjs/components/prism-json.js";
-import "prismjs/components/prism-bash.js";
-import "prismjs/components/prism-yaml.js";
-import {DocArticle} from "./doc-content.styles.js";
+import "prismjs/components/prism-typescript";
+import "prismjs/components/prism-jsx";
+import "prismjs/components/prism-tsx";
+import "prismjs/components/prism-json";
+import "prismjs/components/prism-bash";
+import "prismjs/components/prism-yaml";
+import {DocArticle} from "./doc-content.styles";
 
 const detectLanguage = (code: string): string => {
     const trimmed = code.trim();

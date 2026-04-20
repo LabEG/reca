@@ -1,6 +1,6 @@
 import {type JSX} from "react";
-import {Shell} from "../../../src/components/shell/shell.js";
-import {IntroductionScreen} from "../../../src/screens/getting-started/introduction-screen.js";
+import {Shell} from "../../../src/components/shell/shell";
+import {IntroductionScreen} from "../../../src/screens/getting-started/introduction-screen";
 
 const Page = (): JSX.Element => (
     <Shell>

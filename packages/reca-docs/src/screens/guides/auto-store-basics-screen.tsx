@@ -2,7 +2,7 @@
 
 import {type JSX} from "react";
 import {Alert} from "@mui/material";
-import {DocContent} from "../../components/doc-content/doc-content.js";
+import {DocContent} from "../../components/doc-content/doc-content";
 
 export const AutoStoreBasicsScreen = (): JSX.Element => (
     <DocContent>
