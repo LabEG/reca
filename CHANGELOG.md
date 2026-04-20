@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.6.4] - 2026-04-20
+
+### 🐛 Bug Fixes
+
+- Update Node.js version to latest in deploy workflow
+
 ## [2.6.3] - 2026-04-20
 
 ### 🚜 Refactor
