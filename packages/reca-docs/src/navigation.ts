@@ -23,9 +23,14 @@ export const navigation: INavGroup[] = [
         items: [
             {label: "AutoStore Basics", path: "/guides/auto-store-basics"},
             {label: "Todo Application", path: "/guides/todo-application"},
+            {label: "Lifecycle Methods", path: "/guides/lifecycle"},
+            {label: "Passing Props", path: "/guides/props"},
+            {label: "Dependency Injection", path: "/guides/dependency-injection"},
             {label: "Services", path: "/guides/services"},
             {label: "Repository Pattern", path: "/guides/repository"},
-            {label: "Using Interfaces", path: "/guides/interfaces"}
+            {label: "Using Interfaces", path: "/guides/interfaces"},
+            {label: "Component Communication", path: "/guides/component-communication"},
+            {label: "SSR & Next.js", path: "/guides/ssr"}
         ]
     },
     {
@@ -50,7 +55,17 @@ export const navigation: INavGroup[] = [
         items: [
             {label: "AutoStore", path: "/api/auto-store"},
             {label: "Store", path: "/api/store"},
-            {label: "Decorators", path: "/api/decorators"}
+            {label: "Hooks", path: "/api/hooks"},
+            {label: "Decorators", path: "/api/decorators"},
+            {label: "Configuration", path: "/api/configuration"}
+        ]
+    },
+    {
+        label: "Advanced",
+        items: [
+            {label: "Migration Guide", path: "/advanced/migration"},
+            {label: "Best Practices", path: "/advanced/best-practices"},
+            {label: "FAQ", path: "/advanced/faq"}
         ]
     }
 ];
