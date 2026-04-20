@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.6.2] - 2026-04-20
+
+### 🚜 Refactor
+
+- Simplify page components by removing Shell wrapper
+
 ## [2.6.1] - 2026-04-20
 
 ### 🚜 Refactor
