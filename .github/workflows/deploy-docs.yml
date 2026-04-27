@@ -33,7 +33,7 @@ jobs:
           BASE_PATH: /reca
           NEXT_PUBLIC_BASE_PATH: /reca
 
-      - uses: actions/upload-pages-artifact@v3
+      - uses: actions/upload-pages-artifact@v5
         with:
           path: packages/reca-docs/out
 
