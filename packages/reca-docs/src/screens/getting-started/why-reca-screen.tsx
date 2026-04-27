@@ -1,6 +1,7 @@
 "use client";
 
 import {type JSX} from "react";
+import Image from "next/image";
 import {Alert} from "@mui/material";
 import {DocContent} from "../../components/doc-content/doc-content.js";
 
@@ -14,10 +15,13 @@ export const WhyRecaScreen = (): JSX.Element => (
             is commonly known as <strong>spaghetti code</strong>.
         </p>
 
-        <img
+        <Image
             src="/images/why-reca.svg"
             alt="Spaghetti code transformed into clean layered architecture by ReCA"
-            style={{width: "100%", maxWidth: 800, display: "block", margin: "24px auto"}}
+            width={900}
+            height={400}
+            style={{width: "100%", height: "auto", display: "block", margin: "24px auto"}}
+            unoptimized
         />
 
         <p>
@@ -109,104 +113,271 @@ export const WhyRecaScreen = (): JSX.Element => (
 
         <h2>A Practical Example</h2>
         <p>
-            Consider a typical React component without any architecture:
+            Imagine a user profile page: load data, display it, allow inline editing,
+            validate input, save changes, show a success message. A typical React component
+            handling all of that ends up like this:
         </p>
 
-        <pre><code>{`// ❌ Everything mixed together
+        <pre><code>{`// ❌ A single component doing everything
 const UserProfile = () => {
-    const [user, setUser] = useState(null);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+    const [user, setUser]               = useState(null);
+    const [draft, setDraft]             = useState(null);
+    const [isEditing, setIsEditing]     = useState(false);
+    const [isSaving, setIsSaving]       = useState(false);
+    const [errors, setErrors]           = useState({});
+    const [successMsg, setSuccessMsg]   = useState("");
 
     useEffect(() => {
         fetch("/api/user/me")
             .then((r) => r.json())
-            .then((data) => {
-                if (!data.email.includes("@")) {
-                    setError("Invalid email");
-                }
-                setUser(data);
-            })
-            .catch((e) => setError(e.message))
-            .finally(() => setLoading(false));
+            .then((data) => setUser(data));
     }, []);
 
-    if (loading) return <Spinner />;
-    if (error) return <ErrorBanner message={error} />;
+    const validate = (data) => {
+        const errs = {};
+        if (!data.name.trim())          errs.name  = "Name is required";
+        if (!data.email.includes("@"))  errs.email = "Invalid email";
+        if (data.phone && !/^\+[\d\s]+$/.test(data.phone)) errs.phone = "Invalid phone";
+        return errs;
+    };
 
-    return (
-        <div style={{ padding: 20, maxWidth: 400 }}>
-            <h1>{user.name}</h1>
-            <p>{user.email}</p>
-        </div>
-    );
-};`}</code></pre>
-
-        <p>Now the same feature with ReCA:</p>
-
-        <pre><code>{`// ✅ Clean separation
-// repository — data access
-class UserRepository {
-    public async getCurrent(): Promise<IUser> {
-        const response = await fetch("/api/user/me");
-        return response.json();
-    }
-}
-
-// service — business logic
-class UserService {
-    constructor(private readonly repo: UserRepository) {}
-
-    public async getCurrentUser(): Promise<IUser> {
-        const user = await this.repo.getCurrent();
-        if (!user.email.includes("@")) {
-            throw new ValidationError("Invalid email");
-        }
-        return user;
-    }
-}
-
-// store — UI state
-class UserProfileStore extends AutoStore {
-    public user: IUser | null = null;
-    public isLoading: boolean = true;
-    public error: string | null = null;
-
-    constructor(private readonly userService: UserService) {
-        super();
-    }
-
-    public async init(): Promise<void> {
+    const handleSave = async () => {
+        const errs = validate(draft);
+        if (Object.keys(errs).length) { setErrors(errs); return; }
+        setIsSaving(true);
         try {
-            this.user = await this.userService.getCurrentUser();
-        } catch (e: any) {
-            this.error = e.message;
+            const res = await fetch("/api/user/me", {
+                method: "PUT",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(draft),
+            });
+            if (!res.ok) throw new Error("Server error");
+            setUser(await res.json());
+            setIsEditing(false);
+            setErrors({});
+            setSuccessMsg("Saved!");
+            setTimeout(() => setSuccessMsg(""), 3000);
+        } catch (e) {
+            setErrors({ general: e.message });
         } finally {
-            this.isLoading = false;
+            setIsSaving(false);
         }
-    }
-}
+    };
 
-// component — only rendering
-const UserProfile = () => {
-    const store = useStore(UserProfileStore);
-
-    if (store.isLoading) return <Spinner />;
-    if (store.error) return <ErrorBanner message={store.error} />;
-
+    if (!user) return <div>Loading...</div>;
     return (
-        <div>
-            <h1>{store.user?.name}</h1>
-            <p>{store.user?.email}</p>
+        <div style={{ padding: 20, maxWidth: 600 }}>
+            {successMsg && (
+                <div style={{ background: "#d4edda", padding: 10, marginBottom: 16 }}>
+                    {successMsg}
+                </div>
+            )}
+            {errors.general && (
+                <div style={{ background: "#f8d7da", padding: 10, marginBottom: 16 }}>
+                    {errors.general}
+                </div>
+            )}
+            {isEditing ? (
+                <div>
+                    <div>
+                        <label>Name</label>
+                        <input
+                            value={draft.name}
+                            onChange={(e) => setDraft({ ...draft, name: e.target.value })}
+                        />
+                        {errors.name && <span style={{ color: "red" }}>{errors.name}</span>}
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input
+                            value={draft.email}
+                            onChange={(e) => setDraft({ ...draft, email: e.target.value })}
+                        />
+                        {errors.email && <span style={{ color: "red" }}>{errors.email}</span>}
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <input
+                            value={draft.phone}
+                            onChange={(e) => setDraft({ ...draft, phone: e.target.value })}
+                        />
+                        {errors.phone && <span style={{ color: "red" }}>{errors.phone}</span>}
+                    </div>
+                    <button onClick={handleSave} disabled={isSaving}>
+                        {isSaving ? "Saving..." : "Save"}
+                    </button>
+                    <button onClick={() => { setIsEditing(false); setErrors({}); }}>
+                        Cancel
+                    </button>
+                </div>
+            ) : (
+                <div>
+                    <h1>{user.name}</h1>
+                    <p>{user.email}</p>
+                    <p>{user.phone}</p>
+                    <button onClick={() => { setDraft({ ...user }); setIsEditing(true); }}>
+                        Edit
+                    </button>
+                </div>
+            )}
         </div>
     );
 };`}</code></pre>
 
         <p>
-            More files? Yes. But each file is <strong>small, focused, and testable</strong>.
-            The repository can be mocked. The service can be tested without React. The store
-            can be tested without a DOM. And the component is just markup.
+            Six <code>useState</code> calls, business logic, validation, HTTP requests, and
+            rendering all woven together. You cannot test validation without rendering the
+            component. You cannot swap the HTTP client without touching the component.
+            Every new requirement adds another hook and more interleaving.
         </p>
+
+        <p>Now the same feature with ReCA — each layer does exactly one thing:</p>
+
+        <pre><code>{`// ✅ repository — data access only
+class UserRepository {
+    async getCurrent() {
+        return fetch("/api/user/me").then((r) => r.json());
+    }
+    async update(user) {
+        const res = await fetch("/api/user/me", {
+            method: "PUT",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify(user),
+        });
+        if (!res.ok) throw new Error("Server error");
+        return res.json();
+    }
+}
+
+// ✅ service — validation and business rules only (no React)
+class UserService {
+    constructor(repo) { this.repo = repo; }
+
+    async getUser()  { return this.repo.getCurrent(); }
+    async save(data) {
+        const errors = this.validate(data);
+        if (Object.keys(errors).length) throw { fields: errors };
+        return this.repo.update(data);
+    }
+
+    validate(data) {
+        const errors = {};
+        if (!data.name.trim())          errors.name  = "Name is required";
+        if (!data.email.includes("@"))  errors.email = "Invalid email";
+        if (data.phone && !/^\+[\d\s]+$/.test(data.phone)) errors.phone = "Invalid phone";
+        return errors;
+    }
+}
+
+// ✅ store — UI state only (no HTTP, no validation rules)
+class UserProfileStore extends AutoStore {
+    user       = null;
+    draft      = null;
+    isEditing  = false;
+    isSaving   = false;
+    errors     = {};
+    successMsg = "";
+
+    constructor(userService) { super(); this.userService = userService; }
+
+    async activate() {
+        this.user = await this.userService.getUser();
+    }
+
+    startEditing()  { this.draft = { ...this.user }; this.isEditing = true; }
+    cancelEditing() { this.draft = null; this.isEditing = false; this.errors = {}; }
+
+    async save() {
+        this.isSaving = true;
+        try {
+            this.user       = await this.userService.save(this.draft);
+            this.isEditing  = false;
+            this.successMsg = "Saved!";
+            setTimeout(() => { this.successMsg = ""; }, 3000);
+        } catch (e) {
+            this.errors = e.fields ?? { general: e.message };
+        } finally {
+            this.isSaving = false;
+        }
+    }
+}
+
+// ✅ component — markup only (no logic at all)
+const UserProfile = () => {
+    const store = useStore(UserProfileStore);
+
+    if (!store.user) return <div>Loading...</div>;
+    return (
+        <div style={{ padding: 20, maxWidth: 600 }}>
+            {store.successMsg && (
+                <div style={{ background: "#d4edda", padding: 10, marginBottom: 16 }}>
+                    {store.successMsg}
+                </div>
+            )}
+            {store.errors.general && (
+                <div style={{ background: "#f8d7da", padding: 10, marginBottom: 16 }}>
+                    {store.errors.general}
+                </div>
+            )}
+            {store.isEditing ? (
+                <div>
+                    <div>
+                        <label>Name</label>
+                        <input
+                            value={store.draft.name}
+                            onChange={(e) => { store.draft = { ...store.draft, name: e.target.value }; }}
+                        />
+                        {store.errors.name && <span style={{ color: "red" }}>{store.errors.name}</span>}
+                    </div>
+                    <div>
+                        <label>Email</label>
+                        <input
+                            value={store.draft.email}
+                            onChange={(e) => { store.draft = { ...store.draft, email: e.target.value }; }}
+                        />
+                        {store.errors.email && <span style={{ color: "red" }}>{store.errors.email}</span>}
+                    </div>
+                    <div>
+                        <label>Phone</label>
+                        <input
+                            value={store.draft.phone}
+                            onChange={(e) => { store.draft = { ...store.draft, phone: e.target.value }; }}
+                        />
+                        {store.errors.phone && <span style={{ color: "red" }}>{store.errors.phone}</span>}
+                    </div>
+                    <button onClick={() => store.save()} disabled={store.isSaving}>
+                        {store.isSaving ? "Saving..." : "Save"}
+                    </button>
+                    <button onClick={() => store.cancelEditing()}>
+                        Cancel
+                    </button>
+                </div>
+            ) : (
+                <div>
+                    <h1>{store.user.name}</h1>
+                    <p>{store.user.email}</p>
+                    <p>{store.user.phone}</p>
+                    <button onClick={() => store.startEditing()}>
+                        Edit
+                    </button>
+                </div>
+            )}
+        </div>
+    );
+};`}</code></pre>
+
+        <p>
+            Identical features, identical JSX — but now each file has a single job.
+            The component knows nothing about HTTP or validation. The service knows nothing
+            about React. The repository knows nothing about business rules.
+            Every layer can be tested in complete isolation.
+        </p>
+        <ul>
+            <li><strong>Validation rules</strong> — test <code>userService.validate()</code> with plain objects, no React needed</li>
+            <li><strong>Business logic</strong> — mock <code>UserRepository</code>, test <code>UserService</code> without a server</li>
+            <li><strong>UI state transitions</strong> — test the store by calling methods and asserting properties</li>
+            <li><strong>Component</strong> — only needs a fake store; never touches HTTP or timers</li>
+        </ul>
 
         <h2>The Bottom Line</h2>
         <blockquote>

@@ -22,6 +22,23 @@ declare module "next/link" {
     export default Link;
 }
 
+declare module "next/image" {
+    import type React from "react";
+
+    interface ImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
+        src: string;
+        width: number;
+        height: number;
+        alt: string;
+        unoptimized?: boolean;
+        priority?: boolean;
+        fill?: boolean;
+    }
+
+    const Image: React.FC<ImageProps>;
+    export default Image;
+}
+
 declare module "next/navigation" {
     export function usePathname(): string;
     export function useRouter(): {
