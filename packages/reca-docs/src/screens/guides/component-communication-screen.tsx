@@ -8,28 +8,24 @@ export const ComponentCommunicationScreen = (): JSX.Element => (
     <DocContent>
         <h1>Component Communication</h1>
         <p>
-            When two components are far apart in the tree — for example a header and
-            a settings panel — passing data through props becomes impractical. ReCA
+            When two components are far apart in the tree — for example a form deep in the
+            page and a header at the top — passing data through props becomes impractical. ReCA
             solves this with a <strong>shared service</strong> that acts as a message bus
             using the EventEmitter pattern.
         </p>
 
         <h2>The Problem</h2>
         <p>
-            Imagine a <code>Toolbar</code> at the top of the page and a <code>Canvas</code>
-            deep inside a tab layout. They have no common parent that can hold shared state
+            Imagine an <code>AppHeader</code> at the top of the page and a <code>ProfileForm</code>
+            deep in the content area. They have no common parent that can hold shared state
             without prop-drilling through dozens of intermediate components:
         </p>
         <pre><code>{`<App>
-  <Header>
-    <Toolbar />          ← sends "clear canvas" command
-  </Header>
+  <AppHeader />          ← shows user's name
   <Main>
-    <TabLayout>
-      <Tab>
-        <Canvas />       ← receives the command
-      </Tab>
-    </TabLayout>
+    <ProfilePage>
+      <ProfileForm />    ← user types their name
+    </ProfilePage>
   </Main>
 </App>`}</code></pre>
 
@@ -40,34 +36,28 @@ export const ComponentCommunicationScreen = (): JSX.Element => (
         </p>
 
         <h3>Step 1 — Define Events</h3>
-        <pre><code>{`// events/canvas-events.ts
-export enum CanvasEvent {
-    Clear = "clear",
-    Undo = "undo",
-    ZoomChanged = "zoom-changed",
-    SelectionChanged = "selection-changed",
+        <pre><code>{`// events/user-events.ts
+export enum UserEvent {
+    NameChanged = "name-changed",
 }
 
-export interface ICanvasEvents {
-    [CanvasEvent.Clear]: void;
-    [CanvasEvent.Undo]: void;
-    [CanvasEvent.ZoomChanged]: number;
-    [CanvasEvent.SelectionChanged]: string[];
+export interface IUserEvents {
+    [UserEvent.NameChanged]: string;
 }`}</code></pre>
 
         <h3>Step 2 — Create the Event Service</h3>
         <p>
             A lightweight typed EventEmitter. No external libraries required:
         </p>
-        <pre><code>{`// services/canvas-event.service.ts
+        <pre><code>{`// services/user-event.service.ts
 type Listener<T> = (data: T) => void;
 
-export class CanvasEventService {
+export class UserEventService {
     private readonly listeners = new Map<string, Set<Listener<any>>>();
 
-    public on<K extends keyof ICanvasEvents>(
+    public on<K extends keyof IUserEvents>(
         event: K,
-        listener: Listener<ICanvasEvents[K]>,
+        listener: Listener<IUserEvents[K]>,
     ): void {
         if (!this.listeners.has(event)) {
             this.listeners.set(event, new Set());
@@ -75,16 +65,16 @@ export class CanvasEventService {
         this.listeners.get(event)!.add(listener);
     }
 
-    public off<K extends keyof ICanvasEvents>(
+    public off<K extends keyof IUserEvents>(
         event: K,
-        listener: Listener<ICanvasEvents[K]>,
+        listener: Listener<IUserEvents[K]>,
     ): void {
         this.listeners.get(event)?.delete(listener);
     }
 
-    public emit<K extends keyof ICanvasEvents>(
+    public emit<K extends keyof IUserEvents>(
         event: K,
-        ...args: ICanvasEvents[K] extends void ? [] : [ICanvasEvents[K]]
+        ...args: IUserEvents[K] extends void ? [] : [IUserEvents[K]]
     ): void {
         const set = this.listeners.get(event);
         if (set) {
@@ -96,76 +86,55 @@ export class CanvasEventService {
 }`}</code></pre>
 
         <Alert severity="info" sx={{my: 2}}>
-            The service is a singleton — DI guarantees that <code>ToolbarStore</code>
-            and <code>CanvasStore</code> receive the <strong>same instance</strong>.
+            The service is a singleton — DI guarantees that <code>ProfileStore</code>
+            and <code>HeaderStore</code> receive the <strong>same instance</strong>.
         </Alert>
 
-        <h3>Step 3 — Sender Store (Toolbar)</h3>
-        <pre><code>{`// stores/toolbar.store.ts
+        <h3>Step 3 — Sender Store (Profile)</h3>
+        <pre><code>{`// stores/profile.store.ts
 import { AutoStore } from "reca";
-import { CanvasEventService } from "../services/canvas-event.service";
-import { CanvasEvent } from "../events/canvas-events";
+import { UserEventService } from "../services/user-event.service";
+import { UserEvent } from "../events/user-events";
 
-export class ToolbarStore extends AutoStore {
-    public zoom: number = 100;
+export class ProfileStore extends AutoStore {
+    public name: string = "";
 
-    constructor(private readonly canvasEvents: CanvasEventService) {
+    constructor(private readonly userEvents: UserEventService) {
         super();
     }
 
-    public clear(): void {
-        this.canvasEvents.emit(CanvasEvent.Clear);
-    }
-
-    public undo(): void {
-        this.canvasEvents.emit(CanvasEvent.Undo);
-    }
-
-    public setZoom(value: number): void {
-        this.zoom = value;
-        this.canvasEvents.emit(CanvasEvent.ZoomChanged, value);
+    public setName(value: string): void {
+        this.name = value;
+        this.userEvents.emit(UserEvent.NameChanged, value);
     }
 }`}</code></pre>
 
-        <h3>Step 4 — Receiver Store (Canvas)</h3>
-        <pre><code>{`// stores/canvas.store.ts
+        <h3>Step 4 — Receiver Store (Header)</h3>
+        <pre><code>{`// stores/header.store.ts
 import { AutoStore, notAuto } from "reca";
-import { CanvasEventService } from "../services/canvas-event.service";
-import { CanvasEvent } from "../events/canvas-events";
+import { UserEventService } from "../services/user-event.service";
+import { UserEvent } from "../events/user-events";
 
-export class CanvasStore extends AutoStore {
-    public items: ICanvasItem[] = [];
-    public zoom: number = 100;
+export class HeaderStore extends AutoStore {
+    public userName: string = "Guest";
 
-    @notAuto()
-    private readonly onClear = (): void => {
-        this.items = [];
-    };
+    // Stable reference used only for subscribe / unsubscribe
+    private readonly onNameChanged = (name: string) => this.handleNameChanged(name);
 
-    @notAuto()
-    private readonly onUndo = (): void => {
-        this.items = this.items.slice(0, -1);
-    };
-
-    @notAuto()
-    private readonly onZoomChanged = (value: number): void => {
-        this.zoom = value;
-    };
-
-    constructor(private readonly canvasEvents: CanvasEventService) {
+    constructor(private readonly userEvents: UserEventService) {
         super();
     }
 
+    private handleNameChanged(name: string): void {
+        this.userName = name || "Guest";
+    }
+
     public activate(): void {
-        this.canvasEvents.on(CanvasEvent.Clear, this.onClear);
-        this.canvasEvents.on(CanvasEvent.Undo, this.onUndo);
-        this.canvasEvents.on(CanvasEvent.ZoomChanged, this.onZoomChanged);
+        this.userEvents.on(UserEvent.NameChanged, this.onNameChanged);
     }
 
     public dispose(): void {
-        this.canvasEvents.off(CanvasEvent.Clear, this.onClear);
-        this.canvasEvents.off(CanvasEvent.Undo, this.onUndo);
-        this.canvasEvents.off(CanvasEvent.ZoomChanged, this.onZoomChanged);
+        this.userEvents.off(UserEvent.NameChanged, this.onNameChanged);
     }
 }`}</code></pre>
 
@@ -175,87 +144,89 @@ export class CanvasStore extends AutoStore {
         </Alert>
 
         <h3>Step 5 — Components</h3>
-        <pre><code>{`// components/Toolbar.tsx
+        <pre><code>{`// components/ProfileForm.tsx
 import { useStore } from "reca";
-import { ToolbarStore } from "../stores/toolbar.store";
+import { ProfileStore } from "../stores/profile.store";
 
-export const Toolbar = () => {
-    const store = useStore(ToolbarStore);
+export const ProfileForm = () => {
+    const store = useStore(ProfileStore);
 
     return (
         <div>
-            <button onClick={() => store.clear()}>Clear</button>
-            <button onClick={() => store.undo()}>Undo</button>
+            <label>Full Name</label>
             <input
-                type="range"
-                min={10}
-                max={200}
-                value={store.zoom}
-                onChange={(e) => store.setZoom(Number(e.target.value))}
+                value={store.name}
+                onChange={(e) => store.setName(e.target.value)}
+                placeholder="Enter your name..."
             />
         </div>
     );
 };
 
-// components/Canvas.tsx
+// components/AppHeader.tsx
 import { useStore } from "reca";
-import { CanvasStore } from "../stores/canvas.store";
+import { HeaderStore } from "../stores/header.store";
 
-export const Canvas = () => {
-    const store = useStore(CanvasStore);
+export const AppHeader = () => {
+    const store = useStore(HeaderStore);
 
     return (
-        <div style={{ zoom: \`\${store.zoom}%\` }}>
-            {store.items.map((item) => (
-                <div key={item.id}>{item.content}</div>
-            ))}
-        </div>
+        <header>
+            <span>Welcome, {store.userName}!</span>
+        </header>
     );
 };`}</code></pre>
 
         <h2>How It Works</h2>
-        <pre><code>{`Toolbar                          Canvas
+        <pre><code>{`ProfileForm                      AppHeader
    │                                │
-   │  store.clear()                 │
+   │  store.setName("Alice")        │
    │      │                         │
    │      ▼                         │
-   │  CanvasEventService            │
+   │  UserEventService              │
    │  (DI singleton)                │
    │      │                         │
-   │      │  emit("clear")          │
+   │      │  emit("name-changed")   │
    │      │─────────────────────────▶
-   │                           onClear()
-   │                           items = []
+   │                           onNameChanged("Alice")
+   │                           userName = "Alice"
    │                           redraw ✓`}</code></pre>
 
         <h2>Two-Way Communication</h2>
         <p>
-            Communication can go both ways. The canvas can notify the toolbar
-            about selection changes:
+            Communication can go both ways. The header can have a &quot;Sign out&quot; button
+            that resets the name everywhere:
         </p>
-        <pre><code>{`// In CanvasStore — emit when selection changes
-public selectItem(id: string): void {
-    this.selectedIds = [...this.selectedIds, id];
-    this.canvasEvents.emit(CanvasEvent.SelectionChanged, this.selectedIds);
+        <pre><code>{`// Add a new event
+export enum UserEvent {
+    NameChanged = "name-changed",
+    SignedOut   = "signed-out",      // ← new
 }
 
-// In ToolbarStore — react to selection
+export interface IUserEvents {
+    [UserEvent.NameChanged]: string;
+    [UserEvent.SignedOut]: void;      // ← new
+}
+
+// In HeaderStore — emit on sign out
+public signOut(): void {
+    this.userName = "Guest";
+    this.userEvents.emit(UserEvent.SignedOut);
+}
+
+// In ProfileStore — react to sign out
+private handleSignedOut(): void {
+    this.name = "";
+}
+
+private readonly onSignedOut = () => this.handleSignedOut();
+
 public activate(): void {
-    this.canvasEvents.on(
-        CanvasEvent.SelectionChanged,
-        this.onSelectionChanged,
-    );
+    this.userEvents.on(UserEvent.SignedOut, this.onSignedOut);
 }
-
-private readonly onSelectionChanged = (ids: string[]): void => {
-    this.hasSelection = ids.length > 0;
-};
 
 public dispose(): void {
-    this.canvasEvents.off(
-        CanvasEvent.SelectionChanged,
-        this.onSelectionChanged,
-    );
+    this.userEvents.off(UserEvent.SignedOut, this.onSignedOut);
 }`}</code></pre>
 
         <h2>Generic EventBus Service</h2>
@@ -303,7 +274,7 @@ export class CartBus extends EventBus<ICartEvents> {}`}</code></pre>
 
         <h2>Best Practices</h2>
         <ul>
-            <li>Use <strong>arrow function</strong> handlers (<code>private readonly onX = () =&gt;</code>) to avoid <code>this</code> binding issues</li>
+            <li>Put logic in a regular <strong>method</strong> (<code>private handleX()</code>) and keep a thin arrow property as a stable reference: <code>private readonly onX = () =&gt; this.handleX()</code></li>
             <li>Mark handlers with <code>@notAuto()</code> — they are implementation details, not state</li>
             <li>Subscribe in <code>activate()</code>, unsubscribe in <code>dispose()</code> — always</li>
             <li>Use <strong>enums</strong> for event names to avoid typos and enable auto-complete</li>

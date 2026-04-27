@@ -21,27 +21,20 @@ export const FirstComponentScreen = (): JSX.Element => (
 
         <pre><code>{`// stores/todo.store.ts
 import { AutoStore } from "reca";
-import type { FormEvent } from "react";
 
 export class TodoStore extends AutoStore {
+    currentTodo = "";
+    todos: string[] = [];
 
-    public currentTodo: string = "";
-
-    public todos: string[] = [];
-
-    public handleAddTodo(): void {
+    addTodo() {
         if (this.currentTodo.trim()) {
             this.todos.push(this.currentTodo.trim());
             this.currentTodo = "";
         }
     }
 
-    public handleDeleteTodo(index: number): void {
+    deleteTodo(index: number) {
         this.todos.splice(index, 1);
-    }
-
-    public handleCurrentEdit(event: FormEvent<HTMLInputElement>): void {
-        this.currentTodo = event.currentTarget.value;
     }
 }`}</code></pre>
 
@@ -70,7 +63,7 @@ export const TodoComponent = () => {
                 {store.todos.map((todo, index) => (
                     <div key={index}>
                         <span>{todo}</span>
-                        <button onClick={() => store.handleDeleteTodo(index)}>
+                        <button onClick={() => store.deleteTodo(index)}>
                             Delete
                         </button>
                     </div>
@@ -80,10 +73,10 @@ export const TodoComponent = () => {
             <div>
                 <input
                     value={store.currentTodo}
-                    onInput={store.handleCurrentEdit}
+                    onChange={(e) => { store.currentTodo = e.target.value; }}
                     placeholder="Enter a todo..."
                 />
-                <button onClick={store.handleAddTodo}>
+                <button onClick={() => store.addTodo()}>
                     Add
                 </button>
             </div>
@@ -96,7 +89,7 @@ export const TodoComponent = () => {
             <li><code>useStore(TodoStore)</code> creates a new instance of <code>TodoStore</code> scoped to this component</li>
             <li>The store instance is wrapped with a <code>Proxy</code> that detects property mutations</li>
             <li>When <code>todos</code> or <code>currentTodo</code> changes, React automatically re-renders the component</li>
-            <li>Methods like <code>handleAddTodo</code> are called directly — no dispatching needed</li>
+            <li>Store properties can be mutated directly (<code>store.currentTodo = ...</code>) or via methods like <code>addTodo()</code></li>
         </ol>
 
         <blockquote>

@@ -30,6 +30,8 @@ export const navigation: INavGroup[] = [
             {label: "Repository Pattern", path: "/guides/repository"},
             {label: "Using Interfaces", path: "/guides/interfaces"},
             {label: "Component Communication", path: "/guides/component-communication"},
+            {label: "Manual Store", path: "/guides/manual-store"},
+            {label: "Custom Stores", path: "/guides/custom-stores"},
             {label: "SSR & Next.js", path: "/guides/ssr"}
         ]
     },

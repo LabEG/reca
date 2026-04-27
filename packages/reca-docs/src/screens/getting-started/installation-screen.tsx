@@ -64,17 +64,30 @@ ReactDOM.createRoot(
         </ul>
 
         <h2>Next.js Setup</h2>
+
+        <h3>App Router</h3>
         <p>
-            For Next.js projects, import <code>reflect-metadata</code> in your root layout or
-            a custom <code>_app.tsx</code>:
+            Import <code>reflect-metadata</code> at the top of your root layout:
         </p>
-        <pre><code>{`// app/layout.tsx (App Router)
+        <pre><code>{`// app/layout.tsx
 import "reflect-metadata";
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
     return (
         <html><body>{children}</body></html>
     );
+}`}</code></pre>
+
+        <h3>Pages Router</h3>
+        <p>
+            Import <code>reflect-metadata</code> in your custom <code>_app.tsx</code>:
+        </p>
+        <pre><code>{`// pages/_app.tsx
+import "reflect-metadata";
+import type { AppProps } from "next/app";
+
+export default function App({ Component, pageProps }: AppProps) {
+    return <Component {...pageProps} />;
 }`}</code></pre>
     </DocContent>
 );
