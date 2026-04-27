@@ -1,7 +1,6 @@
 "use client";
 
 import {type JSX} from "react";
-import Image from "next/image";
 import {Alert} from "@mui/material";
 import {DocContent} from "../../components/doc-content/doc-content.js";
 
@@ -15,13 +14,10 @@ export const WhyRecaScreen = (): JSX.Element => (
             is commonly known as <strong>spaghetti code</strong>.
         </p>
 
-        <Image
-            src="/images/why-reca.svg"
+        <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/why-reca.svg`}
             alt="Spaghetti code transformed into clean layered architecture by ReCA"
-            width={900}
-            height={400}
-            style={{width: "100%", height: "auto", display: "block", margin: "24px auto"}}
-            unoptimized
+            style={{width: "100%", maxWidth: 800, display: "block", margin: "24px auto"}}
         />
 
         <p>

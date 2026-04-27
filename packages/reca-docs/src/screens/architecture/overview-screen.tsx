@@ -1,7 +1,6 @@
 "use client";
 
 import {type JSX} from "react";
-import Image from "next/image";
 import {DocContent} from "../../components/doc-content/doc-content.js";
 
 export const ArchitectureOverviewScreen = (): JSX.Element => (
@@ -21,13 +20,10 @@ export const ArchitectureOverviewScreen = (): JSX.Element => (
             depend on repositories.
         </p>
 
-        <Image
-            src="/images/architecture-layers.svg"
+        <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/architecture-layers.svg`}
             alt="ReCA Architecture Layers: Component → Store → Service → Repository"
-            width={720}
-            height={400}
-            style={{width: "100%", height: "auto", display: "block", margin: "24px auto"}}
-            unoptimized
+            style={{width: "100%", maxWidth: 600, display: "block", margin: "24px auto"}}
         />
 
         <h2>The Four Layers</h2>
@@ -65,13 +61,10 @@ export const ArchitectureOverviewScreen = (): JSX.Element => (
             When a user interacts with the UI, the request flows through all layers and back:
         </p>
 
-        <Image
-            src="/images/request-lifecycle.svg"
+        <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/request-lifecycle.svg`}
             alt="Request lifecycle flowing from User through Component, Store, Service, Repository to Server and back"
-            width={720}
-            height={220}
-            style={{width: "100%", height: "auto", display: "block", margin: "24px auto"}}
-            unoptimized
+            style={{width: "100%", maxWidth: 700, display: "block", margin: "24px auto"}}
         />
 
         <ol>
@@ -102,13 +95,10 @@ export const ArchitectureOverviewScreen = (): JSX.Element => (
             diagram below shows the difference in how they trigger re-renders:
         </p>
 
-        <Image
-            src="/images/store-flow.svg"
+        <img
+            src={`${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}/images/store-flow.svg`}
             alt="AutoStore (automatic proxy-based) vs Store (manual emitChange) flow comparison"
-            width={720}
-            height={320}
-            style={{width: "100%", height: "auto", display: "block", margin: "24px auto"}}
-            unoptimized
+            style={{width: "100%", maxWidth: 700, display: "block", margin: "24px auto"}}
         />
 
         <h2>Store as a Modern Controller</h2>

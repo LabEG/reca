@@ -31,6 +31,7 @@ jobs:
         run: npm run build -w packages/reca-docs
         env:
           BASE_PATH: /reca
+          NEXT_PUBLIC_BASE_PATH: /reca
 
       - uses: actions/upload-pages-artifact@v3
         with:
