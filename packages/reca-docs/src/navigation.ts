@@ -63,6 +63,13 @@ export const navigation: INavGroup[] = [
         ]
     },
     {
+        label: "Examples",
+        items: [
+            {label: "Application Structure", path: "/examples/app-structure"},
+            {label: "Enterprise Application", path: "/examples/enterprise-app"}
+        ]
+    },
+    {
         label: "Advanced",
         items: [
             {label: "Migration Guide", path: "/advanced/migration"},
