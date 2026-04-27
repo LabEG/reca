@@ -76,13 +76,13 @@ export const IntroductionScreen = (): JSX.Element => (
         <pre><code>{`import { AutoStore, useStore } from "reca";
 
 class CounterStore extends AutoStore {
-    public count: number = 0;
+    count = 0;
 
-    public increment(): void {
+    increment() {
         this.count++;
     }
 
-    public decrement(): void {
+    decrement() {
         this.count--;
     }
 }
