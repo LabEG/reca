@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.10.0] - 2026-04-27
+
+### 🚀 Features
+
+- Replace <img> with <Image> component and getting started screens
+
+### 🐛 Bug Fixes
+
+- Simplify CounterStore class syntax in introduction example
+
 ## [2.9.0] - 2026-04-27
 
 ### 🚀 Features
