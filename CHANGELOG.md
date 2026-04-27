@@ -2,6 +2,19 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.9.0] - 2026-04-27
+
+### 🚀 Features
+
+- Add Custom Stores and Manual Store documentation screens
+- Add example screens for Application Structure and Enterprise Application, update navigation
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps)* Bump actions/deploy-pages from 4 to 5 (#46)
+- *(deps)* Bump the all-minor-patch group with 2 updates (#50)
+- *(deps-dev)* Bump the development-dependencies group with 3 updates (#51)
+
 ## [2.8.0] - 2026-04-20
 
 ### 🚀 Features
