@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.12.0] - 2026-04-29
+
+### 🚀 Features
+
+- Enhance responsive design and accessibility in documentation layout and styles
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps)* Bump actions/upload-pages-artifact from 3 to 5 (#49)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#52)
+- *(deps-dev)* Bump the development-dependencies group with 4 updates (#53)
+
 ## [2.11.0] - 2026-04-27
 
 ### 🚀 Features
