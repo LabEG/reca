@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.1] - 2026-04-29
+
+### 🚜 Refactor
+
+- Simplify MainContent component by removing drawerWidth prop and max-width style
+
 ## [2.13.0] - 2026-04-29
 
 ### 🚀 Features
