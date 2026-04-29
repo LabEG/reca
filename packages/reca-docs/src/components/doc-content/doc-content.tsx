@@ -30,6 +30,15 @@ export const DocContent = ({children}: IDocContent): JSX.Element => {
     useEffect(() => {
         if (!ref.current) return;
 
+        // Wrap bare tables in a scrollable container (only once)
+        ref.current.querySelectorAll("table").forEach((table) => {
+            if (table.parentElement?.classList.contains("table-scroll")) return;
+            const wrapper = document.createElement("div");
+            wrapper.className = "table-scroll";
+            table.parentNode?.insertBefore(wrapper, table);
+            wrapper.appendChild(table);
+        });
+
         const codeBlocks = ref.current.querySelectorAll("pre > code");
         codeBlocks.forEach((block) => {
             if (!/language-/.test(block.className)) {

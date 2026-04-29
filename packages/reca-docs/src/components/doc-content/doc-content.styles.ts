@@ -175,19 +175,21 @@ export const DocArticle = styled("article")`
         }
     }
 
-    /* Wrap tables for horizontal scroll on small screens */
-    .table-wrapper,
-    table {
-        display: block;
+    /* Scrollable table container injected by DocContent */
+    .table-scroll {
+        width: 100%;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
+        margin-bottom: 24px;
+        /* Subtle scroll hint on mobile */
+        border-radius: 4px;
     }
 
     table {
         width: 100%;
         min-width: 480px;
         border-collapse: collapse;
-        margin-bottom: 24px;
+        margin-bottom: 0;
         font-size: 0.9rem;
     }
 
