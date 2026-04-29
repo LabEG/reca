@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const DocArticle = styled("article")`
     line-height: 1.8;
     color: #333;
-    max-width: 820px;
     width: 100%;
 
     h1 {

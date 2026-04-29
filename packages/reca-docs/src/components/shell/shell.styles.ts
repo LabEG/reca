@@ -6,9 +6,7 @@ export const DRAWER_WIDTH = 280;
 export const TOOLBAR_HEIGHT_MOBILE = 56;
 export const TOOLBAR_HEIGHT_DESKTOP = 64;
 
-export const MainContent = styled("main", {
-    shouldForwardProp: (prop) => prop !== "drawerWidth"
-})<{drawerWidth: number}>`
+export const MainContent = styled("main")`
     flex-grow: 1;
     /* min-width: 0 prevents flex child from overflowing its container */
     min-width: 0;
@@ -18,15 +16,9 @@ export const MainContent = styled("main", {
     margin-top: ${TOOLBAR_HEIGHT_DESKTOP}px;
     min-height: calc(100vh - ${TOOLBAR_HEIGHT_DESKTOP}px);
 
-    @media (min-width: 900px) {
-        margin-left: ${({drawerWidth}) => drawerWidth}px;
-    }
-
     /* Tablet: 600px – 899px */
     @media (min-width: 600px) and (max-width: 899px) {
         padding: 28px 32px;
-        margin-top: ${TOOLBAR_HEIGHT_DESKTOP}px;
-        min-height: calc(100vh - ${TOOLBAR_HEIGHT_DESKTOP}px);
     }
 
     /* Mobile: < 600px */

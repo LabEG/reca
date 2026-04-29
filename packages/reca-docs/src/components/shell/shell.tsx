@@ -122,7 +122,7 @@ export const Shell = ({children}: IShellProps): JSX.Element => {
                 {drawerContent}
             </Drawer>
 
-            <MainContent drawerWidth={DRAWER_WIDTH}>
+            <MainContent>
                 {children}
             </MainContent>
         </Box>
