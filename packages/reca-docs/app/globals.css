@@ -8,6 +8,8 @@ html,
 body {
     max-width: 100vw;
     overflow-x: hidden;
+    /* Prevent content overflow from breaking sticky AppBar on mobile */
+    -webkit-text-size-adjust: 100%;
 }
 
 a {

@@ -1,7 +1,12 @@
-import type {Metadata} from "next";
+import type {Metadata, Viewport} from "next";
 import "./globals.css";
 import {type JSX} from "react";
 import {ThemeRegistry} from "../src/components/theme-registry/theme-registry.js";
+
+export const viewport: Viewport = {
+    width: "device-width",
+    initialScale: 1
+};
 
 export const metadata: Metadata = {
     title: "ReCA Documentation",
