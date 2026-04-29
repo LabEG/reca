@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.0] - 2026-04-29
+
+### 🚀 Features
+
+- Add scrollable container for tables in documentation
+
 ## [2.12.0] - 2026-04-29
 
 ### 🚀 Features
