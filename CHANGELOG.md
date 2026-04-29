@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.11.0] - 2026-04-27
+
+### 🚀 Features
+
+- Update image handling in documentation screens to use environment-based paths
+
+### ⚙️ Miscellaneous Tasks
+
+- Merge branches 'main' and 'main' of github.com:LabEG/reca
+
 ## [2.10.0] - 2026-04-27
 
 ### 🚀 Features

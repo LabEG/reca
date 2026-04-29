@@ -1,6 +1,6 @@
 {
   "name": "reca-workspace",
-  "version": "2.10.0",
+  "version": "2.11.0",
   "type": "module",
   "private": "true",
   "scripts": {
@@ -22,13 +22,13 @@
     "packages/*"
   ],
   "devDependencies": {
-    "@commitlint/cli": "^20.5.0",
+    "@commitlint/cli": "^20.5.2",
     "@commitlint/config-conventional": "^20.5.0",
     "@favware/cliff-jumper": "^6.1.0",
     "@labeg/code-style": "^6.10.21",
     "husky": "^9.1.7",
     "lint-staged": "^16.4.0",
     "rimraf": "^6.1.2",
-    "npm-check-updates": "^21.0.3"
+    "npm-check-updates": "^22.0.1"
   }
 }

@@ -25,8 +25,8 @@
     "@types/prismjs": "^1.26.6",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "eslint": "^10.2.0",
-    "eslint-config-next": "16.2.3",
+    "eslint": "^10.2.1",
+    "eslint-config-next": "16.2.4",
     "rimraf": "^6.1.2",
     "typescript": "^6.0.3"
   }
