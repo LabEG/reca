@@ -2,6 +2,33 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.2] - 2026-07-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps-dev)* Bump eslint in the eslint-plugins group (#54)
+- *(deps-dev)* Bump fast-uri from 3.1.0 to 3.1.2 (#56)
+- *(deps-dev)* Bump the development-dependencies group across 1 directory with 8 updates (#57)
+- *(deps)* Bump next from 16.2.4 to 16.2.6 (#58)
+- *(deps)* Bump the all-minor-patch group with 2 updates (#59)
+- *(deps-dev)* Bump the development-dependencies group with 5 updates (#60)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#61)
+- *(deps)* Bump the react-ecosystem group with 3 updates (#62)
+- *(deps)* Bump next in the all-minor-patch group (#63)
+- *(deps-dev)* Bump the development-dependencies group with 6 updates (#64)
+- *(deps)* Bump lewagon/wait-on-check-action from 1.6.1 to 1.8.0 (#65)
+- *(deps)* Bump the all-minor-patch group with 3 updates (#66)
+- *(deps-dev)* Bump the development-dependencies group with 3 updates (#67)
+- *(deps)* Bump the all-minor-patch group with 2 updates (#68)
+- *(deps-dev)* Bump @types/node in the development-dependencies group (#69)
+- *(deps-dev)* Bump js-yaml from 4.1.1 to 4.2.0 (#70)
+- *(deps)* Bump undici from 7.25.0 to 7.28.0 (#71)
+- *(deps)* Bump actions/checkout from 4 to 7 (#72)
+- *(deps)* Bump @mui/material in the all-minor-patch group (#73)
+- *(deps-dev)* Bump the development-dependencies group with 6 updates (#74)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#75)
+- *(deps-dev)* Bump the development-dependencies group with 4 updates (#76)
+
 ## [2.13.1] - 2026-04-29
 
 ### 🚜 Refactor
