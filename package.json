@@ -27,8 +27,8 @@
     "@favware/cliff-jumper": "^6.1.0",
     "@labeg/code-style": "^6.10.22",
     "husky": "^9.1.7",
-    "lint-staged": "^17.1.1",
+    "lint-staged": "^17.2.0",
     "rimraf": "^6.1.2",
-    "npm-check-updates": "^22.2.9"
+    "npm-check-updates": "^23.0.0"
   }
 }
