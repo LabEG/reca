@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.5] - 2026-08-07
+
+### 🐛 Bug Fixes
+
+- *(tests)* Replace archived SpaceX API and update import extensions
+
 ## [2.13.4] - 2026-08-07
 
 ### ⚙️ Miscellaneous Tasks
