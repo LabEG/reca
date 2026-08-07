@@ -2,6 +2,12 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.4] - 2026-08-07
+
+### ⚙️ Miscellaneous Tasks
+
+- *(reca)* Bump version to 2.13.3 and downgrade typescript
+
 ## [2.13.3] - 2026-08-07
 
 ### ⚙️ Miscellaneous Tasks
