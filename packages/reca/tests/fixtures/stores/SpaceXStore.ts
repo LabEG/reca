@@ -19,7 +19,7 @@ export class SpaceXStore extends AutoStore {
     private async fetchCompanyInfo (): Promise<void> {
         try {
             this.companyInfo = await this.spaceXService.getCompanyInfo();
-        } catch (error) {
+        } catch {
             // Process exceptions, ex: this.logger.error(error.message);
         }
     }

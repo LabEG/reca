@@ -1,3 +1,4 @@
+import {JSX} from "react/jsx-runtime";
 import {useStore} from "../../../src/index.js";
 import {SpaceXStore} from "../stores/SpaceXStore.js";
 

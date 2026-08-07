@@ -1,8 +1,8 @@
 /* eslint-disable @typescript-eslint/non-nullable-type-assertion-style */
 
 import {render, fireEvent, waitFor, screen} from "@testing-library/react";
-import {SpaceXComponent} from "./fixtures/components/SpaceXComponent";
-import {ToDoComponent} from "./fixtures/components/ToDoComponent";
+import {SpaceXComponent} from "./fixtures/components/SpaceXComponent.js";
+import {ToDoComponent} from "./fixtures/components/ToDoComponent.js";
 import {expect} from "chai";
 import {describe, it} from "node:test";
 

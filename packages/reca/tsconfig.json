@@ -5,7 +5,10 @@
     "experimentalDecorators": true,
     "emitDecoratorMetadata": true,
     "noEmit": true,
-    "allowImportingTsExtensions": true
+    "allowImportingTsExtensions": true,
+    "rootDir": ".",
+    "types": ["node"],
+    "lib": ["es2020", "dom"]
   },
   "include": [
     "./src/**/*",

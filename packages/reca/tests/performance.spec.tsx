@@ -1,6 +1,6 @@
 
 import {render} from "@testing-library/react";
-import {PerformanceComponent} from "./fixtures/components/PerformanceComponent";
+import {PerformanceComponent} from "./fixtures/components/PerformanceComponent.js";
 import {expect} from "chai";
 import {describe, it} from "node:test";
 

@@ -1,20 +1,39 @@
 import {reflection} from "first-di";
-import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo";
+import {SpaceXCompanyInfo} from "../models/SpaceXCompanyInfo.js";
 
 @reflection
 export class SpaceXService {
 
-    // eslint-disable-next-line @typescript-eslint/class-methods-use-this
+    // Hardcoded SpaceX company info (api.spacexdata.com was archived in June 2026)
+    // eslint-disable-next-line class-methods-use-this
+    private getCompanyInfoData () {
+        return {
+            name: "SpaceX",
+            founder: "Elon Musk",
+            founded: 2002,
+            employees: 13000,
+            ceo: "Elon Musk",
+            cto: "Elon Musk",
+            cvo: "Gwynne Shotwell",
+            headquarters: {
+                address: "Hawthorne, California",
+                city: "Hawthorne",
+                state: ""
+            },
+            links: {
+                website: "https://www.spacex.com/",
+                elonTwitter: "elonmusk"
+            },
+            valuation: 76000000000,
+            summary: "SpaceX designs, manufactures and launches advanced rockets and spacecraft."
+        };
+    }
+
     public async getCompanyInfo (): Promise<SpaceXCompanyInfo> {
-        const response = await fetch("https://api.spacexdata.com/v3/info");
-        const json: unknown = await response.json();
+        const result = new SpaceXCompanyInfo().applyData(this.getCompanyInfoData());
 
-        // ... and manies manies lines of logics
-
-        if (typeof json === "object" && json !== null) {
-            return new SpaceXCompanyInfo().applyData(json);
-        }
-        throw new Error("SpaceXService.getCompanyInfo: response object is not json");
+        return Promise.resolve(result);
     }
 
 }
+
