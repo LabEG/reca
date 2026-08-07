@@ -2,6 +2,26 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.3] - 2026-08-07
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps)* Bump lewagon/wait-on-check-action from 1.8.0 to 1.8.1 (#77)
+- *(deps)* Bump the all-minor-patch group with 4 updates (#78)
+- *(deps)* Bump actions/setup-node from 4 to 7 (#79)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#80)
+- *(deps)* Bump next in the all-minor-patch group (#81)
+- *(deps-dev)* Bump the development-dependencies group with 5 updates (#82)
+- *(deps-dev)* Bump fast-uri from 3.1.3 to 3.1.4 (#83)
+- *(deps)* Bump lewagon/wait-on-check-action from 1.8.1 to 1.9.0 (#84)
+- *(deps)* Bump next in the all-minor-patch group (#85)
+- *(deps-dev)* Bump the development-dependencies group with 4 updates (#86)
+- *(deps)* Bump undici from 7.28.0 to 7.29.0 (#87)
+- *(deps-dev)* Bump brace-expansion from 1.1.12 to 1.1.18 (#88)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#89)
+- *(deps-dev)* Bump fast-uri from 3.1.4 to 3.1.5 (#90)
+- *(config)* Relax commitlint body length and update dependencies
+
 ## [2.13.2] - 2026-07-03
 
 ### ⚙️ Miscellaneous Tasks
