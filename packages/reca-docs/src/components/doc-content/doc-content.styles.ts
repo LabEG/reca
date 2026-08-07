@@ -4,6 +4,8 @@ export const DocArticle = styled("article")`
     line-height: 1.8;
     color: #333;
     width: 100%;
+    max-width: 64rem;
+    margin: 0 auto;
 
     h1 {
         font-size: 2rem;

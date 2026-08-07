@@ -23,7 +23,9 @@ export const useClientStore = <P extends object, T extends Store<P>>(
 
     // Constructor
     let isInit = false;
+    // eslint-disable-next-line react-hooks/immutability
     const [stateStore] = React.useState(() => {
+        // eslint-disable-next-line react-hooks/immutability
         isInit = true;
 
         // Resolve dependencies
@@ -54,6 +56,7 @@ export const useClientStore = <P extends object, T extends Store<P>>(
         return resolvedStore;
     });
 
+    // eslint-disable-next-line react-hooks/immutability
     stateStore.isDrawTime = true;
 
     // Activate and Dispose(Destructor) methods
@@ -84,6 +87,8 @@ export const useClientStore = <P extends object, T extends Store<P>>(
         if (!isInit) {
             stateStore.afterUpdate(props ?? {} as P);
         }
+
+        // eslint-disable-next-line react-hooks/immutability
         stateStore.isDrawTime = false;
     });
 
