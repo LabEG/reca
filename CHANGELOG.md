@@ -2,6 +2,29 @@
 
 All notable changes to this project will be documented in this file.
 
+## [2.13.6] - 2026-10-03
+
+### ⚙️ Miscellaneous Tasks
+
+- *(deps)* Bump lewagon/wait-on-check-action from 1.9.0 to 1.9.1 (#91)
+- *(deps-dev)* Bump eslint in the eslint-plugins group (#92)
+- *(deps)* Bump next in the all-minor-patch group (#93)
+- *(deps-dev)* Bump the development-dependencies group with 7 updates (#94)
+- *(deps)* Bump next in the all-minor-patch group (#95)
+- *(deps)* Bump the all-minor-patch group with 3 updates (#96)
+- *(deps-dev)* Bump the development-dependencies group with 6 updates (#97)
+- *(deps-dev)* Bump fast-uri from 3.1.5 to 3.1.7 (#98)
+- *(deps)* Bump next in the all-minor-patch group (#99)
+- *(deps-dev)* Bump the development-dependencies group with 5 updates (#100)
+- *(deps)* Bump nanoid from 3.3.17 to 3.3.18 (#101)
+- *(deps)* Bump next in the all-minor-patch group (#102)
+- *(deps-dev)* Bump the development-dependencies group with 2 updates (#103)
+- *(deps-dev)* Bump the eslint-plugins group with 2 updates (#104)
+- *(deps-dev)* Bump js-yaml from 4.3.1 to 4.3.2 (#105)
+- *(deps)* Bump next in the all-minor-patch group (#106)
+- *(deps-dev)* Bump the development-dependencies group with 5 updates (#107)
+- *(deps-dev)* Bump brace-expansion from 1.1.18 to 1.1.21 (#108)
+
 ## [2.13.5] - 2026-08-07
 
 ### 🐛 Bug Fixes
